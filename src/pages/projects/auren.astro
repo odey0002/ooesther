@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectPager from "../../components/ProjectPager.astro";
+import { getProjectBySlug } from "../../data/projects.js";
+import "../../styles/projects/auren.css";
+
+const project = getProjectBySlug("auren");
+---
+
+<BaseLayout
+  title="Auren - Noise Cancelling App"
+  description="Auren is a noise-cancelling app concept designed to support focus, calm, and deep work."
+>
+  <Header />
+
+  <main class="project-detail auren-page">
+    <section class="project-hero site-shell section">
+      <a href="/ui-ux" class="project-back-link">← UI/UX Projects</a>
+
+      <div class="project-hero__intro">
+        <p class="project-number">{project?.number ?? "03"}</p>
+
+        <div>
+          <p class="project-label">UX Research / iOS Experience / Sound Design</p>
+          <h1>Auren</h1>
+
+          <p class="project-hero__summary">
+            Auren is a noise-cancelling app concept designed to help people
+            create calmer sound environments for focus, rest, and deep work.
+          </p>
+        </div>
+      </div>
+
+      <figure class="project-hero__image auren-hero-image">
+        <span class="auren-progress-badge">In Progress</span>
+
+        <img
+          src="/images/projects/auren/preview.jpg"
+          alt="Auren noise cancelling app preview shown on iPhone screens"
+        />
+      </figure>
+
+      <dl class="project-facts">
+        <div>
+          <dt>Status</dt>
+          <dd>In Progress</dd>
+        </div>
+
+        <div>
+          <dt>Role</dt>
+          <dd>UX Research, UI Design, Sound Experience</dd>
+        </div>
+
+        <div>
+          <dt>Tools</dt>
+          <dd>Figma, Prototyping, Visual Design</dd>
+        </div>
+
+        <div>
+          <dt>Year</dt>
+          <dd>{project?.year ?? "2024"}</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Preview</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          Auren explores how interface design, sound modes, and calm visual
+          systems can help users manage noise and move into more intentional
+          states of focus.
+        </p>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Product idea</h3>
+            <p>
+              The app gives users a personal sound zone where they can scan
+              their environment, reduce distractions, and choose listening modes
+              based on how they want to focus or feel.
+            </p>
+          </article>
+
+          <article class="detail-card">
+            <h3>Visual direction</h3>
+            <p>
+              The interface uses a calm dark UI, soft green sound cues, simple
+              controls, and mode-based navigation to make the experience feel
+              focused and quiet.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Coming Soon</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          The full case study is currently being shaped. Once complete, this
+          page will include the problem, research insights, user flow, sound-mode
+          logic, interaction decisions, visual direction, and final app screens.
+        </p>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>What I’m refining</h3>
+            <p>
+              I’m currently refining the product story, the sound-control logic,
+              and how the interface communicates different listening states.
+            </p>
+          </article>
+
+          <article class="detail-card">
+            <h3>What to expect</h3>
+            <p>
+              The final case study will show the thinking behind the experience,
+              not just the finished screens.
+            </p>
+          </article>
+        </div>
+
+        <ProjectPager currentSlug="auren" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

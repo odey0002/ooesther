@@ -1,0 +1,141 @@
+/* =========================
+   BLOSSOM THEORY
+========================= */
+
+:root {
+  --blossom-green: #2f6f3e;
+  --blossom-green-soft: #9fb98f;
+  --blossom-cream: #f3eadc;
+}
+
+.blossom-page {
+  --accent: var(--blossom-green);
+  --accent-soft: var(--blossom-green-soft);
+}
+
+/* Project accent */
+.blossom-page .project-label,
+.blossom-page .project-back-link,
+.blossom-page .project-facts dt,
+.blossom-case-copy p {
+  color: var(--blossom-green);
+}
+
+.blossom-page .project-number {
+  color: var(--blossom-green-soft);
+}
+
+/* Keep display font consistent with Omvia / 613Flea / Quench */
+.blossom-page .project-hero h1 {
+  font-family: var(--font-display);
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.blossom-hero-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* =========================
+   SECTION LAYOUT
+   Matches Quench sizing
+========================= */
+
+.blossom-case-section {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.34fr) minmax(0, 0.66fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-block: clamp(3.2rem, 2vw, 5.5rem);
+  border-top: 1px solid var(--border);
+}
+
+.blossom-case-copy {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+}
+
+.blossom-case-copy p {
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.blossom-case-copy h2 {
+  max-width: 18rem;
+  margin-top: 0.85rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-transform: none;
+}
+
+.blossom-case-copy span {
+  display: block;
+  max-width: 19rem;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.blossom-case-media {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* =========================
+   DETAIL CARDS
+========================= */
+
+.blossom-page .detail-grid {
+  margin-top: 0;
+}
+
+.blossom-page .detail-card {
+  background: color-mix(in srgb, var(--bg-soft) 72%, transparent);
+}
+
+.blossom-page .detail-card h3 {
+  font-weight: 700;
+}
+
+.blossom-page .detail-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .blossom-case-section {
+    grid-template-columns: 1fr;
+  }
+
+  .blossom-case-copy {
+    position: static;
+  }
+
+  .blossom-case-copy h2,
+  .blossom-case-copy span {
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .blossom-case-section {
+    padding-block: clamp(2.5rem, 8vw, 4rem);
+  }
+}

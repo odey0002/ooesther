@@ -1,0 +1,26 @@
+---
+const { project, flipped = false } = Astro.props;
+---
+
+<article class:list={["project-feature", { "project-feature--flipped": flipped }]}>
+  <a href={project.link} class="project-feature__image" aria-label={`View ${project.title} case study`}>
+    <img src={project.image} alt={`${project.title} project preview`} />
+  </a>
+
+  <div class="project-feature__content">
+    <div class="project-feature__meta">
+      <span class="project-feature__number">{project.number}</span>
+      <span>{project.category} — {project.year}</span>
+    </div>
+
+    <h3>{project.title}</h3>
+
+    <p>{project.description}</p>
+
+    <ul class="tag-list">
+      {project.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+
+    <a href={project.link} class="text-link">View case study →</a>
+  </div>
+</article>

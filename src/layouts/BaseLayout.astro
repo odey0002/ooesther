@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Esther Portfolio",
+  description = "Design portfolio for UI, brand, web, and illustration work."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <slot />
+
+    <script is:inline>
+  const revealItems = document.querySelectorAll(
+    ".section:not(.project-section):not(.no-reveal), .project-feature:not(.no-reveal), .footer:not(.no-reveal)"
+  );
+
+  revealItems.forEach((item) => {
+    if (!item.closest(".no-reveal")) {
+      item.setAttribute("data-reveal", "");
+    }
+  });
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -4% 0px",
+    }
+  );
+
+  revealItems.forEach((item) => {
+    if (!item.closest(".no-reveal")) {
+      revealObserver.observe(item);
+    }
+  });
+</script>
+
+    <script src="/src/scripts/theme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+---
+const currentPath = Astro.url.pathname;
+
+const isUiUxActive = currentPath.startsWith("/ui-ux");
+const isGraphicsActive = currentPath.startsWith("/graphics");
+const isAboutActive = currentPath.startsWith("/about");
+---
+
+<header class="site-header">
+  <a href="/" class="site-logo" aria-label="Go to homepage">
+    <img
+      class="site-logo__img site-logo__img--dark"
+      src="/images/site/logo-dark.png"
+      alt="Esther Odeyemi logo"
+    />
+
+    <img
+      class="site-logo__img site-logo__img--light"
+      src="/images/site/logo-light.png"
+      alt=""
+      aria-hidden="true"
+    />
+  </a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class:list={[{ "is-active": isUiUxActive }]} href="/ui-ux">
+      UI/UX
+    </a>
+
+    <a class:list={[{ "is-active": isGraphicsActive }]} href="/graphics">
+      Graphics
+    </a>
+
+    <a class:list={[{ "is-active": isAboutActive }]} href="/about">
+      About
+    </a>
+
+    <a href="/#contact">
+      Contact
+    </a>
+  </nav>
+
+  <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch theme">
+    🌙
+  </button>
+</header>

@@ -1,0 +1,1597 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectPager from "../../components/ProjectPager.astro";
+import { getProjectBySlug } from "../../data/projects.js";
+
+import "../../styles/projects/omvia.css";
+
+const project = getProjectBySlug("omvia");
+
+const prototypeUrl = "https://www.figma.com/proto/n1HrOSWuPKgLjaJ5UhpT6Q/smart-home-app-mine--Copy-?node-id=307-3582&p=f&viewport=1189%2C-3634%2C0.21&t=cr2ZpQNTxKqv4qNN-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=307%3A3582&page-id=0%3A1";
+const prototypeEmbedSrc = "https://embed.figma.com/proto/n1HrOSWuPKgLjaJ5UhpT6Q/smart-home-app-mine--Copy-?node-id=307-3582&p=f&viewport=1189%2C-3634%2C0.21&scaling=scale-down&content-scaling=fixed&starting-point-node-id=307%3A3582&page-id=0%3A1&embed-host=share&hide-ui=1&footer=0";
+
+const overviewPoints = [
+  {
+    title: "Unified Command",
+    text: "Combined 3+ device systems into one room-based dashboard to reduce cognitive load."
+  },
+  {
+    title: "Proactive Wellness",
+    text: "Designed Morning Wellness Checks to give caregivers remote confidence."
+  },
+  {
+    title: "Frictionless Access",
+    text: "Clear, easy-to-use, and inclusive for every family member."
+  },
+  {
+    title: "Visual Identity",
+    text: "Created a cohesive system using glassmorphism and soft geometry to reduce digital noise."
+  }
+];
+
+const challengePoints = [
+  {
+    title: "App Fragmentation",
+    text: "Managing 5+ apps causes constant context-switching stress."
+  },
+  {
+    title: "Safety Anxiety",
+    text: "Lack of clear updates reduces remote confidence."
+  },
+  {
+    title: "Invasive Monitoring",
+    text: "Caregivers struggle to balance care with privacy and dignity."
+  },
+  {
+    title: "High Cognitive Load",
+    text: "Complex setups and jargon exclude non-tech users."
+  }
+];
+
+const objectivePoints = [
+  {
+    title: "Unified Command",
+    text: "One room-based dashboard to eliminate app fatigue."
+  },
+  {
+    title: "Remote Confidence",
+    text: "Real-time, glanceable updates for peace of mind."
+  },
+  {
+    title: "Proactive Wellness",
+    text: "Non-intrusive checks to support caregivers."
+  },
+  {
+    title: "Universal Usability",
+    text: "High-contrast, one-handed interface for all users."
+  }
+];
+
+const processSteps = ["Empathize", "Define", "Ideate", "Prototype", "Test"];
+
+const competitorAnalysis = [
+  {
+    product: "Google Home",
+    logo: "/images/projects/omvia/google.png",
+    logoAlt: "Google Home logo",
+    strengths: [
+      "Offers strong ecosystem integration across multiple devices.",
+      "Supports a wide range of smart home products, making setup flexible and scalable."
+    ],
+    weaknesses: [
+      "Fragmented UX with deeply nested menus increases app fatigue, forcing users to dig through multiple layers to complete simple actions.",
+      "Leads to constant context switching and high cognitive load, making everyday use feel inefficient and mentally demanding."
+    ]
+  },
+  {
+    product: "Samsung SmartThings",
+    logo: "/images/projects/omvia/samsung.png",
+    logoAlt: "Samsung SmartThings logo",
+    strengths: [
+      "Provides powerful automation capabilities for advanced users.",
+      "Enables deeper control and customization of smart home systems."
+    ],
+    weaknesses: [
+      "Complex, technical interface creates a steep learning curve, making it difficult for non-tech users to adopt and use confidently.",
+      "Lacks real-time, human-centered reassurance features, limiting its ability to provide quick, clear updates that support everyday peace of mind."
+    ]
+  }
+];
+
+const researchInsights = [
+  {
+    title: "Lifestyle Logic vs. Technical Toggles",
+    observation:
+      "Most apps focus on devices, but busy parents think in terms of routines like bedtime or school mornings, not individual controls.",
+    implication:
+      "Shift to a lifestyle-focused dashboard using Routines and Scenes to simplify daily management and reduce friction."
+  },
+  {
+    title: "Remote Confidence as a Stress Reducer",
+    observation:
+      "Travelers and homeowners often feel safety anxiety because key information is buried and hard to access quickly.",
+    implication:
+      "Introduce glanceable home status and clear Secure Home actions for fast, reliable reassurance on the go."
+  },
+  {
+    title: "Passive Caregiving vs. Intrusive Surveillance",
+    observation:
+      "Caregivers want to ensure safety but feel uncomfortable with constant monitoring that can feel intrusive.",
+    implication:
+      "Use non-intrusive Wellness Checks to provide meaningful updates while maintaining privacy and dignity."
+  }
+];
+
+const personas = [
+  {
+    name: "Nina & Raj",
+    type: "Busy household managers",
+    image: "/images/projects/omvia/persona-1.png",
+    quote: "We just want to make sure everything’s running smoothly at home, even when we’re busy.",
+    about:
+      "Nina and Raj are a busy couple with many obligations, such as work, parenting, and household duties. Mornings are hectic, evenings are spent with the family, and they prefer simplicity and ease. They want to conserve energy, make their home safe and snug, but without needing to flip through a number of apps or worry that they will forget to shut things off.",
+    demographics: [
+      ["Age", "34 (Nina), 36 (Raj)"],
+      ["Location", "Brampton, Ontario, Canada"],
+      ["Work", "Nina - School Administrator, Raj - IT Consultant"],
+      ["Family/Status", "Married with two young children ages 3 and 6"],
+      ["Character", "Responsible, family-focused, time-conscious, eco-aware"]
+    ],
+    needs: [
+      "A simplified, centralized system to control home lighting, temperature, and appliances.",
+      "Smart alerts or routines for when things are left on.",
+      "Easy mobile access and voice commands to manage home settings hands-free."
+    ],
+    frustrations: [
+      "Juggling multiple apps for different smart devices.",
+      "Forgetting to turn off lights or adjust temperature before bed or work.",
+      "Energy bills are unpredictable and high during winter and summer."
+    ],
+    motivation: [
+      "To keep their household organized and energy-efficient.",
+      "To reduce mental load and increase peace of mind.",
+      "To save money while using modern home tech."
+    ],
+    accessibility: [
+      "Needs simple mobile UI, clear icons, voice control, and notifications."
+    ],
+    technicalExperience: [
+      ["Internet", 48],
+      ["Software", 35],
+      ["Mobile Apps", 28],
+      ["Social Media", 18],
+      ["Gaming", 12]
+    ],
+    personality: [
+      ["Introvert", "Extrovert", 35],
+      ["Analytical", "Creative", 58],
+      ["Loyal", "Fickle", 25],
+      ["Passive", "Active", 36]
+    ],
+    brands: ["Alexa", "IKEA", "Canadian Tire"]
+  },
+  {
+    name: "David",
+    type: "Remote property manager",
+    image: "/images/projects/omvia/persona-2.png",
+    quote: "I want my home to stay secure and energy-efficient, even when I’m far away.",
+    about:
+      "David is a homeowner who rents out part of his property to long-term tenants. As a busy manager, he prefers a smart home system that allows him to manage the property remotely for adjusting temperature, checking security, or receiving alerts without needing to visit in person. This helps him stay in control while respecting his tenants’ privacy and avoiding unnecessary interruptions.",
+    demographics: [
+      ["Age", "40"],
+      ["Location", "Downtown area in Ottawa"],
+      ["Work", "Project Manager"],
+      ["Family/Status", "Married"],
+      ["Character", "Independent, organized, and security-conscious"]
+    ],
+    needs: [
+      "Remotely monitor the property without physically visiting.",
+      "Control temperature and lighting to reduce energy costs between tenants or when vacant.",
+      "Respect tenant privacy while still maintaining property oversight.",
+      "Receive real-time alerts for unusual activity issues."
+    ],
+    frustrations: [
+      "Needs to check the property in person for simple issues.",
+      "Doesn’t want to bother tenants but still needs visibility into the home’s status.",
+      "Hard to control unnecessary energy use when the unit is vacant.",
+      "Lacks alerts for potential safety hazards or system failures.",
+      "Manual control wastes time."
+    ],
+    motivation: [
+      "Manage his rental property efficiently without being on-site.",
+      "Prevent energy waste and reduce utility costs during tenant transitions.",
+      "Stay aware of safety or maintenance issues early to avoid bigger risks."
+    ],
+    accessibility: [
+      "David needs a simple, mobile-friendly system with clear alerts and easy controls, so he can manage his rental property remotely without dealing with complex settings."
+    ],
+    technicalExperience: [
+      ["Internet", 70],
+      ["Software", 60],
+      ["Mobile Apps", 70],
+      ["Social Media", 52],
+      ["Gaming", 30]
+    ],
+    personality: [
+      ["Introvert", "Extrovert", 48],
+      ["Analytical", "Creative", 30],
+      ["Loyal", "Fickle", 60],
+      ["Passive", "Active", 42]
+    ],
+    brands: ["Ring", "Ecobee", "Home Depot"]
+  },
+  {
+    name: "Michael Thompson",
+    type: "Family caregiver",
+    image: "/images/projects/omvia/persona-3.png",
+    quote: "I just want to make sure my dad is safe and comfortable, even when I’m not there.",
+    about:
+      "Michael balances his job, family life, and caregiving responsibilities. He visits his father frequently but relies on tech for updates and peace of mind when he can’t be there.",
+    demographics: [
+      ["Age", "45"],
+      ["Location", "Mississauga, ON, Canada"],
+      ["Work", "Part-time administrative assistant"],
+      ["Family/Status", "Married, two teenagers, caring for 78-year-old father who lives alone nearby"],
+      ["Character", "Compassionate, practical, organized, and tech-cautious"]
+    ],
+    needs: [
+      "Monitor his father’s home environment remotely, including temperature, lights, and movement.",
+      "Get alerts for emergencies or changes in routine.",
+      "Simplify daily household tasks to reduce his own stress."
+    ],
+    frustrations: [
+      "Too many apps and devices that don’t work together.",
+      "His father finds most tech confusing.",
+      "Constant worry when he can’t check in.",
+      "Difficulties managing home needs across two households."
+    ],
+    motivation: [
+      "Ensuring his father’s safety and comfort.",
+      "Maintaining balance between caregiving and family life.",
+      "Using tech to save time and mental energy."
+    ],
+    accessibility: [
+      "Prefers large text, voice prompts, and visual cues for his dad’s sake too. Values reminders and alerts."
+    ],
+    technicalExperience: [
+      ["Internet", 42],
+      ["Software", 42],
+      ["Mobile Apps", 42],
+      ["Social Media", 30],
+      ["Gaming", 6]
+    ],
+    personality: [
+      ["Introvert", "Extrovert", 85],
+      ["Analytical", "Creative", 58],
+      ["Loyal", "Fickle", 20],
+      ["Passive", "Active", 82]
+    ],
+    brands: ["Alexa", "Canadian Tire", "Home Depot"]
+  }
+];
+
+const userSolutions = [
+  {
+    user: "Nina",
+    role: "Parent",
+    problem: "Manage a busy home without app-jumping.",
+    solution: "Unified Lifestyle Dashboard with room-based routines.",
+    feature: "Routines",
+    note: "Turns scattered device control into one calm household flow."
+  },
+  {
+    user: "David",
+    role: "Traveller",
+    problem: "Quick reassurance while away.",
+    solution: "Glanceable Status Bar with clear remote confidence indicators.",
+    feature: "Remote Status",
+    note: "Makes the home feel visible and controlled from a distance."
+  },
+  {
+    user: "Michael",
+    role: "Caregiver",
+    problem: "Ensure safety without being intrusive.",
+    solution: "Wellness Check Triggers using passive, motion-based alerts.",
+    feature: "Wellness Checks",
+    note: "Supports caregiving with reassurance, not surveillance."
+  }
+];
+
+const wireframeStrategies = [
+  {
+    title: "Flexible Grid Layout",
+    text: "Using a grid-based layout organizes content into flexible modules, keeping high-priority information like security status clear and visually dominant."
+  },
+  {
+    title: "Thumb-Zone Optimization",
+    text: "Placing key actions and navigation at the bottom of the screen supports one-handed use, making interactions quicker, more comfortable, and easier to reach."
+  },
+  {
+    title: "Step-by-Step Information",
+    text: "Using card-based interactions reveals information gradually, reducing complexity and helping users focus on what matters at each step."
+  }
+];
+
+const screens = ["Sign In", "Onboarding", "Settings", "Devices", "Routines", "Home", "Alert"];
+
+const palette = [
+  {
+    name: "Trust Blue",
+    value: "#2E48C8",
+    text: "Used for key actions and main UI elements."
+  },
+  {
+    name: "Calming Lavender",
+    value: "#D5C7F7",
+    text: "Supports a soft, relaxed interface."
+  },
+  {
+    name: "Soft Cyan",
+    value: "#65D1E4",
+    text: "Adds freshness and subtle highlights."
+  },
+  {
+    name: "Clean White",
+    value: "#FFFFFF",
+    text: "Keeps layouts clean and breathable."
+  },
+  {
+    name: "Alert Orange",
+    value: "#FFB937",
+    text: "Draws attention to critical states and actions."
+  }
+];
+
+const hifiSections = [
+  {
+    title: "Sign In / Onboarding",
+    intro:
+      "The onboarding flow introduces Omvia, helps users define their smart-home needs, connects the home ecosystem, and ends with secure sign in.",
+    variant: "five",
+    highlights: [
+      {
+        title: "Brand Entry",
+        text: "The first screen creates a calm brand introduction before asking users to take action."
+      },
+      {
+        title: "Guided Setup",
+        text: "The onboarding screens explain the value of Omvia step by step instead of overwhelming users immediately."
+      },
+      {
+        title: "Secure Access",
+        text: "The flow ends with login and Face ID access, helping users enter the app quickly and safely."
+      }
+    ],
+    screens: [
+      {
+        src: "/images/projects/omvia/onboarding-1.png",
+        alt: "Omvia logo opening screen",
+        label: "Brand Entry"
+      },
+      {
+        src: "/images/projects/omvia/onboarding-2.png",
+        alt: "Omvia welcome onboarding screen",
+        label: "Welcome"
+      },
+      {
+        src: "/images/projects/omvia/onboarding-3.png",
+        alt: "Omvia onboarding preference screen",
+        label: "User Need"
+      },
+      {
+        src: "/images/projects/omvia/onboarding-4.png",
+        alt: "Omvia device connection onboarding screen",
+        label: "Setup"
+      },
+      {
+        src: "/images/projects/omvia/login.png",
+        alt: "Omvia login screen",
+        label: "Sign In"
+      }
+    ]
+  },
+  {
+    title: "Recommended Routine",
+    intro:
+      "The routine flow shows how users can move from a recommended routine into setup, customization, wellness triggers, and final activation.",
+    variant: "nine",
+    highlights: [
+      {
+        title: "Recommended Routine",
+        text: "Ready-made routines like Morning Rush and Leaving Home give users quick value by allowing multiple devices to work together with one tap."
+      },
+      {
+        title: "Custom Routine Builder",
+        text: "Users can create routines based on time, motion, or voice so the system can adapt to their lifestyle."
+      },
+      {
+        title: "Wellness Triggers",
+        text: "Simple safety checks can be added to routines, helping users support loved ones in a subtle and respectful way."
+      },
+      {
+        title: "Easy Control",
+        text: "Routines can be turned on, edited, or removed instantly, keeping everything simple and easy to manage."
+      }
+    ],
+    screens: [
+      {
+        src: "/images/projects/omvia/routines-main.png",
+        alt: "Omvia routines main screen",
+        label: "Routine Hub"
+      },
+      {
+        src: "/images/projects/omvia/routines-1.png",
+        alt: "Omvia Morning Rush routine screen one",
+        label: "Morning Rush"
+      },
+      {
+        src: "/images/projects/omvia/routines-2.png",
+        alt: "Omvia Morning Rush routine screen two",
+        label: "Routine Detail"
+      },
+      {
+        src: "/images/projects/omvia/routines-3.png",
+        alt: "Omvia Morning Rush routine screen three",
+        label: "Trigger"
+      },
+      {
+        src: "/images/projects/omvia/routines-4.png",
+        alt: "Omvia Morning Rush routine screen four",
+        label: "Actions"
+      },
+      {
+        src: "/images/projects/omvia/routines-5.png",
+        alt: "Omvia Morning Rush routine screen five",
+        label: "Devices"
+      },
+      {
+        src: "/images/projects/omvia/routines-6.png",
+        alt: "Omvia Morning Rush routine screen six",
+        label: "Wellness"
+      },
+      {
+        src: "/images/projects/omvia/routines-7.png",
+        alt: "Omvia Morning Rush routine screen seven",
+        label: "Confirm"
+      },
+      {
+        src: "/images/projects/omvia/routines-8.png",
+        alt: "Omvia Morning Rush routine screen eight",
+        label: "Active"
+      }
+    ]
+  },
+  {
+    title: "Devices",
+    intro:
+      "The devices flow is organized around room-based control, giving users a fast way to view, manage, and secure connected devices.",
+    variant: "three",
+    highlights: [
+      {
+        title: "Multi-View Navigation",
+        text: "Users can switch between visual scanning and faster list-based browsing."
+      },
+      {
+        title: "Secure Home Switch",
+        text: "A single control lets users secure their entire home at once."
+      },
+      {
+        title: "Room-Level Controls",
+        text: "Users can manage all devices in a room together instead of controlling each one separately."
+      }
+    ],
+    screens: [
+      {
+        src: "/images/projects/omvia/devices-1.png",
+        alt: "Omvia devices grid view screen",
+        label: "Grid View"
+      },
+      {
+        src: "/images/projects/omvia/devices-2.png",
+        alt: "Omvia devices list view screen",
+        label: "List View"
+      },
+      {
+        src: "/images/projects/omvia/devices-3.png",
+        alt: "Omvia device detail screen",
+        label: "Device Detail"
+      }
+    ]
+  },
+  {
+    title: "Settings",
+    intro:
+      "The settings flow gives users clear control over account security, access permissions, voice assistants, and privacy.",
+    variant: "six",
+    highlights: [
+      {
+        title: "Biometric Security",
+        text: "Face ID supports quick and secure access without adding extra steps."
+      },
+      {
+        title: "Home Access Management",
+        text: "Users can control family, guest, and caregiver access from one place."
+      },
+      {
+        title: "Voice Assistant Setup",
+        text: "The app supports simple voice assistant connection for everyday control."
+      },
+      {
+        title: "Privacy & Security Hub",
+        text: "A dedicated area helps users manage activity, connections, and personal information."
+      }
+    ],
+    screens: [
+      {
+        src: "/images/projects/omvia/settings-1.png",
+        alt: "Omvia settings screen one",
+        label: "Settings Home"
+      },
+      {
+        src: "/images/projects/omvia/settings-2.png",
+        alt: "Omvia settings screen two",
+        label: "Profile"
+      },
+      {
+        src: "/images/projects/omvia/settings-3.png",
+        alt: "Omvia settings screen three",
+        label: "Security"
+      },
+      {
+        src: "/images/projects/omvia/settings-4.png",
+        alt: "Omvia settings screen four",
+        label: "Access"
+      },
+      {
+        src: "/images/projects/omvia/settings-5.png",
+        alt: "Omvia settings screen five",
+        label: "Voice"
+      },
+      {
+        src: "/images/projects/omvia/settings-6.png",
+        alt: "Omvia settings screen six",
+        label: "Privacy"
+      }
+    ]
+  },
+  {
+    title: "Alert",
+    intro:
+      "The alert flow helps users understand what is happening at home, judge urgency quickly, and respond without stress.",
+    variant: "two",
+    highlights: [
+      {
+        title: "Wellness Alerts",
+        text: "Important updates are delivered calmly, without making the experience feel invasive."
+      },
+      {
+        title: "Quick Actions",
+        text: "The alert detail screen gives users immediate next steps, such as calling a loved one."
+      }
+    ],
+    screens: [
+      {
+        src: "/images/projects/omvia/alert-1.png",
+        alt: "Omvia alert screen",
+        label: "Alert"
+      },
+      {
+        src: "/images/projects/omvia/alert-2.png",
+        alt: "Omvia alert detail screen",
+        label: "Respond"
+      }
+    ]
+  }
+];
+
+const testingResults = [
+  {
+    objective: "Traveler",
+    task: "You’re at the airport and forgot to lock up. Find your devices and secure the home in under 5 seconds.",
+    result: "92%",
+    improvement: "Up from 65%"
+  },
+  {
+    objective: "Caregiver",
+    task: "You receive an alert about your parents’ morning activity. Check how urgent it is and make a quick call.",
+    result: "100%",
+    improvement: "Up from 80%"
+  },
+  {
+    objective: "Multi-Tasker",
+    task: "It’s a busy morning. Go to routines and activate the Morning Rush routine in under 4 seconds.",
+    result: "100%",
+    improvement: "Up from 70%"
+  }
+];
+
+const feedback = [
+  "I find it hard to manage my mom’s safety alerts. The text is difficult to read on the move, and since all alerts look kind of the same, I can’t quickly tell what’s urgent.",
+  "I finished setting up my devices and tapped Go to Home, but was taken to a login screen. It felt confusing.",
+  "The Secure Home button at the top feels a bit intimidating. I’m worried I might tap it by accident and shut everything down."
+];
+
+const futureImpact = [
+  {
+    title: "Smarter Automation",
+    text: "The app can learn daily habits and start suggesting actions automatically, like adjusting energy use or securing the home when needed."
+  },
+  {
+    title: "Wearable Integration",
+    text: "Alerts can extend to smartwatches, using simple vibrations to confirm important updates like wellness checks."
+  },
+  {
+    title: "AR Setup Support",
+    text: "Users can point their camera at a device to get a visual guide for setup, making the process easier for non-tech users."
+  },
+  {
+    title: "Community Safety",
+    text: "A shared alert system can allow users to connect with trusted neighbors, creating a wider sense of safety and awareness."
+  }
+];
+---
+
+<BaseLayout
+  title="Omvia - Smart Home UX/UI Case Study"
+  description="Omvia is a human-centric smart home ecosystem designed to reduce app fatigue through a soft-tech interface, responsive prototype, and caregiver-friendly wellness checks."
+>
+  <Header />
+
+  <main class="project-detail">
+    <section class="project-hero site-shell section">
+      <a href="/#work" class="project-back-link">← Work</a>
+
+      <div class="project-hero__intro">
+        <p class="project-number">{project.number}</p>
+
+        <div>
+          <p class="project-label">{project.category} - 2025</p>
+          <h1>{project.title}</h1>
+
+          <p class="project-hero__summary">
+            Omvia is a human-centric smart home ecosystem designed to reduce app fatigue by bringing different devices into one intuitive interface. The goal was to create a Soft Tech visual identity and a high-fidelity responsive prototype that focuses on peace of mind instead of technical complexity.
+          </p>
+        </div>
+      </div>
+
+      <figure class="project-hero__image">
+        <img src="/images/projects/omvia/hero.png" alt="Omvia app hero mockup" />
+      </figure>
+
+      <dl class="project-facts">
+        <div>
+          <dt>Role</dt>
+          <dd>UX + UI Design, Visual Design, User Flow, Branding, Research, Prototyping + Testing</dd>
+        </div>
+
+        <div>
+          <dt>Tools</dt>
+          <dd>Figma, FigJam, Basecamp, Maze</dd>
+        </div>
+
+        <div>
+          <dt>Timeframe</dt>
+          <dd>Sep - Dec 2025</dd>
+        </div>
+
+        <div>
+          <dt>Year</dt>
+          <dd>2025</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Project Overview</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          Omvia turns smart home technology into a quiet, supportive partner by replacing scattered controls with one clear, human-centered interface.
+        </p>
+
+        <div class="detail-grid">
+          {overviewPoints.map((item) => (
+            <article class="detail-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>The Challenge</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          Smart home systems often create digital noise instead of convenience, overwhelming users with complexity.
+        </p>
+
+        <div class="number-list">
+          {challengePoints.map((item, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Objective / Goal</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          Build a Soft Tech ecosystem that focuses on emotional safety and frictionless daily routines, turning smart home tech into a quiet, supportive partner.
+        </p>
+
+        <ul class="pill-list">
+          {objectivePoints.map((item) => (
+            <li>
+              <p class="pill-list__title">{item.title}</p>
+              <span>{item.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Creative Brief</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          The strategy for Omvia was to shift the smart home from a technical gadget to a supportive household partner, focusing on human emotion over hardware features.
+        </p>
+
+        <div class="split-copy">
+          <article>
+            <h3>Brand Personality & Voice</h3>
+            <p>
+              Calm, reliable, and anticipatory. Omvia uses clear, human language like “The house is secured” instead of cold system codes.
+            </p>
+          </article>
+
+          <article>
+            <h3>Soft Tech Aesthetic</h3>
+            <p>
+              A bright, airy, and inclusive visual style moves the app away from harsh, security-focused interfaces and toward emotional comfort.
+            </p>
+          </article>
+
+          <article>
+            <h3>Lifestyle over Logistics</h3>
+            <p>
+              Omvia focuses on real-life routines like School Morning instead of making users manage individual device controls.
+            </p>
+          </article>
+
+          <article>
+            <h3>Home Circle Logic</h3>
+            <p>
+              A permission-based system ensures each user only sees what is relevant to them, reducing clutter and protecting privacy.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Design Process</p>
+      </div>
+
+      <div class="project-section__content">
+        <figure class="project-figure">
+          <img src="/images/projects/omvia/design-process.png" alt="Omvia design process diagram" />
+        </figure>
+
+        <div class="process-steps">
+          {processSteps.map((step, index) => (
+            <span>{String(index + 1).padStart(2, "0")} {step}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Empathize</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          I analyzed leading smart home platforms to understand where they fail the human experience. The comparison helped reveal a gap between technical capability and everyday emotional reassurance.
+        </p>
+
+        <div class="split-copy">
+          {competitorAnalysis.map((item) => (
+            <article>
+              <img src={item.logo} alt={item.logoAlt} />
+              <h3>{item.product}</h3>
+
+              <p><span class="inline-label">Strengths</span></p>
+              <ul class="screen-list">
+                {item.strengths.map((strength) => (
+                  <li>{strength}</li>
+                ))}
+              </ul>
+
+              <p><span class="inline-label">Weaknesses</span></p>
+              <ul class="screen-list">
+                {item.weaknesses.map((weakness) => (
+                  <li>{weakness}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div class="question-block">
+          <h3>The Market Gap</h3>
+          <p>
+            Most competitors focus on technical control and hardware, but overlook emotional reassurance and ease of use.
+          </p>
+        </div>
+
+        <div class="question-block">
+          <h3>Key Questions</h3>
+
+          <ul>
+            <li>How can we unify devices into a one-handed interface and reduce app fatigue for busy parents managing daily routines?</li>
+            <li>What visual cues and real-time updates help travelers and homeowners feel secure while away?</li>
+            <li>How can wellness checks support caregivers without feeling intrusive?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Strategic Research</p>
+      </div>
+
+      <div class="project-section__content">
+        <div class="research-list">
+          {researchInsights.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p><span class="inline-label">The Observation:</span> {item.observation}</p>
+              <p><span class="inline-label">The Design Implication:</span> {item.implication}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell no-reveal">
+      <div class="project-section__label">
+        <p>User Personas</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          To ensure the Omvia ecosystem supports both family needs and caregiver goals, three user personas were developed. Designing around these user types keeps the experience grounded in real behaviors, emotional needs, and accessibility requirements.
+        </p>
+
+        <div class="persona-showcase">
+          {personas.map((persona, index) => (
+            <article class="persona-card">
+              <div class="persona-card__header">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+
+                <div>
+                  <h3>{persona.name}</h3>
+                  <p>{persona.type}</p>
+                </div>
+              </div>
+
+              <div class="persona-card__body">
+                <div class="persona-card__profile">
+                  <img src={persona.image} alt={`${persona.name} portrait`} />
+
+                  <blockquote>
+                    “{persona.quote}”
+                  </blockquote>
+
+                  <div class="persona-card__demographics">
+                    <h4>Demographics</h4>
+
+                    <dl>
+                      {persona.demographics.map(([label, value]) => (
+                        <div>
+                          <dt>{label}</dt>
+                          <dd>{value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                </div>
+
+                <div class="persona-card__content">
+                  <section>
+                    <h4>About</h4>
+                    <p>{persona.about}</p>
+                  </section>
+
+                  <section>
+                    <h4>Needs</h4>
+                    <ul>
+                      {persona.needs.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section>
+                    <h4>Frustrations</h4>
+                    <ul>
+                      {persona.frustrations.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section>
+                    <h4>Motivation</h4>
+                    <ul>
+                      {persona.motivation.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section>
+                    <h4>Accessibility</h4>
+                    <ul>
+                      {persona.accessibility.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
+
+                <aside class="persona-card__metrics">
+                  <section>
+                    <h4>Technical Experience</h4>
+
+                    <div class="persona-bars">
+                      {persona.technicalExperience.map(([label, value]) => (
+                        <div class="persona-bar" style={`--value: ${value}%;`}>
+                          <div>
+                            <span>{label}</span>
+                          </div>
+
+                          <div class="persona-bar__track">
+                            <span></span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h4>Personality</h4>
+
+                    <div class="persona-sliders">
+                      {persona.personality.map(([left, right, value]) => (
+                        <div class="persona-slider" style={`--value: ${value}%;`}>
+                          <div>
+                            <span>{left}</span>
+                            <span>{right}</span>
+                          </div>
+
+                          <div class="persona-slider__track">
+                            <span></span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h4>Brand Influence</h4>
+
+                    <div class="brand-chip-list">
+                      {persona.brands.map((brand) => (
+                        <span>{brand}</span>
+                      ))}
+                    </div>
+                  </section>
+                </aside>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+<section class="project-section site-shell">
+  <div class="project-section__label">
+    <p>Connecting Users to Solutions</p>
+  </div>
+
+  <div class="project-section__content">
+    <p class="project-lead">
+      Each Omvia feature was shaped by a specific user need. This mapping shows how the personas directly informed the product decisions, turning everyday pain points into focused interface solutions.
+    </p>
+
+    <div class="solution-pathways">
+      <div class="solution-pathways__header">
+        <span>Persona</span>
+        <span>Need / Pain Point</span>
+        <span>Omvia Solution</span>
+      </div>
+
+      {userSolutions.map((item, index) => (
+        <article class="solution-pathway">
+          <div class="solution-pathway__persona">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+
+            <div>
+              <h3>{item.user}</h3>
+              <p>{item.role}</p>
+            </div>
+          </div>
+
+          <div class="solution-pathway__problem">
+            <p>{item.problem}</p>
+          </div>
+
+          <div class="solution-pathway__arrow" aria-hidden="true">
+            →
+          </div>
+
+          <div class="solution-pathway__solution">
+            <span>{item.feature}</span>
+            <h3>{item.solution}</h3>
+            <p>{item.note}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Strategic Project Goals</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          A strong user experience sits at the intersection of human needs, business viability, and technical feasibility. Mapping these three pillars ensured every feature was practical, scalable, and focused on core market frictions.
+        </p>
+
+        <figure class="project-figure">
+          <img src="/images/projects/omvia/venn-diagram.png" alt="Omvia strategic project goals diagram" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Sitemap</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          To reduce app-jumping, I streamlined a fragmented system into a clear five-pillar structure. A flat navigation approach ensures key actions, from emergency alerts to security controls, are always within two taps.
+        </p>
+
+        <figure class="project-figure">
+          <img src="/images/projects/omvia/sitemap.png" alt="Omvia sitemap" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+  <div class="project-section__label">
+    <p>Low-Fi Wireframes</p>
+  </div>
+
+  <div class="project-section__content">
+    <p class="project-lead">
+      The low-fidelity wireframes helped define Omvia’s structure before visual design was applied. At this stage, the focus was on layout, navigation, content hierarchy, and the core user flow.
+    </p>
+
+    <div class="lofi-showcase">
+      <div class="lofi-board-grid">
+        <article class="lofi-screen-card lofi-screen-card--onboarding">
+          <div class="lofi-screen-card__image">
+            <img
+              src="/images/projects/omvia/lofi-onboarding.png"
+              alt="Omvia low-fidelity onboarding wireframe"
+            />
+          </div>
+          <p>Onboarding</p>
+        </article>
+
+       <article class="lofi-screen-card lofi-screen-card--home">
+  <div class="lofi-screen-card__image">
+    <img
+      src="/images/projects/omvia/lofi-home-dashboard.png"
+      alt="Omvia low-fidelity home dashboard wireframe"
+    />
+    <span class="lofi-marker lofi-marker--two">02</span>
+  </div>
+  <p>Home Dashboard</p>
+</article>
+
+        <article class="lofi-screen-card lofi-screen-card--devices">
+          <div class="lofi-screen-card__image">
+            <img
+              src="/images/projects/omvia/lofi-devices.png"
+              alt="Omvia low-fidelity devices wireframe"
+            />
+            <span class="lofi-marker lofi-marker--one">01</span>
+          </div>
+          <p>Devices</p>
+        </article>
+
+        <article class="lofi-screen-card lofi-screen-card--routine">
+          <div class="lofi-screen-card__image">
+            <img
+              src="/images/projects/omvia/lofi-routine-setup.png"
+              alt="Omvia low-fidelity routine setup wireframe"
+            />
+            <span class="lofi-marker lofi-marker--three">03</span>
+          </div>
+          <p>Routine Setup</p>
+        </article>
+
+        <article class="lofi-screen-card lofi-screen-card--alert">
+          <div class="lofi-screen-card__image">
+            <img
+              src="/images/projects/omvia/lofi-alert.png"
+              alt="Omvia low-fidelity alert wireframe"
+            />
+          </div>
+          <p>Alert</p>
+        </article>
+
+        <article class="lofi-screen-card lofi-screen-card--settings">
+  <div class="lofi-screen-card__image">
+    <img
+      src="/images/projects/omvia/lofi-settings.png"
+      alt="Omvia low-fidelity settings wireframe"
+    />
+  </div>
+  <p>Settings</p>
+</article>
+      </div>
+
+      <p class="lofi-showcase__reason">
+        <p class="lofi-showcase__reason">
+        These sketch directions were chosen because they focused on usability, clear navigation, and simple task completion. They covered the main experience areas: home control, device access, routine setup, alerts, and settings.
+</p>.
+      </p>
+
+      <div class="lofi-showcase__caption">
+        <p>What this stage helped define</p>
+      </div>
+
+      <div class="lofi-showcase__notes">
+        <article>
+          <span>01</span>
+          <h3>Layout Exploration</h3>
+          <p>
+    Tested how key content, controls, and dashboard cards could be arranged so users can scan the app quickly.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>Navigation Structure</h3>
+          <p>
+            The wireframes established the main app areas, making sure users could move between Home, Devices, Routines, Alerts, and Settings easily.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>Flow Decisions</h3>
+          <p>
+            This clarified how users would move from setup to everyday control before the final visual style was added.
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Branding</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          To replace gadget fatigue with a sense of calm, the visual system was designed to feel more like home decor than a technical interface.
+        </p>
+
+        <div class="logo-grid">
+          <figure>
+            <img src="/images/projects/omvia/logo-v1.png" alt="Omvia logo version one" />
+            <figcaption>Version 1 - The Routine Loop</figcaption>
+          </figure>
+
+          <figure>
+            <img src="/images/projects/omvia/logo-v2.png" alt="Omvia logo version two" />
+            <figcaption>Version 2 - The Home Pulse</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="subheading">Visual Language: Moodboard</h3>
+
+        <div class="palette-grid">
+          {palette.map((color) => (
+            <article>
+              <span style={`--swatch: ${color.value};`}></span>
+
+              <div>
+                <h3>{color.name}</h3>
+                <p>{color.value}</p>
+                <small>{color.text}</small>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <figure class="project-figure">
+          <img src="/images/projects/omvia/moodboard.png" alt="Omvia visual language moodboard" />
+        </figure>
+
+        <p class="project-copy">
+          Typography combines Timeburner for hierarchy, Inter for readability, and Helvetica for system clarity. Rounded corners and high-contrast pill buttons support one-handed usability and make navigation simple and accessible.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section site-shell no-reveal">
+      <div class="project-section__label">
+        <p>High-Fi Wireframes</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          The high-fidelity stage brought the finalized branding, soft visual direction, and core user flows into polished interface screens.
+        </p>
+
+        {hifiSections.map((section) => (
+          <div class="flow-section">
+            <h3 class="subheading">{section.title}</h3>
+
+            <p class="project-copy">
+              {section.intro}
+            </p>
+
+            <div class="split-copy">
+              {section.highlights.map((item) => (
+                <article>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+
+            <div class:list={["screen-flow", `screen-flow--${section.variant}`]}>
+              <div class="screen-flow__backdrop"></div>
+
+              {section.screens.map((screen, index) => (
+                <article class:list={["screen-flow__item", `screen-flow__item--${index + 1}`]}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <img src={screen.src} alt={screen.alt} />
+                  <p>{screen.label}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  <section class="project-section site-shell">
+  <div class="project-section__label">
+    <p>Testing & Iteration</p>
+  </div>
+
+  <div class="project-section__content">
+    <p class="project-lead">
+      I used Maze to test whether Omvia reduced app fatigue and supported remote control. Twenty users completed three key tasks focused on finding devices, checking alerts, and activating routines.
+    </p>
+
+    <div class="testing-results">
+      <article>
+        <span>Traveler</span>
+        <strong>92%</strong>
+        <p class="testing-results__change">Up from 65%</p>
+        <p>
+          You’re at the airport and forgot to lock up. Find your devices and secure the home in under 5 seconds.
+        </p>
+      </article>
+
+      <article>
+        <span>Caregiver</span>
+        <strong>100%</strong>
+        <p class="testing-results__change">Up from 80%</p>
+        <p>
+          You receive an alert about your parents’ morning activity. Check how urgent it is and make a quick call.
+        </p>
+      </article>
+
+      <article>
+        <span>Multi-tasker</span>
+        <strong>100%</strong>
+        <p class="testing-results__change">Up from 70%</p>
+        <p>
+          It’s a busy morning. Go to routines and activate the Morning Rush routine in under 4 seconds.
+        </p>
+      </article>
+    </div>
+
+    <div class="testing-subsection">
+      <h3>Key Feedback</h3>
+
+      <div class="feedback-grid">
+        <article>
+          <span>01</span>
+          <p>
+            “I find it hard to manage my mom’s safety alerts. The text is difficult to read on the move, and since all alerts look kind of the same, I can’t quickly tell what’s urgent.”
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <p>
+            “I finished setting up my devices and tapped Go to Home, but was taken to a login screen. It felt confusing.”
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <p>
+            “The Secure Home button at the top feels a bit intimidating. I’m worried I might tap it by accident and shut everything down.”
+          </p>
+        </article>
+      </div>
+
+      <div class="feedback-to-change">
+        <p>Feedback was grouped into three design priorities:</p>
+
+        <div>
+          <span>01 Readability + Alert Priority</span>
+          <span>02 Clearer Setup Progress</span>
+          <span>03 Safer Secure Home Action</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testing-subsection">
+      <h3>Design Changes From Testing</h3>
+
+      <div class="iteration-decision-grid">
+        <article class="iteration-decision-card">
+          <div class="iteration-decision-card__text">
+            <span>Issue 01</span>
+            <h4>Alert priority and status text were hard to scan</h4>
+            <p>
+              Users needed clearer hierarchy when checking safety alerts and home status updates. I strengthened the text hierarchy, increased contrast, and introduced a color-based alert system. Softer tones were used for regular updates, while warmer tones helped high-priority alerts stand out faster.
+            </p>
+          </div>
+
+          <div class="iteration-pair-list">
+            <div class="iteration-pair">
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/home-before.png"
+                    alt="Omvia home screen before contrast and text hierarchy improvements"
+                  />
+                  <span class="iteration-marker iteration-marker--home-before">01</span>
+                </div>
+                <figcaption>Before: home status text was hard to scan</figcaption>
+              </figure>
+
+              <span class="iteration-arrow" aria-hidden="true"></span>
+
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/home-after.png"
+                    alt="Omvia home screen after contrast and text hierarchy improvements"
+                  />
+                  <span class="iteration-marker iteration-marker--home-after">01</span>
+                </div>
+                <figcaption>After: stronger text weight improved readability</figcaption>
+              </figure>
+            </div>
+
+            <div class="iteration-pair">
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/alert-before.png"
+                    alt="Omvia alert screen before alert priority improvements"
+                  />
+                  <span class="iteration-marker iteration-marker--alert-before">02</span>
+                </div>
+                <figcaption>Before: urgent alerts did not stand out enough</figcaption>
+              </figure>
+
+              <span class="iteration-arrow" aria-hidden="true"></span>
+
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/alert-after.png"
+                    alt="Omvia alert screen after alert priority improvements"
+                  />
+                  <span class="iteration-marker iteration-marker--alert-after">02</span>
+                </div>
+                <figcaption>After: color priority made urgent alerts easier to spot</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="iteration-decision-card">
+          <div class="iteration-decision-card__text">
+            <span>Issue 02</span>
+            <h4>Setup completion was unclear</h4>
+            <p>
+              Users expected “Go to Home” to take them directly into the dashboard, but the setup process was not fully complete. I changed the CTA to “Complete Setup” so the action matched the user’s actual progress and reduced confusion.
+            </p>
+          </div>
+
+          <div class="iteration-pair-list">
+            <div class="iteration-pair">
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/onboarding-before.png"
+                    alt="Omvia onboarding screen before CTA wording was updated"
+                  />
+                  <span class="iteration-marker iteration-marker--onboarding-before">03</span>
+                </div>
+                <figcaption>Before: “Go to Home” created false completion</figcaption>
+              </figure>
+
+              <span class="iteration-arrow" aria-hidden="true"></span>
+
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/onboarding-after.png"
+                    alt="Omvia onboarding screen after CTA wording was updated to Complete Setup"
+                  />
+                  <span class="iteration-marker iteration-marker--onboarding-after">03</span>
+                </div>
+                <figcaption>After: “Complete Setup” clarified the next step</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="iteration-decision-card">
+          <div class="iteration-decision-card__text">
+            <span>Issue 03</span>
+            <h4>Secure Home needed clearer reassurance</h4>
+            <p>
+              Users felt unsure about the global Secure Home button because it looked like a major action that could be tapped accidentally. I moved the button to the bottom of the screen, added a reassuring caption, and introduced a confirmation message so users understood the action before it was completed.
+            </p>
+          </div>
+
+          <div class="iteration-pair-list">
+            <div class="iteration-pair">
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/secure-before.png"
+                    alt="Omvia secure home button before placement and confirmation improvements"
+                  />
+                  <span class="iteration-marker iteration-marker--secure-before">04</span>
+                </div>
+                <figcaption>Before: Secure Home felt too prominent and easy to trigger</figcaption>
+              </figure>
+
+              <span class="iteration-arrow" aria-hidden="true"></span>
+
+              <figure>
+                <div class="iteration-image-wrap">
+                  <img
+                    src="/images/projects/omvia/secure-after.png"
+                    alt="Omvia secure home button after reassuring caption and confirmation message were added"
+                  />
+                  <span class="iteration-marker iteration-marker--secure-after">04</span>
+                </div>
+                <figcaption>After: lower placement, reassuring copy, and confirmation made the action feel safer</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Conclusion / Future Impact</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          This project moves the smart home from basic control to everyday support. The next steps focus on making the system smarter, easier, and more connected to real life.
+        </p>
+
+        <div class="detail-grid">
+          {futureImpact.map((item) => (
+            <article class="detail-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <blockquote class="outcome-quote">
+          “These strategic directions would solidify Omvia as a visionary leader in the multi-generational smart home industry, prioritizing human connection above all else.”
+        </blockquote>
+
+        <a href={prototypeUrl} class="prototype-link" target="_blank" rel="noreferrer">
+          View Prototype ↗
+        </a>
+
+        <div class="prototype-embed">
+          {prototypeEmbedSrc ? (
+            <iframe
+              src={prototypeEmbedSrc}
+              title="Omvia interactive Figma prototype"
+              allowfullscreen
+            ></iframe>
+          ) : (
+            <div class="prototype-embed__placeholder">
+              <p>Paste your Figma embed src into <code>prototypeEmbedSrc</code> to show the phone prototype here.</p>
+            </div>
+          )}
+        </div>
+
+        <div class="thanks-block">
+          <div class="thanks-block__orb thanks-block__orb--one"></div>
+          <div class="thanks-block__orb thanks-block__orb--two"></div>
+
+          <p class="thanks-block__eyebrow">Omvia Case Study</p>
+
+          <div class="thanks-block__main">
+            <h2>
+              Thanks for viewing
+              <span aria-hidden="true">♥</span>
+            </h2>
+
+            <p>by Esther Odeyemi</p>
+          </div>
+        </div>
+
+        <ProjectPager currentSlug="omvia" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

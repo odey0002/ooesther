@@ -1,0 +1,257 @@
+/* =========================
+   QUENCH — GLOBAL THEME CASE STUDY
+========================= */
+
+:root {
+  --quench-orange: #db7314;
+  --quench-gold: #a28a00;
+  --quench-red: #d50b2a;
+  --quench-green: #0a5e22;
+}
+
+.quench-page {
+  --accent: var(--quench-orange);
+  --accent-soft: var(--quench-gold);
+}
+
+/* Keep orange project accent, but do not change global font structure */
+.quench-page .project-label,
+.quench-page .project-back-link,
+.quench-page .project-number,
+.quench-case-copy p {
+  color: var(--quench-orange);
+}
+
+.quench-page .project-hero h1 em {
+  color: var(--quench-orange);
+}
+
+/* Force Quench hero to use the same display font as Omvia / 613Flea */
+.quench-page .project-hero h1,
+.quench-page .project-hero h1 em {
+  font-family: var(--font-display);
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.quench-hero-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* =========================
+   SECTION LAYOUT
+========================= */
+
+.quench-case-section {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.34fr) minmax(0, 0.66fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-block: clamp(3.2rem, 2vw, 5.5rem);
+  border-top: 1px solid var(--border);
+}
+
+.quench-case-copy {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+}
+
+.quench-case-copy p {
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.quench-case-copy h2 {
+  max-width: 18rem;
+  margin-top: 0.85rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-transform: none;
+}
+
+.quench-case-copy span {
+  display: block;
+  max-width: 19rem;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.quench-case-media {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* =========================
+   FIGURES
+========================= */
+
+.quench-figure,
+.quench-grid figure,
+.quench-logo-board {
+  margin: 0;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.quench-figure img,
+.quench-grid img {
+  width: 100%;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.quench-figure img {
+  min-height: 22rem;
+}
+
+.quench-figure--dark-placeholder {
+  background: color-mix(in srgb, var(--text) 8%, var(--bg-soft));
+}
+
+.quench-figure--dark-placeholder img {
+  background: color-mix(in srgb, var(--text) 10%, var(--bg-soft));
+}
+
+.quench-figure figcaption,
+.quench-grid figcaption,
+.quench-logo-board figcaption {
+  border-top: 1px solid var(--border);
+  padding: 0.7rem 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.quench-logo-board {
+  display: grid;
+  place-items: center;
+  padding: clamp(3rem, 8vw, 6rem);
+  background: #000000;
+}
+
+.quench-logo-board img {
+  width: min(100%, 13rem);
+}
+
+/* =========================
+   GRIDS
+========================= */
+
+.quench-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.quench-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quench-grid figure {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+}
+
+.quench-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: transparent;
+}
+
+/* Applications */
+.quench-grid--applications {
+  grid-template-columns: 1fr;
+}
+
+.quench-grid--applications img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #ffffff;
+}
+
+/* Promotion: two images up, one full-width image down */
+.quench-grid--promotion {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quench-grid--promotion .quench-grid__full {
+  grid-column: 1 / -1;
+}
+
+.quench-grid--promotion img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center;
+}
+
+.quench-grid--promotion figure:nth-child(2) img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.quench-grid--promotion .quench-grid__full img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .quench-case-section {
+    grid-template-columns: 1fr;
+  }
+
+  .quench-case-copy {
+    position: static;
+  }
+
+  .quench-case-copy h2,
+  .quench-case-copy span {
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .quench-grid--two,
+  .quench-grid--promotion,
+  .quench-grid--applications {
+    grid-template-columns: 1fr;
+  }
+
+  .quench-figure img {
+    min-height: 16rem;
+  }
+
+  .quench-grid--promotion .quench-grid__full {
+    grid-column: auto;
+  }
+
+  .quench-grid--promotion .quench-grid__full img {
+    aspect-ratio: 1 / 1;
+  }
+}

@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectPager from "../../components/ProjectPager.astro";
+import { getProjectBySlug } from "../../data/projects.js";
+import "../../styles/projects/blossom-theory.css";
+
+const project = getProjectBySlug("blossom-theory");
+---
+
+<BaseLayout
+  title="Blossom Theory - Brand Identity"
+  description="Blossom Theory is an in-progress skincare brand identity project focused on botanical elegance, consumer trust, and scalable visual design."
+>
+  <Header />
+
+  <main class="project-detail blossom-page">
+    <section class="project-hero site-shell section">
+      <a href="/graphics" class="project-back-link">← Graphics Projects</a>
+
+      <div class="project-hero__intro">
+        <p class="project-number">{project?.number ?? "05"}</p>
+
+        <div>
+          <p class="project-label">Brand Identity / Skincare / Visual Design — In Progress</p>
+          <h1>Blossom Theory</h1>
+
+          <p class="project-hero__summary">
+            A personal brand identity project for the luxury skincare market,
+            combining botanical elegance with a scalable visual system that
+            builds consumer trust.
+          </p>
+        </div>
+      </div>
+
+      <figure class="project-hero__image blossom-hero-image">
+        <img
+          src="/images/projects/blossom-theory.gif"
+          alt="Blossom Theory skincare brand identity preview"
+        />
+      </figure>
+
+      <dl class="project-facts">
+        <div>
+          <dt>Status</dt>
+          <dd>In Progress</dd>
+        </div>
+
+        <div>
+          <dt>Focus</dt>
+          <dd>Brand identity, visual direction, skincare market positioning</dd>
+        </div>
+
+        <div>
+          <dt>Category</dt>
+          <dd>Graphics / Branding</dd>
+        </div>
+
+        <div>
+          <dt>Year</dt>
+          <dd>In Progress</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="blossom-case-section site-shell">
+      <aside class="blossom-case-copy">
+        <p>Preview</p>
+        <h2>A botanical skincare identity in progress</h2>
+        <span>
+          This project is currently being developed. The full case study will
+          show how the Blossom Theory identity system comes together through
+          market positioning, visual language, typography, color, packaging
+          direction, and brand applications.
+        </span>
+      </aside>
+
+      <div class="blossom-case-media">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Brand direction</h3>
+            <p>
+              The visual direction explores softness, botanical elegance, and
+              refined skincare cues while keeping the brand clear, memorable,
+              and trustworthy.
+            </p>
+          </article>
+
+          <article class="detail-card">
+            <h3>What is coming</h3>
+            <p>
+              The completed page will include the logo direction, visual system,
+              brand applications, product mockups, and the design thinking behind
+              the identity.
+            </p>
+          </article>
+        </div>
+
+        <ProjectPager currentSlug="blossom-theory" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

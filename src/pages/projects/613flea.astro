@@ -1,0 +1,1426 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectPager from "../../components/ProjectPager.astro";
+import { getProjectBySlug } from "../../data/projects.js";
+
+import "../../styles/projects/613flea.css";
+
+const project = getProjectBySlug("613flea");
+
+const creativeBriefUrl = "/documents/613flea-creative-brief.pdf";
+
+const mobilePrototypeUrl =
+  "https://www.figma.com/proto/ym0rfnyyDiuqbRWmhUNII7/613flea--Copy-?node-id=2-1574&viewport=-2056%2C191%2C0.1&t=UF1WvptXhjYtdgyn-8&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A1574&show-proto-sidebar=1&page-id=2%3A1559&hide-ui=1";
+
+const desktopPrototypeUrl =
+  "https://www.figma.com/proto/ym0rfnyyDiuqbRWmhUNII7/613flea--Copy-?node-id=2037-3036&p=f&viewport=125%2C187%2C0.07&t=9Djj5I7fELEjiu7V-8&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2037%3A3036&page-id=2037%3A2369&hide-ui=1";
+
+const mobilePrototypeEmbedSrc =
+  "https://embed.figma.com/proto/ym0rfnyyDiuqbRWmhUNII7/613flea--Copy-?node-id=2-1574&p=f&viewport=748%2C374%2C0.02&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A1574&page-id=2%3A1559&show-proto-sidebar=1&embed-host=share&hide-ui=1&footer=0";
+
+const desktopPrototypeEmbedSrc =
+  "https://embed.figma.com/proto/ym0rfnyyDiuqbRWmhUNII7/613flea--Copy-?node-id=2037-3036&p=f&viewport=125%2C187%2C0.07&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2037%3A3036&page-id=2037%3A2369&embed-host=share&hide-ui=1&footer=0";
+
+const overviewPoints = [
+  {
+    title: "Brand Refresh",
+    text: "Refined the logo and modernized the visual identity while keeping the community-driven personality intact.",
+  },
+  {
+    title: "Cohesive System",
+    text: "Built a flexible brand system that supports a wide range of vendors without visual clutter.",
+  },
+  {
+    title: "Responsive Website",
+    text: "Designed a five-page responsive website concept to improve structure, clarity, and usability.",
+  },
+  {
+    title: "Unified Presence",
+    text: "Created a more polished and consistent experience across all touchpoints.",
+  },
+];
+
+const challengePoints = [
+  {
+    title: "Inconsistent Visual System",
+    text: "The identity lacked a structured design system to support long-term scalability.",
+  },
+  {
+    title: "Weak Digital Experience",
+    text: "The website did not communicate the market’s energy or support intuitive user flow.",
+  },
+  {
+    title: "Engagement Friction",
+    text: "Visitors and potential vendors faced unclear navigation and limited information architecture.",
+  },
+  {
+    title: "Brand Positioning Gap",
+    text: "The market needed a more cohesive presence while preserving its community-driven character.",
+  },
+];
+
+const creativeBriefPoints = [
+  {
+    title: "Local Energy",
+    text: "The brand needed to feel welcoming, lively, and rooted in Ottawa’s creative marketplace culture.",
+  },
+  {
+    title: "Modern Vintage",
+    text: "The visual identity needed to preserve the flea market charm while feeling cleaner and more current online.",
+  },
+  {
+    title: "Vendor Flexibility",
+    text: "The system needed to support many vendor types without becoming visually crowded or inconsistent.",
+  },
+  {
+    title: "Visitor Clarity",
+    text: "The website needed to make event details, vendor discovery, and application information easy to find.",
+  },
+];
+
+const processSteps = ["Empathize", "Define", "Ideate", "Prototype", "Test"];
+
+const competitorAnalysis = [
+  {
+    name: "Nextdoor Ottawa",
+    logo: "/images/projects/613flea/nextdoor-ottawa.png",
+    strengths: [
+      'Highly "Instagrammable" branding that resonates with a younger, trend-conscious audience.',
+      "The site uses a dedicated events calendar.",
+      "The site uses bold, high-visibility banners to create urgency and encourage vendors to apply.",
+    ],
+    weaknesses: [
+      "A much smaller footprint at 4,000 sq. ft.",
+      "The site is event-focused and lacks a year-round vendor directory.",
+    ],
+    keyFeatures: [
+      "A live Instagram feed keeps the homepage dynamic.",
+      "A section promotes space rentals.",
+      "A detailed FAQ covers specific visitor questions and niche events.",
+    ],
+  },
+  {
+    name: "Stittsville’s Carp Road Flea Market",
+    logo: "/images/projects/613flea/stittsville-carp-road.png",
+    logoClass: "flea-competitor-card__logo--carp",
+    strengths: [
+      "Offers a mix of 20,000 sq. ft. of indoor space alongside outdoor stalls.",
+      "Offers a wide range of products, from everyday items to rare collectibles.",
+      "The website text is easy to read.",
+    ],
+    weaknesses: [
+      'The visual presence and website feel "old-school," which may not appeal to Gen Z or Millennials.',
+      'There is no way to search for a specific vendor or "favorite" an item; the site mainly communicates information one way.',
+    ],
+    keyFeatures: [
+      'A standard functional map in the "Location" section helps with GPS navigation.',
+      "Direct Instagram and Facebook links show an active, real-time community presence.",
+    ],
+  },
+  {
+    name: "Aberfoyle Antique Market",
+    logo: "/images/projects/613flea/aberfoyle-antique-market.png",
+    strengths: [
+      'Offers a "day-trip" experience with a full-service restaurant and picturesque grounds.',
+      'Known for high-quality, authentic antiques rather than "garage sale" items.',
+    ],
+    weaknesses: [
+      'Requires a $5–$10 admission fee, which discourages casual "window shopping."',
+      "Has a limited operating window from May to October, leaving a gap for year-round markets.",
+      "The design feels basic and safe, more like a tourism brochure than a modern retail experience.",
+    ],
+    keyFeatures: [
+      "A clear call-to-action to subscribe for email updates helps maintain a long-term relationship with collectors.",
+      "A professional, multi-step contact form supports high-end antique dealers.",
+    ],
+  },
+];
+
+const keyQuestions = [
+  "What core information, such as location, vendor types, and accessibility, is most critical for a customer deciding to visit a local market for the first time?",
+  "Which specific vendor details, such as social media links, product categories, or sustainability tags, are essential to build trust and credibility before a purchase?",
+  "What interactive design elements, such as a treasure hunt vibe or social integration, would increase engagement and encourage return visits?",
+];
+
+const researchInsights = [
+  {
+    title: "Visual Storytelling vs. Static Listing",
+    observation:
+      "Most competitor sites feel like plain catalogs. People want to feel the vibe before deciding to visit.",
+    implication:
+      "Transition 613Flea from a simple information page to a more lifestyle-focused digital experience using stronger visual storytelling, video moments, and vibe galleries.",
+  },
+  {
+    title: "Logistics as a Conversion Tool",
+    observation:
+      "First-time visitors often hesitate because key details like parking and transit are hard to find or not mobile friendly.",
+    implication:
+      "Design a mobile-friendly Plan Your Visit page that clearly shows transit, parking, dates, and key information upfront.",
+  },
+  {
+    title: "Curated Discovery vs. Choice Overload",
+    observation:
+      "With 100+ vendors, shoppers can feel overwhelmed and cannot easily find specific interests before they arrive.",
+    implication:
+      "Implement filters so people can browse vendors and explore what interests them before visiting.",
+  },
+];
+
+const personas = [
+  {
+    number: "01",
+    name: "Emma Wilson",
+    subtitle: "Trend-Seeker / Local Creative Visitor",
+    image: "/images/projects/613flea/persona-1.png",
+    quote: "If vendors are different every time, I don’t want to miss out.",
+    about:
+      "Emma is a local creative who enjoys discovering unique places, handmade goods, vintage finds, and community events. She usually finds things to do through Instagram or word-of-mouth, so she needs the website to quickly communicate the event vibe, vendor highlights, and what makes each market day worth attending.",
+    demographics: [
+      { label: "Age", value: "32" },
+      { label: "Location", value: "Centretown, Ottawa" },
+      { label: "Work", value: "Creative agency employee" },
+      { label: "Status", value: "Single" },
+      { label: "Character", value: "Social, visual-first, creative, trend-conscious" },
+    ],
+    needs: [
+      "A clear event calendar with dates, location, and themes.",
+      "Vendor previews with photos and highlights.",
+      "A mobile-friendly browsing experience.",
+      "Easy ways to share events with friends.",
+    ],
+    frustrations: [
+      "Event information is scattered across different platforms.",
+      "The market’s website feels messy or slow on mobile.",
+      "There are not enough product or vendor previews before the event.",
+    ],
+    motivations: [
+      "Discover unique handmade or vintage items.",
+      "Support local artists and small businesses.",
+      "Enjoy meaningful weekend experiences with friends.",
+    ],
+    websiteWants: [
+      "Up-to-date event calendar.",
+      "Featured vendor previews.",
+      "Mobile-optimized experience.",
+    ],
+    marketWants: [
+      "A fun outing that changes each time.",
+      "Rotating vendors with handmade and vintage items.",
+      "A way to support local small businesses.",
+    ],
+    personality: [
+      { left: "Hi-tech", right: "Low-tech", value: 50 },
+      { left: "Planner", right: "Spontaneous", value: 20 },
+      { left: "Social", right: "Private", value: 32 },
+      { left: "Creative", right: "Structured", value: 0 },
+      { left: "Visual-first", right: "Info-first", value: 20 },
+    ],
+    influence: ["Instagram", "Local markets", "Vintage shops"],
+  },
+  {
+    number: "02",
+    name: "Dan Togo",
+    subtitle: "Local Artisan / Vendor",
+    image: "/images/projects/613flea/persona-2.png",
+    quote: "I just need a clear way to join and a chance to be seen by the right people.",
+    about:
+      "Dan is a small business owner who creates handmade wood and leather products. He is new to flea markets and wants to reach more local customers, but he needs clear vendor application steps, booth information, and a way for shoppers to discover his products before the market day.",
+    demographics: [
+      { label: "Age", value: "42" },
+      { label: "Location", value: "Nepean, Ottawa" },
+      { label: "Work", value: "Small business owner" },
+      { label: "Product", value: "Handmade wood and leather goods" },
+      { label: "Character", value: "Independent, practical, craft-focused, growth-minded" },
+    ],
+    needs: [
+      "A simple vendor application process.",
+      "Clear booth fees, setup rules, and market expectations.",
+      "A personal vendor profile with photo and product intro.",
+      "A way for shoppers to find him before the event.",
+    ],
+    frustrations: [
+      "Vendor information is hard to find.",
+      "Application steps are unclear for first-time vendors.",
+      "There is no place to show products in advance.",
+      "He feels hidden among many other sellers.",
+    ],
+    motivations: [
+      "Build a local customer base.",
+      "Make personal connections with buyers.",
+      "Test new products and receive feedback.",
+      "Grow brand awareness through in-person experience.",
+    ],
+    websiteWants: [
+      "Simple vendor application.",
+      "Clear booth information.",
+      "Vendor profile and product intro.",
+      "Pre-market vendor discovery.",
+    ],
+    marketWants: [
+      "A platform to sell handmade goods.",
+      "Real engagement with craft-focused shoppers.",
+      "A space to be seen and remembered.",
+      "A cost-effective way to promote his work.",
+    ],
+    personality: [
+      { left: "Hi-tech", right: "Low-tech", value: 24 },
+      { left: "Planner", right: "Spontaneous", value: 20 },
+      { left: "Social", right: "Private", value: 72 },
+      { left: "Creative", right: "Structured", value: 52 },
+      { left: "Visual-first", right: "Info-first", value: 68 },
+    ],
+    influence: ["Etsy", "Craft fairs", "Instagram"],
+  },
+  {
+    number: "03",
+    name: "Rachel King",
+    subtitle: "Out-of-Town Visitor / Family Planner",
+    image: "/images/projects/613flea/persona-3.png",
+    quote: "If I’m travelling all the way there with my kids, I want to know it’ll be worth it.",
+    about:
+      "Rachel is a school teacher and mother of two who plans trips carefully. Since she does not live in Ottawa, she needs practical information before committing to a visit, including parking, food, washrooms, stroller access, crowd expectations, and whether the event will be enjoyable for kids.",
+    demographics: [
+      { label: "Age", value: "38" },
+      { label: "Location", value: "Edmonton, Alberta" },
+      { label: "Work", value: "School teacher" },
+      { label: "Family", value: "Mother of two children, ages 6 and 9" },
+      { label: "Character", value: "Organized, family-focused, safety-conscious, info-driven" },
+    ],
+    needs: [
+      "Kid-friendly booth or workshop information.",
+      "Parking, food, stroller access, and washroom details.",
+      "Easy directions and a first-time visitor guide.",
+      "Photos of the space, crowd, and atmosphere.",
+    ],
+    frustrations: [
+      "There is limited information for families or first-time visitors.",
+      "She is unsure whether the event has enough activities for kids.",
+      "Parking, directions, and crowd size are unclear.",
+      "She does not know what to expect before arriving.",
+    ],
+    motivations: [
+      "Create happy memories with her children.",
+      "Discover local makers, food, and cultural experiences.",
+      "Teach her kids about art, community, and creativity.",
+      "Balance holiday fun with learning.",
+    ],
+    websiteWants: [
+      "Kid-friendly booth information.",
+      "Parking, food, stroller access, and washrooms.",
+      "First-time visitor guide.",
+      "Photos of the space and atmosphere.",
+    ],
+    marketWants: [
+      "A safe and welcoming space for children.",
+      "Enough room to walk and explore comfortably.",
+      "A mix of fun, learning, and creativity.",
+      "A smooth experience that feels worth the trip.",
+    ],
+    personality: [
+      { left: "Hi-tech", right: "Low-tech", value: 76 },
+      { left: "Planner", right: "Spontaneous", value: 4 },
+      { left: "Social", right: "Private", value: 68 },
+      { left: "Creative", right: "Structured", value: 74 },
+      { left: "Visual-first", right: "Info-first", value: 78 },
+    ],
+    influence: ["Google", "TripAdvisor", "Family activities"],
+  },
+];
+
+const userSolutions = [
+  {
+    number: "01",
+    user: "Emma",
+    type: "Creative Visitor",
+    problem: "Wants to feel the market vibe before deciding to attend.",
+    label: "Discovery",
+    title: "Visual storytelling",
+    solution:
+      "Use market imagery, vendor highlights, and lifestyle-focused sections to make the event feel exciting before users arrive.",
+  },
+  {
+    number: "02",
+    user: "Dan",
+    type: "Vendor",
+    problem: "Wants a clear way to apply and be discovered by shoppers.",
+    label: "Vendor Growth",
+    title: "Searchable vendor presence",
+    solution:
+      "Create clearer vendor application steps and support future vendor discovery through profiles, categories, and featured vendor moments.",
+  },
+  {
+    number: "03",
+    user: "Rachel",
+    type: "Family Planner",
+    problem: "Needs practical information before travelling with her kids.",
+    label: "Planning",
+    title: "Plan Your Visit hub",
+    solution:
+      "Bring parking, transit, accessibility, food, washrooms, and first-time visitor details into one easy planning experience.",
+  },
+];
+
+const logoEvolution = [
+  {
+    label: "Old / Current Logo",
+    title: "Existing Logo",
+    image: "/images/projects/613flea/old-logo.png",
+    alt: "Original 613Flea logo",
+    text: "The original logo had a handmade, local-market feel that matched 613Flea’s community personality. However, it was harder to scale across website layouts, signage, social media, and vendor materials because the mark was more image-based and less flexible as a brand system.",
+  },
+  {
+    label: "Version 1 Logo",
+    title: "Early Badge Direction",
+    image: "/images/projects/613flea/logo-v1.png",
+    alt: "613Flea version one badge logo",
+    text: "This version explored a circular badge style to reflect the vintage and handmade feel of the market. It felt warm and market-friendly, but the detailed stitched edge and compact layout made it less flexible at smaller sizes or in responsive digital spaces.",
+  },
+  {
+    label: "Final Version Logo",
+    title: "Final Logo System",
+    badge: "Chosen Direction",
+    image: "/images/projects/613flea/final-logo.png",
+    alt: "Final 613Flea logo",
+    text: "The final logo kept the playful flea market character while improving readability and flexibility. The larger 613 strengthens recognition, while the tag-style Flea adds a marketplace feel without making the mark too busy. This direction works better across web, social, print, signage, and event materials.",
+  },
+];
+
+const logoVariations = [
+  {
+    label: "Dark Version",
+    title: "Dark Background Version",
+    image: "/images/projects/613flea/variation-2.png",
+    alt: "613Flea dark background logo variation",
+    text: "This version keeps the logo usable on dark layouts, posters, social graphics, and high-contrast promotional materials.",
+  },
+  {
+    label: "Badge Version",
+    title: "Badge / Stamp Version",
+    image: "/images/projects/613flea/variation-1.png",
+    alt: "613Flea badge logo variation",
+    text: "The badge variation gives the brand a compact mark that can work for stickers, vendor tags, social icons, merch, and event materials.",
+  },
+];
+
+const palette = [
+  {
+    name: "Retro Teal",
+    value: "#1D5959",
+    text: "Supports the modern-vintage identity and main brand presence.",
+  },
+  {
+    name: "Muted Coral",
+    value: "#FDA587",
+    text: "Adds warmth, friendliness, and market-inspired energy.",
+  },
+  {
+    name: "Cream",
+    value: "#F8F5E9",
+    text: "Keeps the layout soft, clean, and approachable.",
+  },
+  {
+    name: "Warm Mustard",
+    value: "#E2BB45",
+    text: "Used for high-contrast call-to-action moments.",
+  },
+  {
+    name: "Soft Lilac",
+    value: "#BA9FD0",
+    text: "Adds playful contrast and supports secondary highlights.",
+  },
+];
+
+const hifiImages = [
+  {
+    src: "/images/projects/613flea/hifi-home.png",
+    alt: "613Flea mobile home page high fidelity design",
+    label: "Mobile Home",
+  },
+  {
+    src: "/images/projects/613flea/hifi-calendar.png",
+    alt: "613Flea mobile calendar event page",
+    label: "Calendar Event",
+  },
+  {
+    src: "/images/projects/613flea/hifi-vendor.png",
+    alt: "613Flea mobile become a vendor page",
+    label: "Become a Vendor",
+  },
+  {
+    src: "/images/projects/613flea/hifi-visitor-info.png",
+    alt: "613Flea mobile visitor info page",
+    label: "Visitor Info",
+  },
+  {
+    src: "/images/projects/613flea/hifi-contact.png",
+    alt: "613Flea mobile contact page",
+    label: "Contact",
+  },
+  {
+    src: "/images/projects/613flea/hifi-desktop-visitor.png",
+    alt: "613Flea desktop visitor info page",
+    label: "Desktop Visitor Info",
+  },
+];
+
+const testingResults = [
+  {
+    objective: "Objective 1",
+    task: "Find the date and location of the next 613Flea market from the home screen in under 5 seconds.",
+    result: "100%",
+    improvement: "Up from 75%",
+  },
+  {
+    objective: "Objective 2",
+    task: "Go to Explore the Market and find a way to view a vendor’s profile.",
+    result: "95%",
+    improvement: "Up from 75%",
+  },
+  {
+    objective: "Objective 3",
+    task: "Find the requirements and steps to apply as a vendor.",
+    result: "100%",
+    improvement: "Successful completion",
+  },
+];
+
+const feedback = [
+  "I love the vibe, but took me awhile to actually see the market info down below.",
+  "I wasn’t sure if I could click the photos for vendors.",
+  "I found the Become a Vendor link quickly, all the information I needed was present. Great!",
+];
+
+const iterations = [
+  {
+    title: "Market details were made more visible",
+    imageClass: "flea-before-after-pair__image--phone",
+    before:
+      "The market date and location were harder to notice on the home page.",
+    after:
+      "The specific market date and location were added directly into the high-contrast hero card in bold text.",
+    beforeImage: "/images/projects/613flea/home-before.png",
+    afterImage: "/images/projects/613flea/home-after.png",
+    beforeAlt: "613Flea home page before iteration",
+    afterAlt: "613Flea home page after iteration",
+    markers: [
+      {
+        number: "01",
+        title: "Event details moved up",
+        text: "The next market date and location were placed directly in the hero area so users could find key information faster.",
+      },
+      {
+        number: "02",
+        title: "Stronger visual priority",
+        text: "The updated hero card gives the date and location more contrast, helping the information stand out at a glance.",
+      },
+    ],
+    imageMarkers: {
+      before: [
+        {
+          number: "01",
+          label: "Missing event detail",
+          x: 50,
+          y: 34,
+        },
+      ],
+      after: [
+        {
+          number: "01",
+          label: "Event date added",
+          x: 50,
+          y: 43,
+        },
+        {
+          number: "02",
+          label: "Hero content clearer",
+          x: 50,
+          y: 34,
+        },
+      ],
+    },
+  },
+  {
+    title: "Vendor cards became more clearly interactive",
+    imageClass: "flea-before-after-pair__image--wide",
+    before:
+      "Vendor photos did not clearly communicate that users could explore a vendor profile.",
+    after:
+      "Dedicated View Vendor buttons were added to each artisan spotlight, including Clay Play and Palm & Thread.",
+    beforeImage: "/images/projects/613flea/vendor-before.png",
+    afterImage: "/images/projects/613flea/vendor-after.png",
+    beforeAlt: "613Flea vendor card before iteration",
+    afterAlt: "613Flea vendor card after iteration",
+    markers: [
+      {
+        number: "01",
+        title: "Clickable action added",
+        text: "View Vendor buttons made the cards feel interactive instead of just decorative.",
+      },
+      {
+        number: "02",
+        title: "Clearer discovery path",
+        text: "Users now have a direct path from browsing vendor images to exploring vendor details.",
+      },
+    ],
+    imageMarkers: {
+      before: [
+        {
+          number: "01",
+          label: "Cards feel static",
+          x: 50,
+          y: 67,
+        },
+      ],
+      after: [
+        {
+          number: "01",
+          label: "View Vendor button added",
+          x: 84,
+          y: 67,
+        },
+        {
+          number: "02",
+          label: "Clearer interaction",
+          x: 50,
+          y: 67,
+        },
+      ],
+    },
+  },
+];
+
+const futureImpact = [
+  {
+    title: "Proposed Artisan Directory",
+    text: "A year-round directory would allow visitors to discover and shop from vendors even when the market is not running.",
+  },
+  {
+    title: "Vendor Portal",
+    text: "A self-service system could let vendors manage their profiles and applications, reducing manual work for the team.",
+  },
+  {
+    title: "Mobile Event Companion",
+    text: "A live map or wayfinding feature could help visitors navigate the 150+ vendors during busy events.",
+  },
+];
+---
+
+<BaseLayout
+  title="613Flea - Brand and Web Case Study"
+  description="613Flea is a responsive brand and website redesign for an Ottawa indoor marketplace, focused on visual identity, vendor discovery, visitor planning, and community engagement."
+>
+  <Header />
+
+  <main class="project-detail flea-page">
+    <section class="project-hero site-shell section">
+      <a href="/#work" class="project-back-link">← Work</a>
+
+      <div class="project-hero__intro">
+        <p class="project-number">{project?.number ?? "02"}</p>
+
+        <div>
+          <p class="project-label">Brand + Web - 2025</p>
+          <h1>613Flea</h1>
+
+          <p class="project-hero__summary">
+            Building an online presence for a local flea market. 613Flea is a not-for-profit
+            indoor marketplace in Ottawa known for vintage pieces, handmade goods, and local vendors.
+          </p>
+        </div>
+      </div>
+
+      <figure class="project-hero__image flea-hero-card">
+  <img
+    class="flea-hero-card__main"
+    src="/images/projects/613flea/hero.png"
+    alt="613Flea redesigned website hero mockup"
+  />
+
+  <figcaption class="flea-existing-site-mini-card">
+    <div class="flea-existing-site-mini-card__label">
+      <span>Existing Website</span>
+      <small>Before redesign</small>
+    </div>
+
+    <img
+      src="/images/projects/613flea/existing-website.png"
+      alt="Original 613Flea website homepage before redesign"
+    />
+
+    <p>
+      The original homepage had a handmade market feel, but needed clearer hierarchy,
+      stronger visual structure, and a more flexible brand system.
+    </p>
+  </figcaption>
+</figure>
+
+      <dl class="project-facts">
+        <div>
+          <dt>Role</dt>
+          <dd>UX + UI Design, Visual Design, Branding, Research, Prototyping + Testing</dd>
+        </div>
+
+        <div>
+          <dt>Tools</dt>
+          <dd>Figma, FigJam, Basecamp, Maze</dd>
+        </div>
+
+        <div>
+          <dt>Timeframe</dt>
+          <dd>May - Aug 2025</dd>
+        </div>
+
+        <div>
+          <dt>Year</dt>
+          <dd>2025</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Project Overview</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          613Flea is a not-for-profit indoor marketplace in Ottawa known for vintage pieces,
+          handmade goods, and local vendors. This project reimagines its brand identity and
+          website to create a more current, cohesive presence across digital and print platforms.
+        </p>
+
+        <div class="detail-grid">
+          {overviewPoints.map((item) => (
+            <article class="detail-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>The Challenge</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          For years, 613Flea has built a strong reputation as a vibrant indoor marketplace in Ottawa.
+          As the market grew, its brand and digital experience did not fully reflect its scale or cultural impact.
+        </p>
+
+        <div class="number-list">
+          {challengePoints.map((item, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Objective / Goal</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          The goal was to develop a refreshed yet familiar brand identity that strengthens 613Flea’s
+          overall visibility while preserving its local roots. The focus was on modernizing the visual
+          system to improve brand recognition, building a flexible design framework that supports a
+          diverse vendor ecosystem, and designing a responsive five-page website that improves navigation,
+          clarity, and overall user engagement for both visitors and prospective vendors.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Creative Brief</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          The creative direction focused on keeping the market familiar and community-led while giving it
+          a more polished and scalable visual system.
+        </p>
+
+        <div class="split-copy">
+          {creativeBriefPoints.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <a class="prototype-link" href={creativeBriefUrl} target="_blank" rel="noreferrer">
+          View Creative Brief PDF ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Design Process</p>
+      </div>
+
+      <div class="project-section__content">
+        <figure class="project-figure">
+          <img src="/images/projects/613flea/design-process.png" alt="613Flea design process diagram" />
+        </figure>
+
+        <div class="process-steps">
+          {processSteps.map((step, index) => (
+            <span>{String(index + 1).padStart(2, "0")} {step}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Empathize</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          To help position 613Flea as a leading cultural destination, a comparative market analysis
+          of local and national marketplaces was conducted. This research revealed a clear market gap:
+          an opportunity to combine large-scale presence with a modern, creative brand identity.
+        </p>
+
+        <div class="flea-competitor-grid">
+          {competitorAnalysis.map((competitor) => (
+            <article class="flea-competitor-card">
+              <header>
+                <div class={`flea-competitor-card__logo ${competitor.logoClass ?? ""}`}>
+                  <img src={competitor.logo} alt={`${competitor.name} logo`} />
+                </div>
+
+                <p>Market Competitor</p>
+                <h3>{competitor.name}</h3>
+              </header>
+
+              <section>
+                <h4>Strengths</h4>
+                <ul>
+                  {competitor.strengths.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <section>
+                <h4>Weaknesses</h4>
+                <ul>
+                  {competitor.weaknesses.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <section>
+                <h4>Key Features</h4>
+                <ul>
+                  {competitor.keyFeatures.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            </article>
+          ))}
+        </div>
+
+        <div class="question-block">
+          <h3>Key Questions</h3>
+
+          <ul>
+            {keyQuestions.map((question) => (
+              <li>{question}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Strategic Research</p>
+      </div>
+
+      <div class="project-section__content">
+        <div class="research-list">
+          {researchInsights.map((item) => (
+            <article>
+              <h3>{item.title}</h3>
+              <p><span class="inline-label">The Observation:</span> {item.observation}</p>
+              <p><span class="inline-label">The Design Implication:</span> {item.implication}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>User Personas</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          Three personas were developed to represent the main groups 613Flea needs to support:
+          a discovery-driven local visitor, a prospective vendor, and an out-of-town family planner.
+        </p>
+
+        <div class="flea-persona-showcase">
+          {personas.map((persona) => (
+            <article class="flea-persona-case">
+              <header class="flea-persona-case__header">
+                <span>{persona.number}</span>
+
+                <div>
+                  <h3>{persona.name}</h3>
+                  <p>{persona.subtitle}</p>
+                </div>
+              </header>
+
+              <div class="flea-persona-case__body">
+                <aside class="flea-persona-case__aside">
+                  <figure class="flea-persona-case__photo">
+                    <img src={persona.image} alt={`${persona.name} persona portrait`} />
+                  </figure>
+
+                  <blockquote>“{persona.quote}”</blockquote>
+
+                  <section class="flea-persona-case__box">
+                    <h4>Demographics</h4>
+
+                    <dl class="flea-persona-demographics">
+                      {persona.demographics.map((item) => (
+                        <div>
+                          <dt>{item.label}</dt>
+                          <dd>{item.value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </section>
+                </aside>
+
+                <div class="flea-persona-case__content">
+                  <section class="flea-persona-case__box flea-persona-case__about">
+                    <h4>About</h4>
+                    <p>{persona.about}</p>
+                  </section>
+
+                  <section class="flea-persona-case__box">
+                    <h4>Needs</h4>
+                    <ul>
+                      {persona.needs.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section class="flea-persona-case__box">
+                    <h4>Frustrations</h4>
+                    <ul>
+                      {persona.frustrations.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section class="flea-persona-case__box">
+                    <h4>Motivation</h4>
+                    <ul>
+                      {persona.motivations.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
+
+                <aside class="flea-persona-case__aside flea-persona-case__aside--right">
+                  <section class="flea-persona-case__box">
+                    <h4>Website Wants</h4>
+                    <ul>
+                      {persona.websiteWants.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section class="flea-persona-case__box">
+                    <h4>Market Wants</h4>
+                    <ul>
+                      {persona.marketWants.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section class="flea-persona-case__box">
+                    <h4>Personality</h4>
+
+                    <div class="flea-persona-sliders">
+                      {persona.personality.map((trait) => (
+                        <div class="flea-persona-slider">
+                          <div>
+                            <span>{trait.left}</span>
+                            <span>{trait.right}</span>
+                          </div>
+
+                          <div class="flea-persona-slider__track">
+                            <span style={`--value: ${trait.value}%;`}></span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section class="flea-persona-case__box">
+                    <h4>Influence</h4>
+
+                    <div class="flea-persona-chip-list">
+                      {persona.influence.map((item) => (
+                        <span>{item}</span>
+                      ))}
+                    </div>
+                  </section>
+                </aside>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="question-block">
+          <h3>Strategic Note</h3>
+          <p>
+            These personas were designed to test the platform’s versatility. The goal was to create a
+            single digital space that feels exciting and easy to explore, while still giving visitors,
+            vendors, and planners the clear practical information they need.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+  <div class="project-section__label">
+    <p>Connecting Users to Solutions</p>
+  </div>
+
+  <div class="project-section__content">
+    <p class="project-lead">
+      The personas were translated into clear design opportunities. Each pathway connects a user need
+      to a practical design response that supports the redesigned 613Flea experience.
+    </p>
+
+    <div class="flea-solution-pathways">
+      <div class="flea-solution-pathways__header" aria-hidden="true">
+        <span>User</span>
+        <span>Problem</span>
+        <span>Design Response</span>
+      </div>
+
+      {userSolutions.map((item) => (
+        <article class="flea-solution-pathway">
+          <div class="flea-solution-pathway__persona">
+            <span>{item.number}</span>
+
+            <div>
+              <h3>{item.user}</h3>
+              <p>{item.type}</p>
+            </div>
+          </div>
+
+          <div class="flea-solution-pathway__problem">
+            <p>{item.problem}</p>
+          </div>
+
+          <div class="flea-solution-pathway__arrow" aria-hidden="true">
+            →
+          </div>
+
+          <div class="flea-solution-pathway__solution">
+            <span>{item.label}</span>
+            <h3>{item.title}</h3>
+            <p>{item.solution}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Sitemap</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          The sitemap was designed as a simple, multi-path structure that supports both exploration
+          and quick access to practical information. Users can navigate directly to the Event Calendar
+          [2.0] or Vendor Directory [3.0] for discovery, while clear pathways to Become a Vendor [4.0]
+          and Visitor Info [5.0] ensure essential details remain one click away from the Home Page [1.0].
+        </p>
+
+        <p class="project-copy">
+          This structure prioritizes intuitive navigation and information clarity, keeping the experience
+          streamlined without overwhelming the user.
+        </p>
+
+        <figure class="project-figure">
+          <img src="/images/projects/613flea/sitemap.png" alt="613Flea sitemap" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Low-Fi Wireframes</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          Created low-fidelity wireframes for both desktop and mobile to translate the sitemap into a
+          structured, responsive layout. These early layouts focus on content hierarchy and navigation flow,
+          ensuring key sections like the Event Calendar, Visitor Info, and Vendor Portal remain equally
+          visible and easy to access.
+        </p>
+
+        <figure class="project-figure">
+          <img src="/images/projects/613flea/low-fi.png" alt="613Flea low fidelity wireframes" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+  <div class="project-section__label">
+    <p>Branding</p>
+  </div>
+
+  <div class="project-section__content">
+    <p class="project-lead">
+      The branding process focused on keeping 613Flea’s handmade, local-market personality while
+      making the visual identity cleaner, more readable, and easier to use across web, print,
+      social media, signage, and vendor materials.
+    </p>
+
+    <h3 class="subheading">Logo Evolution</h3>
+
+    <p class="project-copy">
+      The logo development moved from the existing handmade mark into a more flexible visual system.
+      Each stage helped clarify how the brand could feel playful and market-friendly while becoming
+      more scalable for responsive digital use.
+    </p>
+
+    <div class="flea-logo-evolution">
+      {logoEvolution.map((logo) => (
+        <article class={`flea-logo-evolution__card ${logo.badge ? "flea-logo-evolution__card--featured" : ""}`}>
+          <div class="flea-logo-evolution__media">
+            {logo.badge && <span>{logo.badge}</span>}
+            <img src={logo.image} alt={logo.alt} />
+          </div>
+
+          <div class="flea-logo-evolution__content">
+            <p>{logo.label}</p>
+            <h4>{logo.title}</h4>
+            <p>{logo.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <h3 class="subheading">Logo Variations</h3>
+
+    <p class="project-copy">
+      After choosing the final logo direction, I created supporting variations so the identity could
+      stay consistent across different use cases, including dark backgrounds, social posts, event
+      materials, vendor tags, and compact badge placements.
+    </p>
+
+    <div class="flea-logo-variations">
+      {logoVariations.map((logo) => (
+        <article class="flea-logo-variation-card">
+          <div class="flea-logo-variation-card__media">
+            <img src={logo.image} alt={logo.alt} />
+          </div>
+
+          <div>
+            <p>{logo.label}</p>
+            <h4>{logo.title}</h4>
+            <p>{logo.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <h3 class="subheading">Visual Language: Moodboard</h3>
+
+    <p class="project-copy">
+      To reflect the mix of creativity and community at 613Flea, the visual system blends a vintage
+      feel with a clean, modern look.
+    </p>
+
+    <p class="project-copy">
+      The color palette uses Retro Teal, Muted Coral, and Cream to establish a modern-vintage
+      aesthetic, complemented by Warm Mustard and Soft Lilac for high-contrast call-to-action moments.
+      The typography pairs Tropical Magic as a bold heading font with Helvetica as a readable body font
+      to support clarity across the site.
+    </p>
+
+    <div class="palette-grid flea-palette-grid">
+      {palette.map((color) => (
+        <article>
+          <span style={`--swatch: ${color.value};`}></span>
+
+          <div>
+            <h3>{color.name}</h3>
+            <p>{color.value}</p>
+            <small>{color.text}</small>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <figure class="project-figure flea-moodboard">
+      <img src="/images/projects/613flea/moodboard.png" alt="613Flea final moodboard" />
+    </figure>
+  </div>
+</section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>High-Fi Wireframes</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          The high-fidelity designs focused on applying the finalized branding system, including approved
+          logo variations and the established visual direction, directly into the interface layouts.
+        </p>
+
+        <p class="project-copy">
+          Placeholder elements were replaced with real imagery, finalized typography, and refined UI
+          components to accurately reflect the market’s energy and personality. This phase ensured visual
+          consistency, stronger brand integration, and a polished digital experience that aligns with a
+          community-driven marketplace.
+        </p>
+
+        <div class="flea-hifi-grid">
+          {hifiImages.map((image) => (
+            <figure>
+              <img src={image.src} alt={image.alt} />
+              <figcaption>{image.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+  <div class="project-section__label">
+    <p>Testing & Iteration</p>
+  </div>
+
+  <div class="project-section__content">
+    <p class="project-lead">
+      I ran unmoderated testing sessions to test the new layout and gave four users three key tasks.
+      All users were able to successfully browse the site using both desktop and mobile viewports with minimal friction.
+    </p>
+
+    <div class="flea-testing-grid">
+      {testingResults.map((item) => (
+        <article>
+          <span>{item.objective}</span>
+          <strong>{item.result}</strong>
+          <p class="flea-testing-grid__change">{item.improvement}</p>
+          <p>{item.task}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="flea-testing-subsection">
+      <h3>Feedback</h3>
+
+      <div class="flea-feedback-grid">
+        {feedback.map((quote) => (
+          <blockquote>
+            “{quote}”
+          </blockquote>
+        ))}
+      </div>
+    </div>
+
+    <div class="flea-testing-subsection">
+      <h3>Iterations</h3>
+
+      <p class="project-copy">
+        Based on the test results, I made targeted updates to improve information visibility and make
+        vendor discovery feel more interactive. The main changes focused on making important actions
+        easier to notice without changing the overall visual direction.
+      </p>
+
+      <div class="flea-iteration-list">
+        {iterations.map((iteration, index) => (
+          <article class="flea-iteration-card">
+            <header class="flea-iteration-card__header">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+
+              <div>
+                <h4>{iteration.title}</h4>
+                <p><strong>Before:</strong> {iteration.before}</p>
+                <p><strong>After:</strong> {iteration.after}</p>
+              </div>
+            </header>
+
+            <div class="flea-iteration-card__markers">
+              {iteration.markers.map((marker) => (
+                <article>
+                  <span>{marker.number}</span>
+
+                  <div>
+                    <h5>{marker.title}</h5>
+                    <p>{marker.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div class="flea-before-after-pair">
+              <figure>
+                <div class={`flea-before-after-pair__image ${iteration.imageClass}`}>
+                  <img src={iteration.beforeImage} alt={iteration.beforeAlt} />
+
+                  {iteration.imageMarkers.before.map((marker) => (
+                    <span
+                      class="flea-screen-marker"
+                      style={`--x: ${marker.x}%; --y: ${marker.y}%;`}
+                      aria-label={marker.label}
+                    >
+                      {marker.number}
+                    </span>
+                  ))}
+                </div>
+
+                <figcaption>Before</figcaption>
+              </figure>
+
+              <strong aria-hidden="true">→</strong>
+
+              <figure>
+                <div class={`flea-before-after-pair__image ${iteration.imageClass}`}>
+                  <img src={iteration.afterImage} alt={iteration.afterAlt} />
+
+                  {iteration.imageMarkers.after.map((marker) => (
+                    <span
+                      class="flea-screen-marker"
+                      style={`--x: ${marker.x}%; --y: ${marker.y}%;`}
+                      aria-label={marker.label}
+                    >
+                      {marker.number}
+                    </span>
+                  ))}
+                </div>
+
+                <figcaption>After</figcaption>
+              </figure>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>Conclusion / Future Impact</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          This redesign shifts 613Flea from a simple event listing to a more engaging community hub.
+          While the current site works as a foundation, there are clear opportunities to better connect
+          the digital experience with the physical market.
+        </p>
+
+        <div class="detail-grid">
+          {futureImpact.map((item) => (
+            <article class="detail-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <blockquote class="outcome-quote flea-outcome">
+          These directions would help 613Flea grow as a stronger community platform, supporting local makers
+          and improving the overall visitor experience.
+        </blockquote>
+
+        <div class="flea-prototype-links">
+          <a href={mobilePrototypeUrl} class="prototype-link" target="_blank" rel="noreferrer">
+            View Mobile Prototype ↗
+          </a>
+
+          <a href={desktopPrototypeUrl} class="prototype-link" target="_blank" rel="noreferrer">
+            View Desktop Prototype ↗
+          </a>
+        </div>
+
+        <div class="prototype-embed">
+          <iframe
+            src={mobilePrototypeEmbedSrc}
+            title="613Flea mobile Figma prototype"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="prototype-embed">
+          <iframe
+            src={desktopPrototypeEmbedSrc}
+            title="613Flea desktop Figma prototype"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="thanks-block thanks-block--flea">
+          <div class="thanks-block--flea__stamp">613</div>
+          <div class="thanks-block--flea__shape thanks-block--flea__shape--one"></div>
+          <div class="thanks-block--flea__shape thanks-block--flea__shape--two"></div>
+          <div class="thanks-block--flea__shape thanks-block--flea__shape--three"></div>
+
+          <p class="thanks-block__eyebrow">613Flea Case Study</p>
+
+          <div class="thanks-block__main">
+            <h2>
+              Thanks for viewing
+              <span aria-hidden="true">✦</span>
+            </h2>
+
+            <p>by Esther Odeyemi</p>
+          </div>
+        </div>
+
+        <ProjectPager currentSlug="613flea" />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

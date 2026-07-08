@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getUiUxProjects } from "../data/projects.js";
+
+const uiUxProjects = getUiUxProjects();
+---
+
+<BaseLayout
+  title="UI/UX Projects - Esther Odeyemi"
+  description="A collection of UI/UX, product design, and digital experience projects by Esther Odeyemi."
+>
+  <Header />
+
+  <main class="project-detail">
+    <section class="archive-hero site-shell section">
+      <a href="/" class="project-back-link">← Home</a>
+
+      <p class="project-label">Product Design / UX Research / Interface Design</p>
+      <h1>UI/UX Projects</h1>
+
+      <p class="project-hero__summary">
+        A collection of digital product, research, and interface design work
+        focused on clarity, usability, structure, and thoughtful visual systems.
+      </p>
+    </section>
+
+    <section class="work section archive-projects">
+      <div class="site-shell">
+        <div class="work__list">
+          {uiUxProjects.map((project, index) => (
+            <a
+              href={project.link}
+              class={`project-feature ${index % 2 === 1 ? "project-feature--flipped" : ""}`}
+            >
+              <figure class="project-feature__image">
+                <img src={project.image} alt={`${project.title} project preview`} />
+              </figure>
+
+              <div class="project-feature__content">
+                <div class="project-feature__meta">
+                  <span class="project-feature__number">{project.number}</span>
+                  <span>{project.category} / {project.year}</span>
+                </div>
+
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+
+                <ul class="tag-list">
+                  {project.tags.map((tag) => (
+                    <li>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

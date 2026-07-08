@@ -1,0 +1,350 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectPager from "../../components/ProjectPager.astro";
+import { getProjectBySlug } from "../../data/projects.js";
+import "../../styles/projects/quench.css";
+
+const project = getProjectBySlug("quench");
+
+const facts = [
+  ["Brand", "Quench"],
+  ["Year", "2022 / 24"],
+  ["Role", "Graphic Designer"],
+  ["Tools", "Illustrator / Photoshop"],
+  ["Focus", "Brand Identity / Packaging"],
+  [
+    "Deliverables",
+    "Logo, packaging, flavor variations, brand applications, advertising, and product mockups.",
+  ],
+];
+
+const flavorCards = [
+  {
+    title: "Orange Flavor",
+    image: "/images/projects/quench/flavors-orange.png",
+    alt: "Quench orange flavor packaging visual",
+  },
+  {
+    title: "Pineapple Flavor",
+    image: "/images/projects/quench/flavors-pineapple.png",
+    alt: "Quench pineapple flavor packaging visual",
+  },
+  {
+    title: "Watermelon Flavor",
+    image: "/images/projects/quench/flavors-watermelon.png",
+    alt: "Quench watermelon flavor packaging visual",
+  },
+  {
+    title: "Flavor Set",
+    image: "/images/projects/quench/flavors-set.png",
+    alt: "Quench full flavor set visual",
+  },
+];
+
+const applicationMockups = [
+  {
+    title: "Mug Mockup",
+    image: "/images/projects/quench/applications-mug.png",
+    alt: "Quench mug brand application",
+  },
+  {
+    title: "Tote Mockup",
+    image: "/images/projects/quench/applications-tote.png",
+    alt: "Quench tote brand application",
+  },
+];
+
+const promotionImages = [
+  {
+    title: "Campaign Main",
+    image: "/images/projects/quench/promotion-main.png",
+    alt: "Quench main promotional campaign visual",
+  },
+  {
+    title: "Lifestyle Marketing",
+    image: "/images/projects/quench/promotion-lifestyle.png",
+    alt: "Quench lifestyle marketing visual",
+  },
+  {
+    title: "Social Posts",
+    image: "/images/projects/quench/promotion-social-posts.png",
+    alt: "Quench social media posts",
+    full: true,
+  },
+];
+---
+
+<BaseLayout title="Quench | Biola Olaniyi">
+  <Header />
+
+  <main class="project-detail quench-page">
+    <section class="project-hero site-shell">
+      <a class="project-back-link" href="/#work">← Work</a>
+
+      <div class="project-hero__intro">
+        <span class="project-number">{project?.number ?? "04"}</span>
+
+        <div>
+          <p class="project-label">Brand Identity / Packaging Design</p>
+          <h1>Quench</h1>
+
+          <p class="project-hero__summary">
+            Quench is a 100% juice brand identity and packaging design project.
+            The work focused on creating a fresh, colorful, and consistent visual
+            system for multiple juice flavors.
+          </p>
+        </div>
+      </div>
+
+      <figure class="project-hero__image quench-hero-image">
+        <img
+          src="/images/projects/quench/hero.png"
+          alt="Quench juice brand hero mockup"
+        />
+      </figure>
+
+      <dl class="project-facts">
+        {facts.map(([label, value]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Overview</p>
+        <h2>A fresh juice brand system</h2>
+        <span>
+          Quench was designed as a 100% juice brand with a bold and colorful
+          packaging direction. The goal was to create a visual identity that
+          felt fresh, clear, and easy to recognize on the shelf.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <figure class="quench-figure">
+          <img
+            src="/images/projects/quench/overview-main.gif"
+            alt="Quench brand overview"
+          />
+          <figcaption>Brand overview.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Challenge</p>
+        <h2>Different flavors, one brand family</h2>
+        <span>
+          The main challenge was making each flavor stand out while keeping the
+          full product line connected. Orange, pineapple, and watermelon needed
+          their own visual personality, but they still had to feel like one
+          Quench family.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <figure class="quench-figure">
+          <img
+            src="/images/projects/quench/challenge-main.png"
+            alt="Quench challenge visual showing different flavors in one brand family"
+          />
+          <figcaption>Flavor variety within one brand system.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Direction</p>
+        <h2>Bold fruit color with a consistent base</h2>
+        <span>
+          The design direction uses strong fruit colors and a consistent
+          packaging structure. This helped each flavor feel unique while the
+          repeated layout, logo placement, and carton style kept the brand
+          unified.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <figure class="quench-figure">
+          <img
+            src="/images/projects/quench/direction-color.png"
+            alt="Quench color direction system"
+          />
+          <figcaption>Color direction.</figcaption>
+        </figure>
+
+        <figure class="quench-figure">
+          <img
+            src="/images/projects/quench/direction-visual.png"
+            alt="Quench visual direction board"
+          />
+          <figcaption>Visual direction.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Logo</p>
+        <h2>A simple mark for packaging use</h2>
+        <span>
+          The logo was designed to be simple and readable. It needed to work
+          clearly on the carton while sitting comfortably beside fruit imagery,
+          flavor names, and other packaging details.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <figure class="quench-logo-board">
+          <img
+            src="/images/projects/quench/logo-main.png"
+            alt="Quench main logo mark"
+          />
+          <figcaption>Main logo mark.</figcaption>
+        </figure>
+
+        <figure class="quench-figure">
+          <img
+            src="/images/projects/quench/logo-color-usage.gif"
+            alt="Quench logo color usage"
+          />
+          <figcaption>Logo color usage.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Packaging</p>
+        <h2>A carton system for multiple flavors</h2>
+        <span>
+          The packaging keeps the same structure across the product line. The
+          logo, carton layout, and brand placement stay consistent, while the
+          fruit imagery and color accents change for each flavor.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <figure class="quench-figure">
+          <img
+            src="/images/projects/quench/packaging-main.png"
+            alt="Quench packaging system"
+          />
+          <figcaption>Packaging system.</figcaption>
+        </figure>
+
+        <figure class="quench-figure quench-figure--dark-placeholder">
+          <img
+            src="/images/projects/quench/packaging-detail.png"
+            alt="Quench packaging detail"
+          />
+          <figcaption>Packaging detail.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Flavors</p>
+        <h2>Orange, pineapple, and watermelon</h2>
+        <span>
+          Each flavor uses its own color and fruit direction. Orange feels
+          bright, pineapple feels tropical, and watermelon feels bold and
+          playful. Together, they still read as one connected Quench product
+          family.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <div class="quench-grid quench-grid--two">
+          {flavorCards.map((item) => (
+            <figure>
+              <img src={item.image} alt={item.alt} />
+              <figcaption>{item.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Brand Applications</p>
+        <h2>Quench beyond the carton</h2>
+        <span>
+          The identity was extended into simple branded items like mugs, totes,
+          and everyday touchpoints. This shows how the Quench brand can stay
+          recognizable outside the juice packaging.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <div class="quench-grid quench-grid--applications">
+          {applicationMockups.map((item) => (
+            <figure>
+              <img src={item.image} alt={item.alt} />
+              <figcaption>{item.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+      <aside class="quench-case-copy">
+        <p>Promotion</p>
+        <h2>Extending the brand into campaign visuals</h2>
+        <span>
+          The promotional graphics continue the same visual language from the
+          cartons. They use bold fruit color, clear product placement, lifestyle
+          photography, and a simple layout style to keep the brand consistent.
+        </span>
+      </aside>
+
+      <div class="quench-case-media">
+        <div class="quench-grid quench-grid--promotion">
+          {promotionImages.map((item) => (
+            <figure class:list={[item.full ? "quench-grid__full" : ""]}>
+              <img src={item.image} alt={item.alt} />
+              <figcaption>{item.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="quench-case-section site-shell">
+  <aside class="quench-case-copy">
+    <p>Outcome</p>
+    <h2>A complete packaging identity</h2>
+    <span>
+      The final result is a complete brand and packaging direction for
+      Quench. The system includes the logo, flavor packaging, product
+      mockups, brand applications, and promotional visuals.
+    </span>
+  </aside>
+
+  <div class="quench-case-media">
+    <figure class="quench-figure quench-figure--dark-placeholder">
+      <img
+        src="/images/projects/quench/outcome-final.png"
+        alt="Final Quench brand applications"
+      />
+      <figcaption>Final applications.</figcaption>
+    </figure>
+
+    <ProjectPager currentSlug="quench" />
+  </div>
+</section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,95 @@
+/* =========================
+   AUREN — IN PROGRESS CASE STUDY
+========================= */
+
+:root {
+  --auren-green: #5f7440;
+  --auren-green-soft: #9fb477;
+  --auren-dark: #171916;
+}
+
+.auren-page {
+  --accent: var(--auren-green);
+  --accent-soft: var(--auren-green-soft);
+}
+
+.auren-page .project-label,
+.auren-page .project-back-link,
+.auren-page .project-facts dt {
+  color: var(--auren-green);
+}
+
+.auren-page .project-number {
+  color: var(--auren-green-soft);
+}
+
+.auren-page .project-hero h1 {
+  font-family: var(--font-display);
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.auren-hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.auren-hero-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  background: var(--bg-soft);
+}
+
+.auren-progress-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  border: 1px solid rgba(246, 240, 231, 0.25);
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  background: rgba(23, 25, 22, 0.72);
+  color: #f6f0e7;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.auren-page .project-lead {
+  max-width: 850px;
+}
+
+.auren-page .detail-card {
+  background: color-mix(in srgb, var(--bg-soft) 72%, transparent);
+}
+
+.auren-page .detail-card h3 {
+  font-weight: 700;
+}
+
+.auren-page .detail-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .auren-progress-badge {
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.56rem;
+  }
+}

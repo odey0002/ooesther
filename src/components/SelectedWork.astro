@@ -1,0 +1,27 @@
+---
+import ProjectFeature from "./ProjectFeature.astro";
+import { getFeaturedProjects } from "../data/projects.js";
+
+const featuredProjects = getFeaturedProjects();
+---
+
+<section class="work section" id="work">
+  <div class="site-shell">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">(B) Selected Work</p>
+        <h2>Things I've <em>made.</em></h2>
+      </div>
+
+      <p class="tiny-label">
+        01 — {String(featuredProjects.length).padStart(2, "0")}
+      </p>
+    </div>
+
+    <div class="work__list">
+      {featuredProjects.map((project, index) => (
+        <ProjectFeature project={project} flipped={index % 2 !== 0} />
+      ))}
+    </div>
+  </div>
+</section>
