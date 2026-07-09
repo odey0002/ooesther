@@ -308,17 +308,6 @@ html[data-theme="light"] .site-logo__img--light {
   opacity: 1;
 }
 
-.theme-toggle {
-  display: inline-grid;
-  width: 2.6rem;
-  height: 2.6rem;
-  place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text);
-}
-
 .hero {
   min-height: auto;
   display: grid;
@@ -792,6 +781,146 @@ html[data-theme="dark"] .project-detail {
     linear-gradient(90deg, rgba(246, 240, 231, 0.015) 1px, transparent 1px),
     var(--bg);
   background-size: 18px 18px;
+}
+
+/* =========================
+   HEADER ACTIONS + MOBILE/TABLET MENU
+========================= */
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle,
+.mobile-nav-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  min-width: 2.6rem;
+  min-height: 2.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  line-height: 1;
+  text-align: center;
+  appearance: none;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.theme-toggle {
+  font-size: 1rem;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  gap: 0.22rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible,
+.mobile-nav-toggle:hover,
+.mobile-nav-toggle:focus-visible {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  background: color-mix(in srgb, var(--bg-soft) 85%, transparent);
+  transform: translateY(-0.08rem);
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 1rem;
+  height: 1px;
+  background: currentColor;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease,
+    background 180ms ease;
+}
+
+.mobile-nav-toggle:hover span,
+.mobile-nav-toggle:focus-visible span {
+  background: var(--accent);
+}
+
+.site-header.is-menu-open .mobile-nav-toggle {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  background: color-mix(in srgb, var(--bg-soft) 85%, transparent);
+}
+
+/* Tablet + mobile hamburger */
+@media (max-width: 1100px) {
+  .site-header {
+    grid-template-columns: 1fr auto;
+    padding: 1rem 1.25rem;
+  }
+
+  .site-header__actions {
+    justify-self: end;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-grid;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    z-index: 19;
+    display: grid;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--bg) 96%, transparent);
+    backdrop-filter: blur(18px);
+    transform: translateY(-0.75rem);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  .site-nav a {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.15rem 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+  }
+
+  .site-nav a::after {
+    display: none;
+  }
+
+  .site-header.is-menu-open .site-nav {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-header.is-menu-open .mobile-nav-toggle span:nth-child(1) {
+    transform: translateY(0.28rem) rotate(45deg);
+  }
+
+  .site-header.is-menu-open .mobile-nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.is-menu-open .mobile-nav-toggle span:nth-child(3) {
+    transform: translateY(-0.28rem) rotate(-45deg);
+  }
 }
 
 /* =========================
@@ -1462,20 +1591,6 @@ html[data-theme="dark"] .project-detail {
   opacity: 0.85;
 }
 
-@media (max-width: 900px) {
-  .about-page__section {
-    grid-template-columns: 1fr;
-  }
-
-  .about-page__label p {
-    position: static;
-  }
-
-  .about-page__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* =========================
    SCROLL REVEAL
 ========================= */
@@ -1521,10 +1636,6 @@ html[data-theme="dark"] .project-detail {
   .site-header {
     grid-template-columns: 1fr auto;
     padding: 1rem 1.25rem;
-  }
-
-  .site-nav {
-    display: none;
   }
 
   .hero__grid,
@@ -1628,7 +1739,10 @@ html[data-theme="dark"] .project-detail {
   .footer__email,
   .footer__email::after,
   .site-nav a,
-  .site-nav a::after {
+  .site-nav a::after,
+  .theme-toggle,
+  .mobile-nav-toggle,
+  .mobile-nav-toggle span {
     transition: none;
   }
 }
