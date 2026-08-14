@@ -149,6 +149,15 @@
   width: min(100%, 13rem);
 }
 
+/* The construction grid is intended to be studied, so it needs the full board. */
+.quench-logo-board--construction {
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.quench-logo-board--construction img {
+  width: 100%;
+}
+
 /* =========================
    GRIDS
 ========================= */
