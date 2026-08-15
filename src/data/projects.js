@@ -38,7 +38,7 @@ export const projects = [
     tags: ["iOS Experience", "Sound Design", "Motion UI", "UX Research", "UI/UX"],
     image: "/images/projects/auren.png",
     link: "/projects/auren",
-    featured: true,
+    featured: false,
     inProgress: true,
     type: "uiux",
   },
@@ -46,7 +46,7 @@ export const projects = [
     slug: "quench",
     number: "04",
     title: "Quench",
-    year: "2021",
+    year: "2022 / 24",
     category: "Branding / Packaging / Advertising",
     description:
       "A conceptual juice brand identity focused on bold packaging, visual refreshment, and campaign-ready product storytelling.",
