@@ -1187,7 +1187,7 @@ html[data-theme="dark"] .project-detail {
   color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.45;
   letter-spacing: 0;
 }
@@ -1334,9 +1334,81 @@ html[data-theme="dark"] .project-detail {
   list-style: none;
 }
 
+/* Avoid a doubled divider when a goal block follows the numbered problem list. */
+.number-list + .question-block {
+  border-top: 0;
+}
+
+.goal-block h3 {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
 .research-list {
   display: grid;
-  gap: 1.5rem;
+  margin-top: 0;
+}
+
+.research-findings {
+  margin-top: 3.5rem;
+}
+
+.research-findings__label {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.research-insight {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.research-insight:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.research-insight__number {
+  color: var(--accent-soft);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.research-insight__content h3 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.research-insight__content p {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.research-insight__content .inline-label {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .research-list article {
@@ -1691,6 +1763,15 @@ html[data-theme="dark"] .project-detail {
   .site-shell,
   .hero__inner {
     width: min(100% - 1.5rem, var(--container));
+
+   .research-insight {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.research-insight__number {
+  margin-bottom: 0.2rem;
+} 
   }
 
   .site-header {
