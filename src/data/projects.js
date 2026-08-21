@@ -56,34 +56,33 @@ export const projects = [
     featured: true,
     type: "graphics",
   },
-
   {
-  slug: "blossom-theory",
-  number: "05",
-  title: "Blossom Theory",
-  year: "In Progress",
-  category: "Brand Identity / Skincare / Visual Design",
-  description:
-    "A personal brand identity project for the luxury skincare market, combining botanical elegance with a scalable visual system that builds consumer trust.",
-  tags: ["Branding", "Visual Identity", "Skincare", "In Progress"],
-  image: "/images/projects/blossom-theory.gif",
-  link: "/projects/blossom-theory",
-  featured: false,
-  inProgress: true,
-  type: "graphics",
-}
+    slug: "blossom-theory",
+    number: "05",
+    title: "Blossom Theory",
+    year: "In Progress",
+    category: "Brand Identity / Skincare / Visual Design",
+    description:
+      "A personal brand identity project for the luxury skincare market, combining botanical elegance with a scalable visual system that builds consumer trust.",
+    tags: ["Branding", "Visual Identity", "Skincare", "In Progress"],
+    image: "/images/projects/blossom-theory.gif",
+    link: "/projects/blossom-theory",
+    featured: false,
+    inProgress: true,
+    type: "graphics",
+  },
 
   /*
     Add future projects below.
 
     Set featured: true only if you want it on the homepage.
-    Set featured: false if it should only appear on UI/UX or Graphics pages.
+    Set featured: false if it should only appear on the Work page.
   */
 
   /*
   {
     slug: "new-project",
-    number: "05",
+    number: "06",
     title: "New Project",
     year: "2025",
     category: "UI/UX",
@@ -101,6 +100,13 @@ export function getFeaturedProjects() {
   return projects.filter((project) => project.featured);
 }
 
+export function getWorkProjects() {
+  return [
+    ...projects.filter((project) => project.type === "uiux"),
+    ...projects.filter((project) => project.type === "graphics"),
+  ];
+}
+
 export function getUiUxProjects() {
   return projects.filter((project) => project.type === "uiux");
 }
@@ -114,7 +120,9 @@ export function getProjectBySlug(slug) {
 }
 
 export function getProjectNavigation(currentSlug) {
-  const currentIndex = projects.findIndex((project) => project.slug === currentSlug);
+  const currentIndex = projects.findIndex(
+    (project) => project.slug === currentSlug
+  );
 
   if (currentIndex === -1) {
     return {
@@ -124,10 +132,14 @@ export function getProjectNavigation(currentSlug) {
   }
 
   const previousProject =
-    currentIndex === 0 ? projects[projects.length - 1] : projects[currentIndex - 1];
+    currentIndex === 0
+      ? projects[projects.length - 1]
+      : projects[currentIndex - 1];
 
   const nextProject =
-    currentIndex === projects.length - 1 ? projects[0] : projects[currentIndex + 1];
+    currentIndex === projects.length - 1
+      ? projects[0]
+      : projects[currentIndex + 1];
 
   return {
     previousProject,

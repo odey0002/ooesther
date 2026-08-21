@@ -197,6 +197,8 @@ em {
 
 .text-link {
   display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   width: fit-content;
   margin-top: 1.5rem;
   padding-bottom: 0.35rem;
@@ -359,19 +361,25 @@ html[data-theme="light"] .site-logo__img--light {
   line-height: 1.65;
 }
 
+.hero__cta,
+.about__cta,
+.work__cta {
+  color: var(--accent);
+}
+
 .hero__cta {
   margin-top: clamp(3rem, 2vw, 1.6rem);
-  color: var(--accent);
 }
 
 .hero__cta-arrow {
   display: inline-block;
+  transform: rotate(90deg);
   transition: transform 200ms ease;
 }
 
 .hero__cta:hover .hero__cta-arrow,
 .hero__cta:focus-visible .hero__cta-arrow {
-  transform: translateY(0.25rem);
+  transform: rotate(90deg) translateX(0.25rem);
 }
 
 .hero__name-part,
@@ -984,7 +992,7 @@ html[data-theme="dark"] .project-detail {
 }
 
 /* =========================
-   ARCHIVE PAGES: UI/UX + GRAPHICS
+   ARCHIVE PAGE: WORK
 ========================= */
 
 .archive-hero {
@@ -1893,6 +1901,11 @@ html[data-theme="dark"] .project-detail {
   .about__stats {
     animation: none;
   }
+}
+
+.work__cta {
+  display: flex;
+  margin: clamp(3rem, 4vw, 4rem) auto 0;
 }
 
 @media (max-width: 540px) {

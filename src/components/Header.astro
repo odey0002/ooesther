@@ -1,8 +1,11 @@
 ---
 const currentPath = Astro.url.pathname;
 
-const isUiUxActive = currentPath.startsWith("/ui-ux");
-const isGraphicsActive = currentPath.startsWith("/graphics");
+const isWorkActive =
+  currentPath.startsWith("/work") ||
+  currentPath.startsWith("/ui-ux") ||
+  currentPath.startsWith("/graphics");
+
 const isAboutActive = currentPath.startsWith("/about");
 ---
 
@@ -23,12 +26,8 @@ const isAboutActive = currentPath.startsWith("/about");
   </a>
 
   <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
-    <a class:list={[{ "is-active": isUiUxActive }]} href="/ui-ux">
-      UI/UX
-    </a>
-
-    <a class:list={[{ "is-active": isGraphicsActive }]} href="/graphics">
-      Graphics
+    <a class:list={[{ "is-active": isWorkActive }]} href="/work">
+      Work
     </a>
 
     <a class:list={[{ "is-active": isAboutActive }]} href="/about">
