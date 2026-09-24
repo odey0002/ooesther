@@ -59,30 +59,6 @@ const competitorAnalysis = [
   }
 ];
 
-const researchInsights = [
-  {
-    title: "People think in routines, not devices",
-    observation:
-      "Busy households think about moments like school mornings, bedtime, or leaving home rather than individual switches and devices.",
-    implication:
-      "Organize the experience around routines and rooms so everyday tasks feel simpler and more familiar."
-  },
-  {
-    title: "Safety information needs to be glanceable",
-    observation:
-      "People checking their home remotely want quick reassurance, but important status information can be difficult to find.",
-    implication:
-      "Make home status and Secure Home controls easy to find, so users can quickly understand what is happening."
-  },
-  {
-    title: "Caregiving should not feel like surveillance",
-    observation:
-      "Caregivers want meaningful updates without constantly watching or intruding on a loved one’s privacy.",
-    implication:
-      "Use passive Wellness Checks to provide reassurance without making users feel watched."
-  }
-];
-
 const userSolutions = [
   {
     user: "Busy household",
@@ -426,6 +402,27 @@ const hifiSections = [
           <dd>2025</dd>
         </div>
       </dl>
+      <section class="omvia-test-results" aria-labelledby="omvia-test-results-title">
+        <h2 id="omvia-test-results-title">USABILITY TEST RESULTS</h2>
+        <dl class="omvia-test-results__metrics">
+          <div>
+            <dt>Participants</dt>
+            <dd>20</dd>
+          </div>
+          <div>
+            <dt>Remote safety task</dt>
+            <dd>65% → 92%</dd>
+          </div>
+          <div>
+            <dt>Caregiver task</dt>
+            <dd>80% → 100%</dd>
+          </div>
+          <div>
+            <dt>Routine task</dt>
+            <dd>70% → 100%</dd>
+          </div>
+        </dl>
+      </section>
     </section>
 
     <section class="project-section site-shell">
@@ -459,17 +456,20 @@ const hifiSections = [
       </div>
     </section>
 
-    <section class="project-section site-shell">
+    <section class="project-section site-shell omvia-research">
       <div class="project-section__label">
         <p>02 / Research</p>
       </div>
 
       <div class="project-section__content">
         <p class="project-lead">
-          A review of leading smart-home platforms highlighted where strong technical capability still created friction in everyday use.
+          Research began with a review of existing smart-home products and early problem-framing exercises. The goal was to narrow the broad smart-home space into specific situations where a more focused experience could be useful.
         </p>
 
-        <div class="split-copy">
+        <div class="question-block">
+          <h3>Looking at Existing Products</h3>
+          <p>Google Home and Samsung SmartThings were reviewed to understand how established products organize devices, routines, alerts, and home controls.</p>
+          <div class="split-copy">
           {competitorAnalysis.map((item) => (
             <article>
               <img src={item.logo} alt={item.logoAlt} />
@@ -485,54 +485,59 @@ const hifiSections = [
             </article>
           ))}
         </div>
-
-        <div class="question-block">
-          <h3>Research takeaway</h3>
-          <p>
-            Both products handle device control well, but there was room to make everyday smart-home management feel calmer, clearer, and more reassuring.
-          </p>
+          <div class="omvia-research__takeaway">
+            <h4>Key Takeaway</h4>
+            <p>Both products offered strong device control, but managing a connected home could still involve moving between devices, rooms, settings, and alerts. This created an opportunity to make everyday home management feel more focused and easier to understand.</p>
+          </div>
         </div>
 
         <div class="question-block">
-          <h3>Key questions</h3>
-
-          <ul>
-            <li>How can one interface make everyday home routines easier to manage?</li>
-            <li>What information helps people quickly feel confident that home is okay?</li>
-            <li>How can wellness checks support caregivers without feeling intrusive?</li>
-          </ul>
+          <h3>Framing the Problem</h3>
+          <p>A problem-framing exercise explored who might experience friction, when it could happen, and which situations were worth examining more closely.</p>
+          <figure class="omvia-research__board omvia-research__board--main">
+            <button type="button" class="omvia-board-open" aria-haspopup="dialog" aria-label="Enlarge brainstorming board"><img src="/images/projects/omvia/omvia-problem-framing.png" alt="Omvia problem-framing brainstorming board exploring who, what, when, where, and why around smart-home management" loading="lazy" /></button>
+            <figcaption>Early exploration considered busy households, homeowners managing a property while away, and adults supporting older family members.</figcaption>
+          </figure>
         </div>
 
-        <div class="research-findings">
-          <p class="research-findings__label">Research findings</p>
+        <div class="question-block">
+          <h3>Exploring User Needs</h3>
+          <p>Three situations were explored further to understand the different needs that could shape the experience.</p>
+          <div class="omvia-research__boards">
+            <figure class="omvia-research__board">
+              <button type="button" class="omvia-board-open" aria-haspopup="dialog" aria-label="Enlarge brainstorming board"><img src="/images/projects/omvia/omvia-user-need-family.png" alt="Omvia brainstorming board exploring smart-home needs for busy families with children" loading="lazy" /></button>
+              <figcaption>Family with Kids</figcaption>
+            </figure>
+            <figure class="omvia-research__board">
+              <button type="button" class="omvia-board-open" aria-haspopup="dialog" aria-label="Enlarge brainstorming board"><img src="/images/projects/omvia/omvia-user-need-away.png" alt="Omvia brainstorming board exploring remote smart-home needs for homeowners away from home" loading="lazy" /></button>
+              <figcaption>Away from Home</figcaption>
+            </figure>
+            <figure class="omvia-research__board">
+              <button type="button" class="omvia-board-open" aria-haspopup="dialog" aria-label="Enlarge brainstorming board"><img src="/images/projects/omvia/omvia-user-need-caregiver.png" alt="Omvia brainstorming board exploring smart-home needs for adults supporting an older parent" loading="lazy" /></button>
+              <figcaption>Supporting an Older Parent</figcaption>
+            </figure>
+          </div>
+        </div>
 
-          <div class="research-list">
-            {researchInsights.map((item, index) => (
-              <article class="research-insight">
-                <span class="research-insight__number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <div class="research-insight__content">
-                  <h3>{item.title}</h3>
-
-                  <p>
-                    <span class="inline-label">Observation: </span>
-                    {item.observation}
-                  </p>
-
-                  <p>
-                    <span class="inline-label">Design response: </span>
-                    {item.implication}
-                  </p>
-                </div>
-              </article>
-            ))}
+        <div class="question-block">
+          <h3>Narrowing the Focus</h3>
+          <div class="omvia-research__focus">
+            <article>
+              <h4>Everyday routines</h4>
+              <p>Busy households may need a quicker way to manage repeated actions across several devices.</p>
+            </article>
+            <article>
+              <h4>Away from home</h4>
+              <p>Homeowners may need an easier way to check important home information and control devices remotely.</p>
+            </article>
+            <article>
+              <h4>Supporting family</h4>
+              <p>Family members may need useful updates and remote support without constantly monitoring someone.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
-
     <section class="project-section site-shell">
       <div class="project-section__label">
         <p>03 / From Needs to Solutions</p>
@@ -1138,5 +1143,50 @@ const hifiSections = [
     </section>
   </main>
 
+  <dialog class="omvia-board-dialog" aria-label="Enlarged brainstorming board">
+    <form method="dialog" class="omvia-board-dialog__toolbar">
+      <button class="omvia-board-dialog__close" autofocus>Close ×</button>
+    </form>
+    <div class="omvia-board-dialog__image"></div>
+  </dialog>
+
+  <script>
+    function setupOmviaBoards() {
+      const dialog = document.querySelector<HTMLDialogElement>('.omvia-board-dialog');
+      const imageContainer = dialog?.querySelector<HTMLDivElement>('.omvia-board-dialog__image');
+      if (!dialog || !imageContainer || dialog.dataset.ready) return;
+      dialog.dataset.ready = 'true';
+      let opener: HTMLButtonElement | null = null;
+      document.querySelectorAll<HTMLButtonElement>('.omvia-board-open').forEach((button) => {
+        const thumbnail = button.querySelector('img');
+        if (!thumbnail) return;
+        button.setAttribute('aria-label', `Enlarge: ${thumbnail.alt}`);
+        button.addEventListener('click', () => {
+          const enlarged = new Image();
+          enlarged.src = thumbnail.currentSrc || thumbnail.src;
+          enlarged.alt = thumbnail.alt;
+          imageContainer.replaceChildren(enlarged);
+          opener = button;
+          dialog.showModal();
+          document.documentElement.classList.add('omvia-board-is-open');
+          imageContainer.scrollTo(0, 0);
+        });
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        document.documentElement.classList.remove('omvia-board-is-open');
+        opener?.focus({ preventScroll: true });
+      });
+      document.addEventListener('astro:before-swap', () => {
+        document.documentElement.classList.remove('omvia-board-is-open');
+      }, { once: true });
+    }
+    setupOmviaBoards();
+    document.addEventListener('astro:page-load', setupOmviaBoards);
+  </script>
   <Footer />
 </BaseLayout>
