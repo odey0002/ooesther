@@ -23,44 +23,6 @@ const mobilePrototypeEmbedSrc =
 const desktopPrototypeEmbedSrc =
   "https://embed.figma.com/proto/ym0rfnyyDiuqbRWmhUNII7/613flea--Copy-?node-id=2037-3036&p=f&viewport=125%2C187%2C0.07&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2037%3A3036&page-id=2037%3A2369&embed-host=share&hide-ui=1&footer=0";
 
-const overviewPoints = [
-  {
-    title: "Brand Refresh",
-    text: "Refined the logo and modernized the visual identity while keeping the community-driven personality intact.",
-  },
-  {
-    title: "Cohesive System",
-    text: "Built a flexible brand system that supports a wide range of vendors without visual clutter.",
-  },
-  {
-    title: "Responsive Website",
-    text: "Designed a five-page responsive website concept to improve structure, clarity, and usability.",
-  },
-  {
-    title: "Unified Presence",
-    text: "Created a more polished and consistent experience across all touchpoints.",
-  },
-];
-
-const challengePoints = [
-  {
-    title: "Inconsistent Visual System",
-    text: "The identity lacked a structured design system to support long-term scalability.",
-  },
-  {
-    title: "Weak Digital Experience",
-    text: "The website did not communicate the market’s energy or support intuitive user flow.",
-  },
-  {
-    title: "Engagement Friction",
-    text: "Visitors and potential vendors faced unclear navigation and limited information architecture.",
-  },
-  {
-    title: "Brand Positioning Gap",
-    text: "The market needed a more cohesive presence while preserving its community-driven character.",
-  },
-];
-
 const creativeBriefPoints = [
   {
     title: "Local Energy",
@@ -625,8 +587,8 @@ const futureImpact = [
           <h1>613Flea</h1>
 
           <p class="project-hero__summary">
-            Building an online presence for a local flea market. 613Flea is a not-for-profit
-            indoor marketplace in Ottawa known for vintage pieces, handmade goods, and local vendors.
+            613Flea is a not-for-profit Ottawa marketplace redesigned with a clearer brand identity
+            and a more engaging digital experience for visitors and vendors.
           </p>
         </div>
       </div>
@@ -657,222 +619,241 @@ const futureImpact = [
 </figure>
 
       <dl class="project-facts">
-        <div>
-          <dt>Role</dt>
-          <dd>UX + UI Design, Visual Design, Branding, Research, Prototyping + Testing</dd>
-        </div>
+  <div>
+    <dt>Role</dt>
+    <dd>Product Designer, 4-person team</dd>
+  </div>
 
-        <div>
-          <dt>Tools</dt>
-          <dd>Figma, FigJam, Basecamp, Maze</dd>
-        </div>
+  <div>
+    <dt>Contribution</dt>
+    <dd>
+      Led the homepage redesign and visual direction; contributed to branding,
+      research, prototyping, testing, client communication, and creative brief design.
+    </dd>
+  </div>
 
-        <div>
-          <dt>Timeframe</dt>
-          <dd>May - Aug 2025</dd>
-        </div>
+  <div>
+    <dt>Tools</dt>
+    <dd>Figma, FigJam, Basecamp, Maze</dd>
+  </div>
 
-        <div>
-          <dt>Year</dt>
-          <dd>2025</dd>
-        </div>
-      </dl>
+  <div>
+    <dt>Timeframe</dt>
+    <dd>May - Aug 2025</dd>
+  </div>
+
+  <div>
+    <dt>Year</dt>
+    <dd>2025</dd>
+  </div>
+</dl>
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label">
-        <p>Project Overview</p>
+        <p>01 / The Problem</p>
       </div>
 
       <div class="project-section__content">
         <p class="project-lead">
-          613Flea is a not-for-profit indoor marketplace in Ottawa known for vintage pieces,
-          handmade goods, and local vendors. This project reimagines its brand identity and
-          website to create a more current, cohesive presence across digital and print platforms.
-        </p>
-
-        <div class="detail-grid">
-          {overviewPoints.map((item) => (
-            <article class="detail-card">
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-
-      </div>
-    </section>
-
-    <section class="project-section site-shell">
-      <div class="project-section__label">
-        <p>The Challenge</p>
-      </div>
-
-      <div class="project-section__content">
-        <p class="project-lead">
-          For years, 613Flea has built a strong reputation as a vibrant indoor marketplace in Ottawa.
-          As the market grew, its brand and digital experience did not fully reflect its scale or cultural impact.
+          613Flea had built a strong reputation as a vibrant Ottawa marketplace, but its
+          digital presence had not evolved with the market. The website lacked clear
+          structure, the visual identity was inconsistent across touchpoints, and important
+          information for visitors and vendors was harder to find than it needed to be.
         </p>
 
         <div class="number-list">
-          {challengePoints.map((item, index) => (
-            <article>
-              <span>{String(index + 1).padStart(2, "0")}</span>
+          <article>
+            <span>01</span>
 
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+            <div>
+              <h3>The brand lacked a consistent system</h3>
+              <p>
+                The existing identity had character, but it was difficult to apply
+                consistently across web, social, signage, and vendor materials.
+              </p>
+            </div>
+          </article>
 
-      </div>
-    </section>
+          <article>
+            <span>02</span>
 
-    <section class="project-section site-shell">
-      <div class="project-section__label">
-        <p>Objective / Goal</p>
-      </div>
+            <div>
+              <h3>Key information was difficult to find</h3>
+              <p>
+                Visitors needed quicker access to event dates, location, parking,
+                accessibility, and other practical details.
+              </p>
+            </div>
+          </article>
 
-      <div class="project-section__content">
-        <p class="project-lead">
-          The goal was to develop a refreshed yet familiar brand identity that strengthens 613Flea’s
-          overall visibility while preserving its local roots. The focus was on modernizing the visual
-          system to improve brand recognition, building a flexible design framework that supports a
-          diverse vendor ecosystem, and designing a responsive five-page website that improves navigation,
-          clarity, and overall user engagement for both visitors and prospective vendors.
-        </p>
-      </div>
-    </section>
+          <article>
+            <span>03</span>
 
-    <section class="project-section site-shell">
-      <div class="project-section__label">
-        <p>Creative Brief</p>
-      </div>
-
-      <div class="project-section__content">
-        <p class="project-lead">
-          The creative direction focused on keeping the market familiar and community-led while giving it
-          a more polished and scalable visual system.
-        </p>
-
-        <div class="split-copy">
-          {creativeBriefPoints.map((item) => (
-            <article>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-
-        <a class="prototype-link" href={creativeBriefUrl} target="_blank" rel="noreferrer">
-          View Creative Brief PDF ↗
-        </a>
-      </div>
-    </section>
-
-    <section class="project-section site-shell">
-      <div class="project-section__label">
-        <p>Design Process</p>
-      </div>
-
-      <div class="project-section__content">
-        <figure class="project-figure">
-          <img src="/images/projects/613flea/design-process.png" alt="613Flea design process diagram" />
-        </figure>
-
-        <div class="process-steps">
-          {processSteps.map((step, index) => (
-            <span>{String(index + 1).padStart(2, "0")} {step}</span>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="project-section site-shell">
-      <div class="project-section__label">
-        <p>Empathize</p>
-      </div>
-
-      <div class="project-section__content">
-        <p class="project-lead">
-          To help position 613Flea as a leading cultural destination, a comparative market analysis
-          of local and national marketplaces was conducted. This research revealed a clear market gap:
-          an opportunity to combine large-scale presence with a modern, creative brand identity.
-        </p>
-
-        <div class="flea-competitor-grid">
-          {competitorAnalysis.map((competitor) => (
-            <article class="flea-competitor-card">
-              <header>
-                <div class={`flea-competitor-card__logo ${competitor.logoClass ?? ""}`}>
-                  <img src={competitor.logo} alt={`${competitor.name} logo`} />
-                </div>
-
-                <p>Market Competitor</p>
-                <h3>{competitor.name}</h3>
-              </header>
-
-              <section>
-                <h4>Strengths</h4>
-                <ul>
-                  {competitor.strengths.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h4>Weaknesses</h4>
-                <ul>
-                  {competitor.weaknesses.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h4>Key Features</h4>
-                <ul>
-                  {competitor.keyFeatures.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-              </section>
-            </article>
-          ))}
+            <div>
+              <h3>Vendor discovery was limited</h3>
+              <p>
+                With a wide range of vendors, the website gave visitors little opportunity
+                to explore who would be at the market before attending.
+              </p>
+            </div>
+          </article>
         </div>
 
         <div class="question-block">
-          <h3>Key Questions</h3>
-
-          <ul>
-            {keyQuestions.map((question) => (
-              <li>{question}</li>
-            ))}
-          </ul>
+          <h3>The Goal</h3>
+          <p>
+            Refresh the 613Flea brand and website while preserving its local character,
+            making it easier for visitors to plan a trip, discover vendors, and understand
+            what the market has to offer.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="project-section site-shell">
-      <div class="project-section__label">
-        <p>Strategic Research</p>
-      </div>
+  <div class="project-section__label">
+    <p>02 / Research</p>
+  </div>
 
-      <div class="project-section__content">
-        <div class="research-list">
-          {researchInsights.map((item) => (
-            <article>
-              <h3>{item.title}</h3>
-              <p><span class="inline-label">The Observation:</span> {item.observation}</p>
-              <p><span class="inline-label">The Design Implication:</span> {item.implication}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+  <div class="project-section__content">
+    <p class="project-lead">
+      Research focused on understanding 613Flea’s existing brand, audience, competitive
+      landscape, and the gaps in its digital experience. The goal was to identify what
+      already made the market distinctive while finding clearer ways to support visitors
+      and vendors online.
+    </p>
+
+    <p class="project-copy">
+  A detailed creative brief was developed to define the project direction, including
+  the audience, brand positioning, visual considerations, competitive context, and
+  long-term goals. I designed the final brief document used to organize and present
+  this research.
+    </p>
+
+    <h3 class="subheading">What the Brief Established</h3>
+
+    <p class="project-copy">
+      The creative brief established three priorities for the redesign: preserve
+  613Flea’s local character, support its varied audience, and make important
+  information easier to find.
+    </p>
+
+    <div class="split-copy">
+      <article>
+        <h3>Keep the local character</h3>
+        <p>
+          The redesign needed to preserve the playful, community-led personality that
+          already made 613Flea recognizable to returning visitors.
+        </p>
+      </article>
+
+      <article>
+        <h3>Support a wider audience</h3>
+        <p>
+          The experience needed to work for local shoppers, creators, small business
+          owners, vintage sellers, families, and curious visitors.
+        </p>
+      </article>
+
+      <article>
+        <h3>Make the experience easier to use</h3>
+        <p>
+          Event details, vendor information, planning resources, and application
+          information needed to become easier to find and understand.
+        </p>
+      </article>
+    </div>
+
+    <a
+      class="prototype-link"
+      href={creativeBriefUrl}
+      target="_blank"
+      rel="noreferrer"
+    >
+      View Full Creative Brief PDF ↗
+    </a>
+
+    <h3 class="subheading">Competitive Review</h3>
+
+    <p class="project-copy">
+      A comparative review of other marketplaces looked at how they handled event
+      information, vendor discovery, visual identity, amenities, and the overall
+      browsing experience.
+    </p>
+
+    <div class="flea-competitor-grid">
+      {competitorAnalysis.map((competitor) => (
+        <article class="flea-competitor-card">
+          <header>
+            <div class={`flea-competitor-card__logo ${competitor.logoClass ?? ""}`}>
+              <img src={competitor.logo} alt={`${competitor.name} logo`} />
+            </div>
+
+            <p>Market Competitor</p>
+            <h3>{competitor.name}</h3>
+          </header>
+
+          <section>
+            <h4>Strengths</h4>
+
+            <ul>
+              {competitor.strengths.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h4>Weaknesses</h4>
+
+            <ul>
+              {competitor.weaknesses.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h4>Key Features</h4>
+
+            <ul>
+              {competitor.keyFeatures.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        </article>
+      ))}
+    </div>
+
+    <h3 class="subheading">Key Findings</h3>
+
+    <p class="project-copy">
+      The research pointed to three opportunities that could make the website more
+      useful while also bringing the digital experience closer to the energy of the
+      physical market.
+    </p>
+
+    <div class="research-list">
+      {researchInsights.map((item) => (
+        <article>
+          <h3>{item.title}</h3>
+
+          <p>
+            <span class="inline-label">Observation:</span>
+            {" "}{item.observation}
+          </p>
+
+          <p>
+            <span class="inline-label">Design Response:</span>
+            {" "}{item.implication}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
     <section class="project-section site-shell">
       <div class="project-section__label">
