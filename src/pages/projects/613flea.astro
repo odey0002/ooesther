@@ -117,33 +117,24 @@ const audienceGroups = [
 const userSolutions = [
   {
     number: "01",
-    user: "Emma",
-    type: "Creative Visitor",
-    problem: "Wants to feel the market vibe before deciding to attend.",
-    label: "Discovery",
+    user: "Local Visitors",
+    problem: "Want to understand the market, discover vendors, and get a feel for the experience before attending.",
     title: "Visual storytelling",
-    solution:
-      "Use market imagery, vendor highlights, and lifestyle-focused sections to make the event feel exciting before users arrive.",
+    solution: "Use market imagery, vendor highlights, and lifestyle-focused sections to communicate the atmosphere before visitors arrive.",
   },
   {
     number: "02",
-    user: "Dan",
-    type: "Vendor",
-    problem: "Wants a clear way to apply and be discovered by shoppers.",
-    label: "Vendor Growth",
-    title: "Searchable vendor presence",
-    solution:
-      "Create clearer vendor application steps and support future vendor discovery through profiles, categories, and featured vendor moments.",
+    user: "Vendors",
+    problem: "Need a clear way to apply and better opportunities to be discovered by shoppers.",
+    title: "Vendor discovery",
+    solution: "Create clearer application steps and introduce vendor profiles, categories, and featured vendor content.",
   },
   {
     number: "03",
-    user: "Rachel",
-    type: "Family Planner",
-    problem: "Needs practical information before travelling with her kids.",
-    label: "Planning",
-    title: "Plan Your Visit hub",
-    solution:
-      "Bring parking, transit, accessibility, food, washrooms, and first-time visitor details into one easy planning experience.",
+    user: "First-Time Visitors",
+    problem: "Need practical information before deciding when and how to visit.",
+    title: "Plan Your Visit",
+    solution: "Bring parking, transit, accessibility, food, washrooms, and first-time visitor information into one clear planning area.",
   },
 ];
 
@@ -642,38 +633,23 @@ const futureImpact = [
 
   <div class="project-section__content">
     <p class="project-lead">
-      The three audience groups informed the proposed redesign. Each pathway connects a practical need to a design response.
+      The audience needs identified during research were translated into three design responses that shaped the redesign.
     </p>
 
-    <div class="flea-solution-pathways">
-      <div class="flea-solution-pathways__header" aria-hidden="true">
-        <span>User</span>
-        <span>Problem</span>
-        <span>Design Response</span>
-      </div>
-
+    <div class="flea-response-grid">
       {userSolutions.map((item) => (
-        <article class="flea-solution-pathway">
-          <div class="flea-solution-pathway__persona">
-            <span>{item.number}</span>
-
-            <div>
-              <h3>{item.user}</h3>
-              <p>{item.type}</p>
-            </div>
-          </div>
-
-          <div class="flea-solution-pathway__problem">
+        <article class="flea-response-card">
+          <header>
+            <span class="flea-response-card__number" aria-hidden="true">{item.number}</span>
+            <h3>{item.user}</h3>
+          </header>
+          <div class="flea-response-card__need">
+            <h4 class="flea-response-card__label">Need</h4>
             <p>{item.problem}</p>
           </div>
-
-          <div class="flea-solution-pathway__arrow" aria-hidden="true">
-            →
-          </div>
-
-          <div class="flea-solution-pathway__solution">
-            <span>{item.label}</span>
-            <h3>{item.title}</h3>
+          <div class="flea-response-card__response">
+            <h4 class="flea-response-card__label">Design response</h4>
+            <h5>{item.title}</h5>
             <p>{item.solution}</p>
           </div>
         </article>
@@ -689,15 +665,11 @@ const futureImpact = [
 
       <div class="project-section__content">
         <p class="project-lead">
-          The sitemap was designed as a simple, multi-path structure that supports both exploration
-          and quick access to practical information. Users can navigate directly to the Event Calendar
-          [2.0] or Vendor Directory [3.0] for discovery, while clear pathways to Become a Vendor [4.0]
-          and Visitor Info [5.0] ensure essential details remain one click away from the Home Page [1.0].
+          The website was organized around five core areas: Home [1.0], Event Calendar [2.0], Vendor Directory [3.0], Become a Vendor [4.0], and Visitor Info [5.0].
         </p>
 
         <p class="project-copy">
-          This structure prioritizes intuitive navigation and information clarity, keeping the experience
-          streamlined without overwhelming the user.
+          This keeps visitor planning and vendor discovery close to the homepage while giving vendors a clear path to application information.
         </p>
 
         <figure class="project-figure">
@@ -713,14 +685,29 @@ const futureImpact = [
 
       <div class="project-section__content">
         <p class="project-lead">
-          Created low-fidelity wireframes for both desktop and mobile to translate the sitemap into a
-          structured, responsive layout. These early layouts focus on content hierarchy and navigation flow,
-          ensuring key sections like the Event Calendar, Visitor Info, and Vendor Portal remain equally
-          visible and easy to access.
+          Low-fidelity wireframes were used to translate the sitemap into responsive desktop and mobile layouts, focusing on hierarchy and access to the information identified during research.
         </p>
 
-        <figure class="project-figure">
-          <img src="/images/projects/613flea/low-fi.png" alt="613Flea low fidelity wireframes" />
+        <div class="flea-early-focus">
+          <article>
+            <h3>Event visibility</h3>
+            <p>Upcoming market information was given stronger hierarchy.</p>
+          </article>
+          <article>
+            <h3>Vendor discovery</h3>
+            <p>A clearer path was created for browsing vendors before attending.</p>
+          </article>
+          <article>
+            <h3>Visitor planning</h3>
+            <p>Practical visit information was grouped into a dedicated area.</p>
+          </article>
+        </div>
+        <h3 class="subheading">Low-Fidelity Wireframes</h3>
+        <figure class="project-figure flea-lowfi-overview">
+          <button type="button" class="flea-board-open" aria-haspopup="dialog" aria-label="View 613Flea low-fidelity wireframes at full size">
+            <img src="/images/projects/613flea/low-fi.png" alt="613Flea low fidelity wireframes" loading="lazy" />
+          </button>
+          <figcaption>Click to view full size</figcaption>
         </figure>
       </div>
     </section>
@@ -732,9 +719,7 @@ const futureImpact = [
 
   <div class="project-section__content">
     <p class="project-lead">
-      The branding process focused on keeping 613Flea’s handmade, local-market personality while
-      making the visual identity cleaner, more readable, and easier to use across web, print,
-      social media, signage, and vendor materials.
+      The visual direction kept 613Flea’s playful, local character while making the brand more consistent, flexible, and easier to use across digital and physical touchpoints.
     </p>
 
     <h3 class="subheading">Logo Evolution</h3>
@@ -786,20 +771,15 @@ const futureImpact = [
       ))}
     </div>
 
-    <h3 class="subheading">Visual Language: Moodboard</h3>
-
+    <h3 class="subheading">Moodboard</h3>
     <p class="project-copy">
-      To reflect the mix of creativity and community at 613Flea, the visual system blends a vintage
-      feel with a clean, modern look.
+      The moodboard combined vintage market character with a cleaner, more contemporary visual style, using playful imagery, warm colour, and casual lifestyle references.
     </p>
+    <figure class="project-figure flea-moodboard">
+      <button type="button" class="flea-board-open" aria-haspopup="dialog" aria-label="Enlarge 613Flea moodboard"><img src="/images/projects/613flea/moodboard.png" alt="613Flea final moodboard" /></button>
+    </figure>
 
-    <p class="project-copy">
-      The color palette uses Retro Teal, Muted Coral, and Cream to establish a modern-vintage
-      aesthetic, complemented by Warm Mustard and Soft Lilac for high-contrast call-to-action moments.
-      The typography pairs Tropical Magic as a bold heading font with Helvetica as a readable body font
-      to support clarity across the site.
-    </p>
-
+    <h3 class="subheading">Colour Palette</h3>
     <div class="palette-grid flea-palette-grid">
       {palette.map((color) => (
         <article>
@@ -814,9 +794,10 @@ const futureImpact = [
       ))}
     </div>
 
-    <figure class="project-figure flea-moodboard">
-      <img src="/images/projects/613flea/moodboard.png" alt="613Flea final moodboard" />
-    </figure>
+    <h3 class="subheading">Typography</h3>
+    <p class="project-copy">
+      Tropical Magic adds the playful, vintage character of the market, while Helvetica keeps longer information clear and easy to read.
+    </p>
   </div>
 </section>
 
@@ -1046,5 +1027,64 @@ const futureImpact = [
     </section>
   </main>
 
+  <dialog class="flea-board-dialog" aria-label="Enlarged project image">
+    <form method="dialog" class="flea-board-dialog__toolbar">
+      <button type="button" class="flea-board-dialog__zoom" aria-pressed="false">View actual size</button>
+      <button class="flea-board-dialog__close" autofocus>Close ×</button>
+    </form>
+    <div class="flea-board-dialog__image"></div>
+  </dialog>
+
+  <script>
+    function setupFleaBoards() {
+      const dialog = document.querySelector<HTMLDialogElement>('.flea-board-dialog');
+      const imageContainer = dialog?.querySelector<HTMLDivElement>('.flea-board-dialog__image');
+      if (!dialog || !imageContainer || dialog.dataset.ready) return;
+      dialog.dataset.ready = 'true';
+      const zoom = dialog.querySelector<HTMLButtonElement>('.flea-board-dialog__zoom');
+      function setZoom(actualSize: boolean) {
+        imageContainer!.classList.toggle('is-actual-size', actualSize);
+        if (zoom) {
+          zoom.textContent = actualSize ? 'Fit to window' : 'View actual size';
+          zoom.setAttribute('aria-pressed', String(actualSize));
+        }
+        imageContainer!.scrollTo(0, 0);
+      }
+      zoom?.addEventListener('click', () => {
+        setZoom(!imageContainer.classList.contains('is-actual-size'));
+      });
+      let opener: HTMLButtonElement | null = null;
+      document.querySelectorAll<HTMLButtonElement>('.flea-board-open').forEach((button) => {
+        const thumbnail = button.querySelector('img');
+        if (!thumbnail) return;
+        button.setAttribute('aria-label', `Enlarge: ${thumbnail.alt}`);
+        button.addEventListener('click', () => {
+          const enlarged = new Image();
+          enlarged.src = thumbnail.currentSrc || thumbnail.src;
+          enlarged.alt = thumbnail.alt;
+          imageContainer.replaceChildren(enlarged);
+          setZoom(false);
+          opener = button;
+          dialog.showModal();
+          document.documentElement.classList.add('flea-board-is-open');
+          imageContainer.scrollTo(0, 0);
+        });
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        document.documentElement.classList.remove('flea-board-is-open');
+        opener?.focus({ preventScroll: true });
+      });
+      document.addEventListener('astro:before-swap', () => {
+        document.documentElement.classList.remove('flea-board-is-open');
+      }, { once: true });
+    }
+    setupFleaBoards();
+    document.addEventListener('astro:page-load', setupFleaBoards);
+  </script>
   <Footer />
 </BaseLayout>

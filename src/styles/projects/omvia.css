@@ -2195,3 +2195,24 @@ html.omvia-board-is-open { overflow: hidden; }
   font-size: 0.85rem;
   line-height: 1.6;
 }
+/* Dark-mode text accents, without recolouring blue artwork or buttons. */
+html[data-theme="dark"] .solution-pathway__arrow,
+html[data-theme="dark"] .solution-pathway__solution span,
+html[data-theme="dark"] .lofi-showcase__notes span,
+html[data-theme="dark"] .testing-results__change {
+  color: #c4ceff;
+}
+html[data-theme="dark"] .testing-results article:nth-child(1) > span { color: #c4ceff; }
+html[data-theme="dark"] .testing-results article:nth-child(2) > span { color: #d5c7f7; }
+html[data-theme="dark"] .testing-results article:nth-child(3) > span { color: #ffcf75; }
+html[data-theme="dark"] .screen-flow--five,
+html[data-theme="dark"] .screen-flow--nine,
+html[data-theme="dark"] .screen-flow--three,
+html[data-theme="dark"] .screen-flow--six,
+html[data-theme="dark"] .screen-flow--two,
+html[data-theme="dark"] .lofi-board-grid,
+html[data-theme="dark"] .persona-card {
+  --text: #25221f;
+  --text-muted: #514b43;
+  --accent: #2e48c8;
+}

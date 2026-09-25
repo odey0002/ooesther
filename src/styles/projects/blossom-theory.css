@@ -139,3 +139,8 @@
     padding-block: clamp(2.5rem, 8vw, 4rem);
   }
 }
+html[data-theme="dark"] .blossom-page { --accent: #bfdbb2; }
+html[data-theme="dark"] .blossom-page .project-label,
+html[data-theme="dark"] .blossom-page .project-back-link,
+html[data-theme="dark"] .blossom-page .project-facts dt,
+html[data-theme="dark"] .blossom-case-copy p { color: var(--text); }

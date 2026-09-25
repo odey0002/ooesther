@@ -1902,3 +1902,185 @@
 @media (max-width: 700px) {
   .flea-audience-focus { grid-template-columns: 1fr; }
 }
+/* Audience-to-response editorial cards */
+.flea-response-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.flea-response-card {
+  --card-accent: var(--flea-coral);
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  gap: 1.5rem;
+  min-width: 0;
+  padding: clamp(1rem, 1.8vw, 1.5rem);
+  border: 1px solid var(--flea-line);
+  border-top: 5px solid var(--card-accent);
+  background: var(--flea-cream);
+  color: var(--flea-ink);
+}
+.flea-response-card:nth-child(2) { --card-accent: var(--flea-gold); }
+.flea-response-card:nth-child(3) { --card-accent: var(--flea-lavender); }
+.flea-response-card header { display: grid; align-content: start; gap: 1rem; }
+.flea-response-card__number {
+  color: var(--flea-green);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.flea-response-card h3 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.flea-response-card__label {
+  margin: 0 0 0.75rem;
+  color: #34312c;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.flea-response-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.flea-response-card__response {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--flea-line);
+}
+.flea-response-card h5 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 900px) {
+  .flea-response-grid { grid-template-columns: 1fr; }
+  .flea-response-card { grid-row: auto; grid-template-rows: auto; }
+}
+/* Keep competitor content legible on dark surfaces. */
+html[data-theme="dark"] .flea-competitor-card {
+  background: #34312c;
+  border-color: #655f55;
+}
+html[data-theme="dark"] .flea-competitor-card h4,
+html[data-theme="dark"] .flea-competitor-card header p {
+  color: var(--text);
+}
+html[data-theme="dark"] .flea-competitor-card section p {
+  color: #ded6ca;
+}
+html[data-theme="dark"] .flea-competitor-card header {
+  border-bottom-color: #655f55;
+}
+html[data-theme="dark"] .flea-competitor-card__logo {
+  min-height: 7rem;
+  padding: 0.75rem;
+  background: var(--flea-cream);
+}
+html[data-theme="dark"] .flea-competitor-card__logo--carp img {
+  transform: none;
+}
+html[data-theme="dark"] .flea-page .project-facts dt,
+html[data-theme="dark"] .flea-test-results h2 {
+  color: var(--text);
+}
+/* Theme-aware text on dark surfaces; retain brand colours on light artwork. */
+html[data-theme="dark"] .flea-page { --accent: #f6f0e7; }
+html[data-theme="dark"] .flea-page .project-label,
+html[data-theme="dark"] .flea-page .project-back-link,
+html[data-theme="dark"] .flea-page .project-number,
+html[data-theme="dark"] .flea-page .prototype-link,
+html[data-theme="dark"] .flea-brief-priorities-heading,
+html[data-theme="dark"] .flea-logo-evolution__content > p:first-child,
+html[data-theme="dark"] .flea-logo-variation-card > div:last-child > p:first-child,
+html[data-theme="dark"] .flea-hifi-grid figcaption,
+html[data-theme="dark"] .flea-testing-grid span,
+html[data-theme="dark"] .flea-testing-grid__change,
+html[data-theme="dark"] .flea-iteration-card__header p strong,
+html[data-theme="dark"] .flea-before-after-pair figcaption {
+  color: var(--text);
+}
+html[data-theme="dark"] .flea-logo-evolution__media > span {
+  background: var(--flea-cream);
+  color: var(--flea-ink);
+}
+html[data-theme="dark"] .flea-existing-site-mini-card,
+html[data-theme="dark"] .thanks-block--flea {
+  --text: #25221f;
+  --text-muted: #514b43;
+  --accent: #1d5959;
+}
+html[data-theme="dark"] .thanks-block--flea .thanks-block__eyebrow,
+html[data-theme="dark"] .thanks-block--flea .thanks-block__main p {
+  color: #1d5959;
+}
+.flea-response-card__need {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--flea-line);
+}
+.flea-early-focus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.flea-early-focus article { border-top: 1px solid var(--border); padding-top: 1rem; }
+.flea-early-focus h3 { font-family: var(--font-body); font-size: 1rem; font-weight: 600; letter-spacing: 0; }
+.flea-early-focus p { margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+.flea-lowfi-overview { border: 0; background: transparent; }
+.flea-board-open { display: block; width: 100%; padding: 0; border: 1px solid var(--border); background: var(--bg-soft); cursor: zoom-in; }
+.flea-lowfi-overview img { height: auto; min-height: 0; object-fit: contain; }
+.flea-lowfi-overview figcaption { margin-top: 0.75rem; color: var(--text-muted); font-size: 0.8rem; }
+.flea-board-open:focus-visible,
+.flea-board-dialog__close:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+html.flea-board-is-open { overflow: hidden; }
+.flea-board-dialog { width: 96vw; max-width: 96vw; max-height: 94dvh; margin: auto; padding: 0; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text); }
+.flea-board-dialog::backdrop { background: rgb(0 0 0 / 75%); }
+.flea-board-dialog__toolbar { display: flex; justify-content: flex-end; margin: 0; padding: 0.75rem 1rem; }
+.flea-board-dialog__close { padding: 0.5rem 0.75rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; }
+.flea-board-dialog__image { max-height: calc(94dvh - 5rem); overflow: auto; }
+.flea-board-dialog__image img { display: block; width: auto; max-width: none; height: auto; margin-inline: auto; }
+@media (max-width: 700px) { .flea-early-focus { grid-template-columns: 1fr; } }
+.flea-board-dialog__toolbar { gap: 0.75rem; }
+.flea-board-dialog__zoom {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+.flea-board-dialog__zoom:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.flea-board-dialog__image img {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(94dvh - 6rem);
+  height: auto;
+  object-fit: contain;
+}
+.flea-board-dialog__image.is-actual-size img {
+  max-width: none;
+  max-height: none;
+}
+/* The selected logo card stays light in both themes. */
+html[data-theme="dark"] .flea-logo-evolution__card--featured {
+  --text: #25221f;
+  --text-muted: #514b43;
+  color: var(--text);
+}

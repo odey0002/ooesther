@@ -264,3 +264,10 @@
     aspect-ratio: 1 / 1;
   }
 }
+
+html[data-theme="dark"] .quench-page { --accent: #ffc18a; }
+html[data-theme="dark"] .quench-page .project-label,
+html[data-theme="dark"] .quench-page .project-back-link,
+html[data-theme="dark"] .quench-page .project-number,
+html[data-theme="dark"] .quench-case-copy p,
+html[data-theme="dark"] .quench-page .project-hero h1 em { color: #ffc18a; }

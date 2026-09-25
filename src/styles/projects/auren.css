@@ -93,3 +93,7 @@
     font-size: 0.56rem;
   }
 }
+html[data-theme="dark"] .auren-page { --accent: #c1d6a1; }
+html[data-theme="dark"] .auren-page .project-label,
+html[data-theme="dark"] .auren-page .project-back-link,
+html[data-theme="dark"] .auren-page .project-facts dt { color: var(--text); }
