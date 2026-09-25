@@ -48,55 +48,21 @@ const competitorAnalysis = [
   {
     name: "Nextdoor Ottawa",
     logo: "/images/projects/613flea/nextdoor-ottawa.png",
-    strengths: [
-      'Highly "Instagrammable" branding that resonates with a younger, trend-conscious audience.',
-      "The site uses a dedicated events calendar.",
-      "The site uses bold, high-visibility banners to create urgency and encourage vendors to apply.",
-    ],
-    weaknesses: [
-      "A much smaller footprint at 4,000 sq. ft.",
-      "The site is event-focused and lacks a year-round vendor directory.",
-    ],
-    keyFeatures: [
-      "A live Instagram feed keeps the homepage dynamic.",
-      "A section promotes space rentals.",
-      "A detailed FAQ covers specific visitor questions and niche events.",
-    ],
+    works: "A dedicated events calendar makes upcoming events visible.",
+    gap: "The site lacks a year-round vendor directory.",
   },
   {
     name: "Stittsville’s Carp Road Flea Market",
     logo: "/images/projects/613flea/stittsville-carp-road.png",
     logoClass: "flea-competitor-card__logo--carp",
-    strengths: [
-      "Offers a mix of 20,000 sq. ft. of indoor space alongside outdoor stalls.",
-      "Offers a wide range of products, from everyday items to rare collectibles.",
-      "The website text is easy to read.",
-    ],
-    weaknesses: [
-      'The visual presence and website feel "old-school," which may not appeal to Gen Z or Millennials.',
-      'There is no way to search for a specific vendor or "favorite" an item; the site mainly communicates information one way.',
-    ],
-    keyFeatures: [
-      'A standard functional map in the "Location" section helps with GPS navigation.',
-      "Direct Instagram and Facebook links show an active, real-time community presence.",
-    ],
+    works: "Website text is easy to read.",
+    gap: "Visitors cannot search for a specific vendor.",
   },
   {
     name: "Aberfoyle Antique Market",
     logo: "/images/projects/613flea/aberfoyle-antique-market.png",
-    strengths: [
-      'Offers a "day-trip" experience with a full-service restaurant and picturesque grounds.',
-      'Known for high-quality, authentic antiques rather than "garage sale" items.',
-    ],
-    weaknesses: [
-      'Requires a $5–$10 admission fee, which discourages casual "window shopping."',
-      "Has a limited operating window from May to October, leaving a gap for year-round markets.",
-      "The design feels basic and safe, more like a tourism brochure than a modern retail experience.",
-    ],
-    keyFeatures: [
-      "A clear call-to-action to subscribe for email updates helps maintain a long-term relationship with collectors.",
-      "A professional, multi-step contact form supports high-end antique dealers.",
-    ],
+    works: "The market is positioned as a full day-trip experience, giving visitors a clear sense of what to expect.",
+    gap: "The visual design feels more like a tourism brochure than a modern retail experience.",
   },
 ];
 
@@ -130,164 +96,21 @@ const researchInsights = [
   },
 ];
 
-const personas = [
+const audienceGroups = [
   {
-    number: "01",
-    name: "Emma Wilson",
-    subtitle: "Trend-Seeker / Local Creative Visitor",
-    image: "/images/projects/613flea/persona-1.png",
-    quote: "If vendors are different every time, I don’t want to miss out.",
-    about:
-      "Emma is a local creative who enjoys discovering unique places, handmade goods, vintage finds, and community events. She usually finds things to do through Instagram or word-of-mouth, so she needs the website to quickly communicate the event vibe, vendor highlights, and what makes each market day worth attending.",
-    demographics: [
-      { label: "Age", value: "32" },
-      { label: "Location", value: "Centretown, Ottawa" },
-      { label: "Work", value: "Creative agency employee" },
-      { label: "Status", value: "Single" },
-      { label: "Character", value: "Social, visual-first, creative, trend-conscious" },
-    ],
-    needs: [
-      "A clear event calendar with dates, location, and themes.",
-      "Vendor previews with photos and highlights.",
-      "A mobile-friendly browsing experience.",
-      "Easy ways to share events with friends.",
-    ],
-    frustrations: [
-      "Event information is scattered across different platforms.",
-      "The market’s website feels messy or slow on mobile.",
-      "There are not enough product or vendor previews before the event.",
-    ],
-    motivations: [
-      "Discover unique handmade or vintage items.",
-      "Support local artists and small businesses.",
-      "Enjoy meaningful weekend experiences with friends.",
-    ],
-    websiteWants: [
-      "Up-to-date event calendar.",
-      "Featured vendor previews.",
-      "Mobile-optimized experience.",
-    ],
-    marketWants: [
-      "A fun outing that changes each time.",
-      "Rotating vendors with handmade and vintage items.",
-      "A way to support local small businesses.",
-    ],
-    personality: [
-      { left: "Hi-tech", right: "Low-tech", value: 50 },
-      { left: "Planner", right: "Spontaneous", value: 20 },
-      { left: "Social", right: "Private", value: 32 },
-      { left: "Creative", right: "Structured", value: 0 },
-      { left: "Visual-first", right: "Info-first", value: 20 },
-    ],
-    influence: ["Instagram", "Local markets", "Vintage shops"],
+    title: "Local Visitors",
+    description: "People looking for a local market experience want to quickly understand what is happening, discover vendors, and get a feel for the market before attending.",
+    needs: ["Clear event details", "Vendor previews", "A stronger sense of the market atmosphere"],
   },
   {
-    number: "02",
-    name: "Dan Togo",
-    subtitle: "Local Artisan / Vendor",
-    image: "/images/projects/613flea/persona-2.png",
-    quote: "I just need a clear way to join and a chance to be seen by the right people.",
-    about:
-      "Dan is a small business owner who creates handmade wood and leather products. He is new to flea markets and wants to reach more local customers, but he needs clear vendor application steps, booth information, and a way for shoppers to discover his products before the market day.",
-    demographics: [
-      { label: "Age", value: "42" },
-      { label: "Location", value: "Nepean, Ottawa" },
-      { label: "Work", value: "Small business owner" },
-      { label: "Product", value: "Handmade wood and leather goods" },
-      { label: "Character", value: "Independent, practical, craft-focused, growth-minded" },
-    ],
-    needs: [
-      "A simple vendor application process.",
-      "Clear booth fees, setup rules, and market expectations.",
-      "A personal vendor profile with photo and product intro.",
-      "A way for shoppers to find him before the event.",
-    ],
-    frustrations: [
-      "Vendor information is hard to find.",
-      "Application steps are unclear for first-time vendors.",
-      "There is no place to show products in advance.",
-      "He feels hidden among many other sellers.",
-    ],
-    motivations: [
-      "Build a local customer base.",
-      "Make personal connections with buyers.",
-      "Test new products and receive feedback.",
-      "Grow brand awareness through in-person experience.",
-    ],
-    websiteWants: [
-      "Simple vendor application.",
-      "Clear booth information.",
-      "Vendor profile and product intro.",
-      "Pre-market vendor discovery.",
-    ],
-    marketWants: [
-      "A platform to sell handmade goods.",
-      "Real engagement with craft-focused shoppers.",
-      "A space to be seen and remembered.",
-      "A cost-effective way to promote his work.",
-    ],
-    personality: [
-      { left: "Hi-tech", right: "Low-tech", value: 24 },
-      { left: "Planner", right: "Spontaneous", value: 20 },
-      { left: "Social", right: "Private", value: 72 },
-      { left: "Creative", right: "Structured", value: 52 },
-      { left: "Visual-first", right: "Info-first", value: 68 },
-    ],
-    influence: ["Etsy", "Craft fairs", "Instagram"],
+    title: "Vendors",
+    description: "Local makers and small businesses need clear information about joining the market and better ways for visitors to discover them.",
+    needs: ["Clear application steps", "Booth and market information", "Better vendor visibility"],
   },
   {
-    number: "03",
-    name: "Rachel King",
-    subtitle: "Out-of-Town Visitor / Family Planner",
-    image: "/images/projects/613flea/persona-3.png",
-    quote: "If I’m travelling all the way there with my kids, I want to know it’ll be worth it.",
-    about:
-      "Rachel is a school teacher and mother of two who plans trips carefully. Since she does not live in Ottawa, she needs practical information before committing to a visit, including parking, food, washrooms, stroller access, crowd expectations, and whether the event will be enjoyable for kids.",
-    demographics: [
-      { label: "Age", value: "38" },
-      { label: "Location", value: "Edmonton, Alberta" },
-      { label: "Work", value: "School teacher" },
-      { label: "Family", value: "Mother of two children, ages 6 and 9" },
-      { label: "Character", value: "Organized, family-focused, safety-conscious, info-driven" },
-    ],
-    needs: [
-      "Kid-friendly booth or workshop information.",
-      "Parking, food, stroller access, and washroom details.",
-      "Easy directions and a first-time visitor guide.",
-      "Photos of the space, crowd, and atmosphere.",
-    ],
-    frustrations: [
-      "There is limited information for families or first-time visitors.",
-      "She is unsure whether the event has enough activities for kids.",
-      "Parking, directions, and crowd size are unclear.",
-      "She does not know what to expect before arriving.",
-    ],
-    motivations: [
-      "Create happy memories with her children.",
-      "Discover local makers, food, and cultural experiences.",
-      "Teach her kids about art, community, and creativity.",
-      "Balance holiday fun with learning.",
-    ],
-    websiteWants: [
-      "Kid-friendly booth information.",
-      "Parking, food, stroller access, and washrooms.",
-      "First-time visitor guide.",
-      "Photos of the space and atmosphere.",
-    ],
-    marketWants: [
-      "A safe and welcoming space for children.",
-      "Enough room to walk and explore comfortably.",
-      "A mix of fun, learning, and creativity.",
-      "A smooth experience that feels worth the trip.",
-    ],
-    personality: [
-      { left: "Hi-tech", right: "Low-tech", value: 76 },
-      { left: "Planner", right: "Spontaneous", value: 4 },
-      { left: "Social", right: "Private", value: 68 },
-      { left: "Creative", right: "Structured", value: 74 },
-      { left: "Visual-first", right: "Info-first", value: 78 },
-    ],
-    influence: ["Google", "TripAdvisor", "Family activities"],
+    title: "First-Time Visitors",
+    description: "People planning their first visit need practical information before deciding when and how to attend.",
+    needs: ["Parking and directions", "Accessibility, food, and washroom information", "A clearer idea of what to expect"],
   },
 ];
 
@@ -647,6 +470,24 @@ const futureImpact = [
     <dd>2025</dd>
   </div>
 </dl>
+      <section class="flea-test-results" aria-labelledby="flea-test-results-title">
+        <h2 id="flea-test-results-title">USABILITY TEST RESULTS</h2>
+        <p class="flea-test-results__context">2 rounds of Maze usability testing · 12 participants in Round 1 · 16 after iteration</p>
+        <dl class="flea-test-results__metrics">
+          <div>
+            <dt>Event information task</dt>
+            <dd>75% → 100%</dd>
+          </div>
+          <div>
+            <dt>Vendor discovery task</dt>
+            <dd>75% → 95%</dd>
+          </div>
+          <div>
+            <dt>Vendor application task</dt>
+            <dd>100%</dd>
+          </div>
+        </dl>
+      </section>
     </section>
 
     <section class="project-section site-shell">
@@ -656,10 +497,7 @@ const futureImpact = [
 
       <div class="project-section__content">
         <p class="project-lead">
-          613Flea had built a strong reputation as a vibrant Ottawa marketplace, but its
-          digital presence had not evolved with the market. The website lacked clear
-          structure, the visual identity was inconsistent across touchpoints, and important
-          information for visitors and vendors was harder to find than it needed to be.
+          At the time of the redesign, 613Flea already had a strong local presence, but its website and branding did not fully reflect the energy of the market. The visual identity was inconsistent, visitor information lacked a clear structure, and there was little opportunity to discover vendors before attending.
         </p>
 
         <div class="number-list">
@@ -669,8 +507,7 @@ const futureImpact = [
             <div>
               <h3>The brand lacked a consistent system</h3>
               <p>
-                The existing identity had character, but it was difficult to apply
-                consistently across web, social, signage, and vendor materials.
+                The existing identity had character, but it was difficult to apply consistently across the website and other brand materials.
               </p>
             </div>
           </article>
@@ -679,10 +516,9 @@ const futureImpact = [
             <span>02</span>
 
             <div>
-              <h3>Key information was difficult to find</h3>
+              <h3>Visitor information had no clear home</h3>
               <p>
-                Visitors needed quicker access to event dates, location, parking,
-                accessibility, and other practical details.
+                Event dates were available, but practical visitor details such as parking, accessibility, and planning information were not grouped into an obvious visitor section.
               </p>
             </div>
           </article>
@@ -693,8 +529,7 @@ const futureImpact = [
             <div>
               <h3>Vendor discovery was limited</h3>
               <p>
-                With a wide range of vendors, the website gave visitors little opportunity
-                to explore who would be at the market before attending.
+                Visitors had little opportunity to explore vendors before attending the market.
               </p>
             </div>
           </article>
@@ -703,10 +538,8 @@ const futureImpact = [
         <div class="question-block">
           <h3>The Goal</h3>
           <p>
-            Refresh the 613Flea brand and website while preserving its local character,
-            making it easier for visitors to plan a trip, discover vendors, and understand
-            what the market has to offer.
-          </p>
+                Refresh the 613Flea brand and website while keeping its local character, making visitor information easier to access and giving people a better way to discover vendors before market day.
+              </p>
         </div>
       </div>
     </section>
@@ -718,53 +551,21 @@ const futureImpact = [
 
   <div class="project-section__content">
     <p class="project-lead">
-      Research focused on understanding 613Flea’s existing brand, audience, competitive
-      landscape, and the gaps in its digital experience. The goal was to identify what
-      already made the market distinctive while finding clearer ways to support visitors
-      and vendors online.
+      Research focused on understanding 613Flea’s brand, audience, competitors, and the gaps in the current website.
     </p>
 
+    <h3 class="subheading">Creative Brief</h3>
     <p class="project-copy">
-  A detailed creative brief was developed to define the project direction, including
-  the audience, brand positioning, visual considerations, competitive context, and
-  long-term goals. I designed the final brief document used to organize and present
-  this research.
+      A detailed creative brief was created to define the audience, brand direction, project goals, and website needs. I designed the final brief document used to organize and present the research.
     </p>
 
-    <h3 class="subheading">What the Brief Established</h3>
-
-    <p class="project-copy">
-      The creative brief established three priorities for the redesign: preserve
-  613Flea’s local character, support its varied audience, and make important
-  information easier to find.
-    </p>
-
+    <h4 class="flea-brief-priorities-heading">Key priorities from the brief</h4>
     <div class="split-copy">
-      <article>
-        <h3>Keep the local character</h3>
-        <p>
-          The redesign needed to preserve the playful, community-led personality that
-          already made 613Flea recognizable to returning visitors.
-        </p>
-      </article>
-
-      <article>
-        <h3>Support a wider audience</h3>
-        <p>
-          The experience needed to work for local shoppers, creators, small business
-          owners, vintage sellers, families, and curious visitors.
-        </p>
-      </article>
-
-      <article>
-        <h3>Make the experience easier to use</h3>
-        <p>
-          Event details, vendor information, planning resources, and application
-          information needed to become easier to find and understand.
-        </p>
-      </article>
+      <article><h3>Keep 613Flea’s local character</h3></article>
+      <article><h3>Make visitor information easier to access</h3></article>
+      <article><h3>Improve vendor discovery</h3></article>
+      <article><h3>Build a more consistent brand</h3></article>
     </div>
-
     <a
       class="prototype-link"
       href={creativeBriefUrl}
@@ -773,15 +574,10 @@ const futureImpact = [
     >
       View Full Creative Brief PDF ↗
     </a>
-
     <h3 class="subheading">Competitive Review</h3>
-
     <p class="project-copy">
-      A comparative review of other marketplaces looked at how they handled event
-      information, vendor discovery, visual identity, amenities, and the overall
-      browsing experience.
+      A competitor review looked at how other marketplaces handled event information, vendor discovery, branding, and visitor planning.
     </p>
-
     <div class="flea-competitor-grid">
       {competitorAnalysis.map((competitor) => (
         <article class="flea-competitor-card">
@@ -790,223 +586,63 @@ const futureImpact = [
               <img src={competitor.logo} alt={`${competitor.name} logo`} />
             </div>
 
-            <p>Market Competitor</p>
+
             <h3>{competitor.name}</h3>
           </header>
 
           <section>
-            <h4>Strengths</h4>
-
-            <ul>
-              {competitor.strengths.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
+            <h4>What works</h4>
+            <p>{competitor.works}</p>
           </section>
-
           <section>
-            <h4>Weaknesses</h4>
-
-            <ul>
-              {competitor.weaknesses.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h4>Key Features</h4>
-
-            <ul>
-              {competitor.keyFeatures.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
+            <h4>Gap / opportunity</h4>
+            <p>{competitor.gap}</p>
           </section>
         </article>
       ))}
     </div>
-
-    <h3 class="subheading">Key Findings</h3>
-
-    <p class="project-copy">
-      The research pointed to three opportunities that could make the website more
-      useful while also bringing the digital experience closer to the energy of the
-      physical market.
-    </p>
-
-    <div class="research-list">
-      {researchInsights.map((item) => (
-        <article>
-          <h3>{item.title}</h3>
-
-          <p>
-            <span class="inline-label">Observation:</span>
-            {" "}{item.observation}
-          </p>
-
-          <p>
-            <span class="inline-label">Design Response:</span>
-            {" "}{item.implication}
-          </p>
-        </article>
-      ))}
+    <h3 class="subheading flea-research-summary-heading">What This Pointed To</h3>
+    <p class="project-copy">Together, the brief and competitor review highlighted three areas to focus on in the redesign.</p>
+    <div class="research-list flea-research-summary">
+      <article>
+        <h3>Clearer visit planning</h3>
+        <p>Visitor information needed a clearer place in the website structure.</p>
+      </article>
+      <article>
+        <h3>Better vendor discovery</h3>
+        <p>Visitors needed more ways to explore vendors before market day.</p>
+      </article>
+      <article>
+        <h3>Stronger digital identity</h3>
+        <p>The website needed to feel more like the lively, local experience of the physical market.</p>
+      </article>
+    </div>
+    <h3 class="subheading">Audience Focus</h3>
+    <p class="project-copy">The redesign also needed to work for three practical groups: people discovering the market, vendors looking to participate, and visitors planning their first trip.</p>
+    <div class="flea-audience-focus">
+      <article>
+        <h4>Local visitors</h4>
+        <p>Want to understand what is happening and discover vendors before attending.</p>
+      </article>
+      <article>
+        <h4>Vendors</h4>
+        <p>Need clear application information and better visibility.</p>
+      </article>
+      <article>
+        <h4>First-time visitors</h4>
+        <p>Need practical details to plan their visit with confidence.</p>
+      </article>
     </div>
   </div>
 </section>
-
-    <section class="project-section site-shell">
-      <div class="project-section__label">
-        <p>User Personas</p>
-      </div>
-
-      <div class="project-section__content">
-        <p class="project-lead">
-          Three personas were developed to represent the main groups 613Flea needs to support:
-          a discovery-driven local visitor, a prospective vendor, and an out-of-town family planner.
-        </p>
-
-        <div class="flea-persona-showcase">
-          {personas.map((persona) => (
-            <article class="flea-persona-case">
-              <header class="flea-persona-case__header">
-                <span>{persona.number}</span>
-
-                <div>
-                  <h3>{persona.name}</h3>
-                  <p>{persona.subtitle}</p>
-                </div>
-              </header>
-
-              <div class="flea-persona-case__body">
-                <aside class="flea-persona-case__aside">
-                  <figure class="flea-persona-case__photo">
-                    <img src={persona.image} alt={`${persona.name} persona portrait`} />
-                  </figure>
-
-                  <blockquote>“{persona.quote}”</blockquote>
-
-                  <section class="flea-persona-case__box">
-                    <h4>Demographics</h4>
-
-                    <dl class="flea-persona-demographics">
-                      {persona.demographics.map((item) => (
-                        <div>
-                          <dt>{item.label}</dt>
-                          <dd>{item.value}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </section>
-                </aside>
-
-                <div class="flea-persona-case__content">
-                  <section class="flea-persona-case__box flea-persona-case__about">
-                    <h4>About</h4>
-                    <p>{persona.about}</p>
-                  </section>
-
-                  <section class="flea-persona-case__box">
-                    <h4>Needs</h4>
-                    <ul>
-                      {persona.needs.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <section class="flea-persona-case__box">
-                    <h4>Frustrations</h4>
-                    <ul>
-                      {persona.frustrations.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <section class="flea-persona-case__box">
-                    <h4>Motivation</h4>
-                    <ul>
-                      {persona.motivations.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
-                  </section>
-                </div>
-
-                <aside class="flea-persona-case__aside flea-persona-case__aside--right">
-                  <section class="flea-persona-case__box">
-                    <h4>Website Wants</h4>
-                    <ul>
-                      {persona.websiteWants.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <section class="flea-persona-case__box">
-                    <h4>Market Wants</h4>
-                    <ul>
-                      {persona.marketWants.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <section class="flea-persona-case__box">
-                    <h4>Personality</h4>
-
-                    <div class="flea-persona-sliders">
-                      {persona.personality.map((trait) => (
-                        <div class="flea-persona-slider">
-                          <div>
-                            <span>{trait.left}</span>
-                            <span>{trait.right}</span>
-                          </div>
-
-                          <div class="flea-persona-slider__track">
-                            <span style={`--value: ${trait.value}%;`}></span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
-
-                  <section class="flea-persona-case__box">
-                    <h4>Influence</h4>
-
-                    <div class="flea-persona-chip-list">
-                      {persona.influence.map((item) => (
-                        <span>{item}</span>
-                      ))}
-                    </div>
-                  </section>
-                </aside>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div class="question-block">
-          <h3>Strategic Note</h3>
-          <p>
-            These personas were designed to test the platform’s versatility. The goal was to create a
-            single digital space that feels exciting and easy to explore, while still giving visitors,
-            vendors, and planners the clear practical information they need.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <section class="project-section site-shell">
   <div class="project-section__label">
-    <p>Connecting Users to Solutions</p>
+    <p>03 / From Needs to Solutions</p>
   </div>
 
   <div class="project-section__content">
     <p class="project-lead">
-      The personas were translated into clear design opportunities. Each pathway connects a user need
-      to a practical design response that supports the redesigned 613Flea experience.
+      The three audience groups informed the proposed redesign. Each pathway connects a practical need to a design response.
     </p>
 
     <div class="flea-solution-pathways">
@@ -1048,7 +684,7 @@ const futureImpact = [
 
     <section class="project-section site-shell">
       <div class="project-section__label">
-        <p>Sitemap</p>
+        <p>04 / Structure</p>
       </div>
 
       <div class="project-section__content">
@@ -1072,7 +708,7 @@ const futureImpact = [
 
     <section class="project-section site-shell">
       <div class="project-section__label">
-        <p>Low-Fi Wireframes</p>
+        <p>05 / Early Design</p>
       </div>
 
       <div class="project-section__content">
@@ -1091,7 +727,7 @@ const futureImpact = [
 
     <section class="project-section site-shell">
   <div class="project-section__label">
-    <p>Branding</p>
+    <p>06 / Visual Direction</p>
   </div>
 
   <div class="project-section__content">
@@ -1186,7 +822,7 @@ const futureImpact = [
 
     <section class="project-section site-shell">
       <div class="project-section__label">
-        <p>High-Fi Wireframes</p>
+        <p>07 / Final Experience</p>
       </div>
 
       <div class="project-section__content">
@@ -1215,7 +851,7 @@ const futureImpact = [
 
     <section class="project-section site-shell">
   <div class="project-section__label">
-    <p>Testing & Iteration</p>
+    <p>08 / Testing</p>
   </div>
 
   <div class="project-section__content">
@@ -1247,8 +883,15 @@ const futureImpact = [
       </div>
     </div>
 
+      </div>
+</section>
+
+<section class="project-section site-shell">
+  <div class="project-section__label">
+    <p>09 / What Changed</p>
+  </div>
+  <div class="project-section__content">
     <div class="flea-testing-subsection">
-      <h3>Iterations</h3>
 
       <p class="project-copy">
         Based on the test results, I made targeted updates to improve information visibility and make
@@ -1330,7 +973,7 @@ const futureImpact = [
 
     <section class="project-section site-shell">
       <div class="project-section__label">
-        <p>Conclusion / Future Impact</p>
+        <p>10 / Outcome</p>
       </div>
 
       <div class="project-section__content">
