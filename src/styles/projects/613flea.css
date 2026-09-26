@@ -2100,3 +2100,65 @@ html[data-theme="dark"] .flea-logo-evolution__card--featured {
   .flea-existing-collage { grid-template-columns: 1fr; }
   .flea-existing-collage__home { grid-row: auto; }
 }
+.flea-hifi-grid .flea-board-open {
+  display: grid;
+  justify-items: center;
+  border: 0;
+  background: transparent;
+}
+.flea-testing-grid article {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  gap: 1rem;
+}
+.flea-testing-grid article > span { margin-bottom: 0; }
+.flea-testing-grid__task small {
+  color: var(--text);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.flea-testing-grid__task p {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.flea-testing-grid__result { padding-top: 0.5rem; }
+.flea-feedback-group { margin-top: 2rem; }
+.flea-feedback-group h4 {
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.flea-feedback-group .flea-feedback-grid { margin-top: 1rem; }
+.flea-feedback-number { display: block; margin-bottom: 0.5rem; color: var(--text); font-size: 0.8rem; font-weight: 700; }
+.flea-feedback-grid blockquote p { margin: 0; }
+@media (max-width: 900px) {
+  .flea-testing-grid article { grid-row: auto; grid-template-rows: auto; }
+}
+.flea-iteration-details { margin-block: 1.5rem; }
+.flea-iteration-details h5 {
+  margin: 1.25rem 0 0.5rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.flea-iteration-details blockquote {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--flea-coral);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.flea-iteration-details ul { margin: 0; padding-left: 1.2rem; }
+.flea-iteration-details li { list-style: disc; margin-top: 0.4rem; font-size: 0.95rem; color: var(--text); }
+.flea-iteration-details__result { color: var(--text); font-size: 1.6rem; font-weight: 700; }

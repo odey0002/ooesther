@@ -236,26 +236,26 @@ const hifiImages = [
   },
   {
     src: "/images/projects/613flea/hifi-desktop-visitor.png",
-    alt: "613Flea desktop visitor info page",
-    label: "Desktop Visitor Info",
+    alt: "613Flea desktop experience collage",
+    label: "Desktop Experience",
   },
 ];
 
 const testingResults = [
   {
-    objective: "Objective 1",
-    task: "Find the date and location of the next 613Flea market from the home screen in under 5 seconds.",
+    objective: "Event information",
+    task: "Find the date and location of the next market from the homepage.",
     result: "100%",
     improvement: "Up from 75%",
   },
   {
-    objective: "Objective 2",
-    task: "Go to Explore the Market and find a way to view a vendor’s profile.",
+    objective: "Vendor discovery",
+    task: "Go to Explore the Market and find a way to view a vendor profile.",
     result: "95%",
     improvement: "Up from 75%",
   },
   {
-    objective: "Objective 3",
+    objective: "Vendor application",
     task: "Find the requirements and steps to apply as a vendor.",
     result: "100%",
     improvement: "Successful completion",
@@ -270,33 +270,21 @@ const feedback = [
 
 const iterations = [
   {
-    title: "Market details were made more visible",
+    title: "Making event information easier to see",
+    problem: "Participants could find the market information, but some took too long to notice it.",
+    quote: feedback[0],
+    changes: ["Moved the event date and location into the hero area", "Strengthened the visual hierarchy"],
+    result: "75% → 100%",
     imageClass: "flea-before-after-pair__image--phone",
-    before:
-      "The market date and location were harder to notice on the home page.",
-    after:
-      "The specific market date and location were added directly into the high-contrast hero card in bold text.",
     beforeImage: "/images/projects/613flea/home-before.png",
     afterImage: "/images/projects/613flea/home-after.png",
     beforeAlt: "613Flea home page before iteration",
     afterAlt: "613Flea home page after iteration",
-    markers: [
-      {
-        number: "01",
-        title: "Event details moved up",
-        text: "The next market date and location were placed directly in the hero area so users could find key information faster.",
-      },
-      {
-        number: "02",
-        title: "Stronger visual priority",
-        text: "The updated hero card gives the date and location more contrast, helping the information stand out at a glance.",
-      },
-    ],
     imageMarkers: {
       before: [
         {
           number: "01",
-          label: "Missing event detail",
+          label: "Event information was harder to notice",
           x: 50,
           y: 34,
         },
@@ -318,33 +306,21 @@ const iterations = [
     },
   },
   {
-    title: "Vendor cards became more clearly interactive",
+    title: "Making vendor discovery clearer",
+    problem: "Some participants were unsure whether the vendor images could be clicked.",
+    quote: feedback[1],
+    changes: ["Added clearer View Vendor buttons", "Made the path to vendor profiles more obvious"],
+    result: "75% → 95%",
     imageClass: "flea-before-after-pair__image--wide",
-    before:
-      "Vendor photos did not clearly communicate that users could explore a vendor profile.",
-    after:
-      "Dedicated View Vendor buttons were added to each artisan spotlight, including Clay Play and Palm & Thread.",
     beforeImage: "/images/projects/613flea/vendor-before.png",
     afterImage: "/images/projects/613flea/vendor-after.png",
     beforeAlt: "613Flea vendor card before iteration",
     afterAlt: "613Flea vendor card after iteration",
-    markers: [
-      {
-        number: "01",
-        title: "Clickable action added",
-        text: "View Vendor buttons made the cards feel interactive instead of just decorative.",
-      },
-      {
-        number: "02",
-        title: "Clearer discovery path",
-        text: "Users now have a direct path from browsing vendor images to exploring vendor details.",
-      },
-    ],
     imageMarkers: {
       before: [
         {
           number: "01",
-          label: "Cards feel static",
+          label: "Cards appeared static",
           x: 50,
           y: 67,
         },
@@ -831,21 +807,13 @@ const futureImpact = [
 
       <div class="project-section__content">
         <p class="project-lead">
-          The high-fidelity designs focused on applying the finalized branding system, including approved
-          logo variations and the established visual direction, directly into the interface layouts.
-        </p>
-
-        <p class="project-copy">
-          Placeholder elements were replaced with real imagery, finalized typography, and refined UI
-          components to accurately reflect the market’s energy and personality. This phase ensured visual
-          consistency, stronger brand integration, and a polished digital experience that aligns with a
-          community-driven marketplace.
+          The final redesign brings event discovery, vendor participation, and visit planning into a clearer, more cohesive experience across mobile and desktop.
         </p>
 
         <div class="flea-hifi-grid">
           {hifiImages.map((image) => (
             <figure>
-              <img src={image.src} alt={image.alt} />
+              <button type="button" class="flea-board-open" aria-haspopup="dialog" aria-label={`Enlarge ${image.label}`}><img src={image.src} alt={image.alt} /></button>
               <figcaption>{image.label}</figcaption>
             </figure>
           ))}
@@ -860,30 +828,46 @@ const futureImpact = [
 
   <div class="project-section__content">
     <p class="project-lead">
-      I ran unmoderated testing sessions to test the new layout and gave four users three key tasks.
-      All users were able to successfully browse the site using both desktop and mobile viewports with minimal friction.
+      The prototype was tested in Maze across two rounds. Round 1 included 12 participants, and 16 participants completed Round 2 after the design was updated. Three tasks focused on event information, vendor discovery, and the vendor application process.
     </p>
 
     <div class="flea-testing-grid">
       {testingResults.map((item) => (
         <article>
           <span>{item.objective}</span>
-          <strong>{item.result}</strong>
-          <p class="flea-testing-grid__change">{item.improvement}</p>
-          <p>{item.task}</p>
+          <div class="flea-testing-grid__task">
+            <small>Task</small>
+            <p>{item.task}</p>
+          </div>
+          <div class="flea-testing-grid__result">
+            <strong>{item.result}</strong>
+            <p class="flea-testing-grid__change">{item.improvement}</p>
+          </div>
         </article>
       ))}
     </div>
 
     <div class="flea-testing-subsection">
-      <h3>Feedback</h3>
-
-      <div class="flea-feedback-grid">
-        {feedback.map((quote) => (
+      <h3>Key Feedback</h3>
+      <div class="flea-feedback-group">
+        <h4>What needed improvement</h4>
+        <div class="flea-feedback-grid">
+          {feedback.slice(0, 2).map((quote, index) => (
+            <blockquote>
+              <span class="flea-feedback-number">{String(index + 1).padStart(2, "0")}</span>
+              <p>“{quote}”</p>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+      <div class="flea-feedback-group">
+        <h4>What worked</h4>
+        <div class="flea-feedback-grid">
           <blockquote>
-            “{quote}”
+            <span class="flea-feedback-number">03</span>
+            <p>“{feedback[2]}”</p>
           </blockquote>
-        ))}
+        </div>
       </div>
     </div>
 
@@ -911,24 +895,20 @@ const futureImpact = [
 
               <div>
                 <h4>{iteration.title}</h4>
-                <p><strong>Before:</strong> {iteration.before}</p>
-                <p><strong>After:</strong> {iteration.after}</p>
+                <p><strong>Problem</strong><br />{iteration.problem}</p>
               </div>
             </header>
 
-            <div class="flea-iteration-card__markers">
-              {iteration.markers.map((marker) => (
-                <article>
-                  <span>{marker.number}</span>
-
-                  <div>
-                    <h5>{marker.title}</h5>
-                    <p>{marker.text}</p>
-                  </div>
-                </article>
-              ))}
+            <div class="flea-iteration-details">
+              <h5>Feedback</h5>
+              <blockquote>“{iteration.quote}”</blockquote>
+              <h5>What changed</h5>
+              <ul>
+                {iteration.changes.map((change) => <li><strong>{change}</strong></li>)}
+              </ul>
+              <h5>Result</h5>
+              <p class="flea-iteration-details__result">{iteration.result}</p>
             </div>
-
             <div class="flea-before-after-pair">
               <figure>
                 <div class={`flea-before-after-pair__image ${iteration.imageClass}`}>
