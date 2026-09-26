@@ -270,82 +270,40 @@ const feedback = [
 
 const iterations = [
   {
-    title: "Making event information easier to see",
-    problem: "Participants could find the market information, but some took too long to notice it.",
-    quote: feedback[0],
-    changes: ["Moved the event date and location into the hero area", "Strengthened the visual hierarchy"],
-    result: "75% → 100%",
+    title: "Event information was easy to miss",
+    change: "Participants could find the market information, but some took too long to notice it. The date and location were moved into the hero, improving task success from",
+    result: "75% to 100%",
     imageClass: "flea-before-after-pair__image--phone",
     beforeImage: "/images/projects/613flea/home-before.png",
     afterImage: "/images/projects/613flea/home-after.png",
     beforeAlt: "613Flea home page before iteration",
     afterAlt: "613Flea home page after iteration",
     imageMarkers: {
-      before: [
-        {
-          number: "01",
-          label: "Event information was harder to notice",
-          x: 50,
-          y: 34,
-        },
-      ],
-      after: [
-        {
-          number: "01",
-          label: "Event date added",
-          x: 50,
-          y: 43,
-        },
-        {
-          number: "02",
-          label: "Hero content clearer",
-          x: 50,
-          y: 34,
-        },
-      ],
+      before: [{ number: "01", label: "Hero area where the event date and location were later added", x: 94, y: 40 }],
+      after: [{ number: "01", label: "Event date and location moved into the hero", x: 94, y: 40 }],
     },
   },
   {
-    title: "Making vendor discovery clearer",
-    problem: "Some participants were unsure whether the vendor images could be clicked.",
-    quote: feedback[1],
-    changes: ["Added clearer View Vendor buttons", "Made the path to vendor profiles more obvious"],
-    result: "75% → 95%",
+    title: "Vendor cards did not clearly look interactive",
+    change: "Some participants were unsure whether the vendor images could be clicked. Clearer",
+    action: "View Vendor",
+    afterAction: "buttons were added, improving vendor discovery from",
+    result: "75% to 95%",
     imageClass: "flea-before-after-pair__image--wide",
     beforeImage: "/images/projects/613flea/vendor-before.png",
     afterImage: "/images/projects/613flea/vendor-after.png",
     beforeAlt: "613Flea vendor card before iteration",
     afterAlt: "613Flea vendor card after iteration",
     imageMarkers: {
-      before: [
-        {
-          number: "01",
-          label: "Cards appeared static",
-          x: 50,
-          y: 67,
-        },
-      ],
-      after: [
-        {
-          number: "01",
-          label: "View Vendor button added",
-          x: 84,
-          y: 67,
-        },
-        {
-          number: "02",
-          label: "Clearer interaction",
-          x: 50,
-          y: 67,
-        },
-      ],
+      before: [{ number: "02", label: "Vendor card without an obvious profile action", x: 94, y: 85 }],
+      after: [{ number: "02", label: "New View Vendor button", x: 94, y: 85 }],
     },
   },
 ];
 
 const futureImpact = [
   {
-    title: "Proposed Artisan Directory",
+    title: "Artisan Directory",
     text: "A year-round directory would allow visitors to discover and shop from vendors even when the market is not running.",
   },
   {
@@ -770,6 +728,15 @@ const futureImpact = [
       ))}
     </div>
 
+    <h3 class="subheading">Logo Usage</h3>
+    <p class="project-copy">
+      Basic usage guidelines were created to keep the logo consistent across different sizes, backgrounds, and applications.
+    </p>
+    <figure class="project-figure flea-logo-usage">
+      <button type="button" class="flea-board-open" aria-haspopup="dialog" aria-label="Enlarge 613Flea logo usage guidelines">
+        <img src="/images/projects/613flea/logo-usage-guidelines.png" alt="613Flea logo usage guidelines showing measurements and incorrect-use examples" loading="lazy" />
+      </button>
+    </figure>
     <h3 class="subheading">Moodboard</h3>
     <p class="project-copy">
       The moodboard combined vintage market character with a cleaner, more contemporary visual style, using playful imagery, warm colour, and casual lifestyle references.
@@ -881,34 +848,20 @@ const futureImpact = [
   <div class="project-section__content">
     <div class="flea-testing-subsection">
 
-      <p class="project-copy">
-        Based on the test results, I made targeted updates to improve information visibility and make
-        vendor discovery feel more interactive. The main changes focused on making important actions
-        easier to notice without changing the overall visual direction.
-      </p>
+      <p class="project-copy">Testing highlighted two areas that needed improvement. The design was updated and tested again.</p>
 
       <div class="flea-iteration-list">
         {iterations.map((iteration, index) => (
           <article class="flea-iteration-card">
-            <header class="flea-iteration-card__header">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-
-              <div>
-                <h4>{iteration.title}</h4>
-                <p><strong>Problem</strong><br />{iteration.problem}</p>
-              </div>
+            <header class="flea-iteration-card__header flea-issue-header">
+              <p class="flea-issue-label">ISSUE {String(index + 1).padStart(2, "0")}</p>
+              <h4>{iteration.title}</h4>
+              <p class="flea-issue-copy">
+                {iteration.change}{" "}
+                {iteration.action && <><strong>{iteration.action}</strong>{" "}{iteration.afterAction}{" "}</>}
+                <strong>{iteration.result}</strong>.
+              </p>
             </header>
-
-            <div class="flea-iteration-details">
-              <h5>Feedback</h5>
-              <blockquote>“{iteration.quote}”</blockquote>
-              <h5>What changed</h5>
-              <ul>
-                {iteration.changes.map((change) => <li><strong>{change}</strong></li>)}
-              </ul>
-              <h5>Result</h5>
-              <p class="flea-iteration-details__result">{iteration.result}</p>
-            </div>
             <div class="flea-before-after-pair">
               <figure>
                 <div class={`flea-before-after-pair__image ${iteration.imageClass}`}>
@@ -962,12 +915,11 @@ const futureImpact = [
 
       <div class="project-section__content">
         <p class="project-lead">
-          This redesign shifts 613Flea from a simple event listing to a more engaging community hub.
-          While the current site works as a foundation, there are clear opportunities to better connect
-          the digital experience with the physical market.
+          The final redesign concept gave 613Flea a clearer visual identity and more direct paths to event information, vendor discovery, and visit planning. Across two rounds of Maze testing, event information improved from <strong>75% to 100%</strong> task success, while vendor discovery improved from <strong>75% to 95%</strong>. The vendor application task reached <strong>100% completion</strong>.
         </p>
 
-        <div class="detail-grid">
+        <h3 class="subheading flea-future-heading">Future Opportunities</h3>
+        <div class="detail-grid flea-future-grid">
           {futureImpact.map((item) => (
             <article class="detail-card">
               <h3>{item.title}</h3>
@@ -975,11 +927,6 @@ const futureImpact = [
             </article>
           ))}
         </div>
-
-        <blockquote class="outcome-quote flea-outcome">
-          These directions would help 613Flea grow as a stronger community platform, supporting local makers
-          and improving the overall visitor experience.
-        </blockquote>
 
         <div class="flea-prototype-links">
           <a href={mobilePrototypeUrl} class="prototype-link" target="_blank" rel="noreferrer">

@@ -2216,3 +2216,32 @@ html[data-theme="dark"] .persona-card {
   --text-muted: #514b43;
   --accent: #2e48c8;
 }
+.omvia-research .omvia-research__session {
+  margin: 0 0 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+/* Readable pathway numbering and supporting text on dark rows. */
+html[data-theme="dark"] .solution-pathway__persona > span {
+  color: #c4ceff;
+}
+html[data-theme="dark"] .solution-pathway__persona p,
+html[data-theme="dark"] .solution-pathway__problem p,
+html[data-theme="dark"] .solution-pathway__solution p {
+  color: #ded6ca;
+}
+/* Transparent UI artwork needs a light canvas beneath its dark labels. */
+html[data-theme="dark"] .project-figure img[src="/images/projects/omvia/ui-system.png"] {
+  background: #f7f4ed;
+}
+/* Preserve contrast for black logo artwork and its captions. */
+html[data-theme="dark"] .logo-grid--selection .logo-option {
+  background: #f7f4ed;
+  --accent: #34312c;
+}
+html[data-theme="dark"] .logo-grid--selection .logo-option figcaption {
+  color: #34312c;
+}

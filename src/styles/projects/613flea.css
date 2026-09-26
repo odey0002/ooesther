@@ -1061,7 +1061,7 @@
   margin: 0;
   color: var(--text);
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 2.5vw, 1.85rem);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
   font-weight: 850;
   line-height: 1.1;
   letter-spacing: -0.045em;
@@ -2162,3 +2162,46 @@ html[data-theme="dark"] .flea-logo-evolution__card--featured {
 .flea-iteration-details ul { margin: 0; padding-left: 1.2rem; }
 .flea-iteration-details li { list-style: disc; margin-top: 0.4rem; font-size: 0.95rem; color: var(--text); }
 .flea-iteration-details__result { color: var(--text); font-size: 1.6rem; font-weight: 700; }
+.flea-iteration-details > p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
+.flea-iteration-details > p strong { color: var(--text); }
+/* Match the vendor image proportions so marker coordinates track the artwork. */
+.flea-before-after-pair__image--wide { aspect-ratio: auto; }
+.flea-before-after-pair__image--wide img { height: auto; }
+.flea-iteration-card__header.flea-issue-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.flea-issue-header .flea-issue-label {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+}
+.flea-issue-header .flea-issue-copy { margin: 0; }
+.flea-issue-header .flea-issue-copy strong { color: var(--text); }
+/* Keep transparent sitemap lines and labels readable in dark mode. */
+html[data-theme="dark"] .project-figure img[src="/images/projects/613flea/sitemap.png"] {
+  background: var(--flea-cream);
+}
+.flea-page .project-section__content > .subheading.flea-future-heading {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.3;
+}
+.flea-page .detail-grid.flea-future-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .flea-page .detail-grid.flea-future-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.flea-logo-usage img {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  background: var(--flea-cream);
+}
