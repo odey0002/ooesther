@@ -59,8 +59,8 @@ export const projects = [
     slug: "quench",
     number: "04",
     title: "Quench",
-    year: "2022 / 24",
-    category: "Branding / Packaging / Advertising",
+    year: "2022–2024",
+    category: "Brand + Packaging",
     description:
       "A conceptual juice brand identity focused on bold packaging, visual refreshment, and campaign-ready product storytelling.",
     tags: ["Branding", "Packaging", "Advertising", "Graphic Design"],
