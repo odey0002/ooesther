@@ -2245,3 +2245,11 @@ html[data-theme="dark"] .logo-grid--selection .logo-option {
 html[data-theme="dark"] .logo-grid--selection .logo-option figcaption {
   color: #34312c;
 }
+/* Project identity highlights: Trust Blue, with a readable dark-mode tint. */
+.omvia-page { --project-highlight: #2e48c8; }
+html[data-theme="dark"] .omvia-page { --project-highlight: #c4ceff; }
+.omvia-page .project-number,
+.omvia-page .project-label,
+.omvia-page .project-back-link,
+.omvia-page .project-facts dt,
+.omvia-page .prototype-link { color: var(--project-highlight); }

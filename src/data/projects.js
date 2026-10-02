@@ -21,7 +21,7 @@ export const projects = [
     category: "UX/UI + Front-End",
     description: "A responsive animal rescue website shaped by user research, designed across mobile, tablet, and desktop, and developed into a working front-end experience.",
     tags: ["User Research", "Responsive Web", "UI/UX", "Front-End"],
-    image: null,
+    image: "/images/projects/preview.jpg",
     link: "/projects/pawsitive-futures",
     featured: true,
     type: "uiux",
@@ -48,7 +48,7 @@ export const projects = [
     category: "UX Research + Motion Design",
     description:
       "A noise-cancelling app concept designed to support focus, calm, and deep work through sound control and intentional interface design.",
-    tags: ["iOS Experience", "Sound Design", "Motion Design", "UX Research", "UI/UX"],
+    tags: ["iOS Experience", "Motion Design", "UX Research", "UI/UX"],
     image: "/images/projects/auren.png",
     link: "/projects/auren",
     featured: false,

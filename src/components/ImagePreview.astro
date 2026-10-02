@@ -1,8 +1,16 @@
 ---
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
 const { project } = Astro.props;
+let imageSrc = project.image;
+if (project.slug === "pawsitive-futures") {
+  const candidates = [project.image, "/images/projects/pawsitive-futures/hero.jpg"];
+  imageSrc = candidates.find(src => src && existsSync(resolve("public", src.slice(1))));
+}
+const hasImage = Boolean(imageSrc);
 ---
-{project.image ? (
-  <img src={project.image} alt={`${project.title} project preview`} />
+{hasImage ? (
+  <img src={imageSrc} alt={`${project.title} project preview`} />
 ) : (
   <div class="project-preview-text">
     <span>{project.category}</span>

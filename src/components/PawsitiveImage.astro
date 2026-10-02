@@ -1,0 +1,19 @@
+---
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
+const { file, alt, optional = false, eager = false } = Astro.props;
+const src = `/images/projects/pawsitive-futures/${file}`;
+const available = existsSync(resolve("public", src.slice(1)));
+---
+{available ? (
+  <figure><img src={src} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" /></figure>
+) : !optional && (
+  <div class="image-placeholder"><span>Image placeholder</span><strong>{alt}</strong><small>{file}</small></div>
+)}
+<style>
+  figure { margin: 1.5rem 0; }
+  img { display: block; width: 100%; height: auto; }
+  .image-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; min-height: 13rem; padding: 2rem; margin: 1.5rem 0; text-align: center; border: 1px dashed var(--text-muted); background: var(--bg-soft); color: var(--text); }
+  span { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  small { color: var(--text-muted); overflow-wrap: anywhere; }
+</style>
