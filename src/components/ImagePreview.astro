@@ -1,0 +1,17 @@
+---
+const { project } = Astro.props;
+---
+{project.image ? (
+  <img src={project.image} alt={`${project.title} project preview`} />
+) : (
+  <div class="project-preview-text">
+    <span>{project.category}</span>
+    <strong>{project.title}</strong>
+    <span>Responsive animal rescue website</span>
+  </div>
+)}
+<style>
+  .project-preview-text { display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; min-height: 24rem; padding: clamp(2rem, 5vw, 4rem); background: var(--bg-soft); color: var(--text); }
+  .project-preview-text strong { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 500; line-height: 1.1; }
+  .project-preview-text span { font-size: 0.85rem; }
+</style>

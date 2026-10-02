@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ImagePreview from "../components/ImagePreview.astro";
 import { getWorkProjects } from "../data/projects.js";
 
 const workProjects = getWorkProjects();
@@ -38,10 +39,7 @@ const workProjects = getWorkProjects();
                 }`}
               >
                 <figure class="project-feature__image">
-                  <img
-                    src={project.image}
-                    alt={`${project.title} project preview`}
-                  />
+                  <ImagePreview project={project} />
                 </figure>
 
                 <div class="project-feature__content">

@@ -1,10 +1,11 @@
 ---
+import ImagePreview from "./ImagePreview.astro";
 const { project, flipped = false } = Astro.props;
 ---
 
 <article class:list={["project-feature", { "project-feature--flipped": flipped }]}>
   <a href={project.link} class="project-feature__image" aria-label={`View ${project.title} case study`}>
-    <img src={project.image} alt={`${project.title} project preview`} />
+    <ImagePreview project={project} />
   </a>
 
   <div class="project-feature__content">

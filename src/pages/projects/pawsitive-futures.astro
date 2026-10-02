@@ -1,0 +1,157 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectPager from "../../components/ProjectPager.astro";
+import { getProjectBySlug } from "../../data/projects.js";
+const project = getProjectBySlug("pawsitive-futures");
+// Add the confirmed live-site URL when supplied.
+const liveSiteUrl = "";
+const priorities = [
+  ["Confident pet discovery", "Help adopters find detailed, current information and understand the adoption process."],
+  ["Clear ways to get involved", "Make fostering, volunteering, and support opportunities easy to understand and act on."],
+  ["Trust and community impact", "Use stories, resources, events, and clear support pathways to show the rescue’s impact."],
+];
+const findings = [
+  ["Colour hierarchy", "Sections needed stronger visual distinction."],
+  ["CTA visibility", "Buttons needed more prominence and consistent states."],
+  ["Visual engagement", "The interface needed stronger supporting visual elements."],
+  ["Contact hierarchy", "The contact form needed clearer definition."],
+];
+---
+<BaseLayout title="Pawsitive Futures — UX/UI & Front-End Case Study" description={project.description}>
+  <Header />
+  <main class="project-detail pawsitive">
+    <section class="project-hero site-shell section">
+      <a href="/work" class="project-back-link">← Work</a>
+      <div class="project-hero__intro">
+        <p class="project-number">{project.number}</p>
+        <div><p class="project-label">{project.category}</p><h1>{project.title}</h1><p class="project-hero__summary">{project.description}</p></div>
+      </div>
+      <dl class="project-facts">
+        <div><dt>Role</dt><dd>UX/UI Designer &amp; Front-End Developer</dd></div>
+        <div><dt>Contribution</dt><dd>Led the project from primary research and information architecture through responsive UX/UI design, front-end development, and later visual refinement.</dd></div>
+        <div><dt>Tools</dt><dd>Figma · FigJam · Lovable · HTML · CSS · JavaScript · Git · GitHub · GitHub Pages</dd></div>
+        <div><dt>Timeframe</dt><dd>Nov 2024 – Mar 2025</dd></div>
+      </dl>
+      <p class="project-copy">Interface refinement: 2026</p>
+      <div class="evidence"><p><strong>9</strong>User Interviews</p><p><strong>3</strong>Audience Groups</p><p><strong class="devices">Mobile · Tablet · Desktop</strong>Responsive design &amp; development</p></div>
+      {liveSiteUrl ? <a class="prototype-link" href={liveSiteUrl}>View Live Website ↗</a> : <p class="pending-link">View Live Website <span>Link coming soon</span></p>}
+      <div class="asset-placeholder hero-placeholder"><span>Preview placeholder</span><strong>Pawsitive Futures</strong><p>Final responsive website preview to be added.</p></div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>01 / The Challenge</h2></div>
+      <div class="project-section__content"><p class="project-lead">The experience needed to help people discover pets, understand adoption, and find clear ways to foster, volunteer, donate, or support the rescue community across mobile, tablet, and desktop.</p></div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>02 / Research</h2></div>
+      <div class="project-section__content">
+        <div class="subsection"><h3>Primary Research</h3><p>9 user interviews across 3 audience groups informed the original project.</p>
+          <div class="compact-grid">{["3 prospective adopters", "3 staff & volunteers", "3 supporters"].map(label => <div class="compact-item"><strong>{label}</strong></div>)}</div>
+          <div class="asset-placeholder"><span>Research synthesis placeholder</span><p>Recurring needs from the interview research — Figma / FigJam summary to be added.</p></div>
+        </div>
+        <div class="subsection"><h3>Competitive Review</h3><div class="compact-grid">{["Ottawa Dog Rescue", "Ottawa Humane Society", "Paws for Cause"].map(name => <article class="compact-item"><h4>{name}</h4><p class="eyebrow">What worked</p><p>Research summary to be added.</p><p class="eyebrow">Opportunity</p><p>Research summary to be added.</p></article>)}</div></div>
+        <div class="subsection"><h3>Audience Profiles</h3><div class="compact-grid">{["Prospective Adopter", "Staff / Volunteer", "Supporter"].map(name => <article class="compact-item"><h4>{name}</h4><p>Key needs from the original profile to be added.</p></article>)}</div></div>
+        <div class="subsection"><h3>Journey Map</h3><div class="asset-placeholder"><span>Journey map placeholder</span><p>Jim’s volunteer journey — cleaned-up original findings to be added.</p></div></div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>03 / From Research to Priorities</h2></div>
+      <div class="project-section__content"><div class="compact-grid">{priorities.map(([title, copy]) => <article class="compact-item"><h3>{title}</h3><p>{copy}</p></article>)}</div></div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>04 / Structure</h2></div>
+      <div class="project-section__content"><p class="project-lead">The primary navigation brings together Home, Adopt, Get Involved, Resources, and Contact.</p><div class="asset-placeholder"><span>Sitemap placeholder</span><p>Cleaned-up sitemap showing the five primary areas to be added.</p></div></div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>05 / Early Design</h2></div>
+      <div class="project-section__content"><p class="project-lead">Low-fidelity wireframes established the page hierarchy, responsive structure, and key paths to adoption and community involvement before visual styling was applied.</p><div class="subsection"><h3>Low-Fidelity Wireframes</h3><div class="asset-placeholder"><span>Wireframe placeholder</span><p>Home and selected supporting pages across mobile, tablet, and desktop to be added.</p></div></div></div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>06 / Initial Visual Direction</h2></div>
+      <div class="project-section__content"><p class="eyebrow">Original project · Nov 2024 – Mar 2025</p>
+        <div class="subsection"><h3>Moodboard</h3><p>The original direction was friendly, compassionate, warm, hopeful, and organized.</p><div class="asset-placeholder"><span>Moodboard placeholder</span><p>Original moodboard to be added.</p></div></div>
+        <div class="subsection"><h3>Style Tile</h3><div class="asset-placeholder"><span>Style tile placeholder</span><p>Original colour palette, typography, buttons, and imagery to be added.</p></div></div>
+        <div class="subsection"><h3>First Implemented Interface</h3><p>Selected screens from the first coded version establish the original visual direction.</p><div class="compact-grid">{["Home", "Adopt", "Contact"].map(name => <div class="asset-placeholder"><span>Initial screen placeholder</span><strong>{name}</strong></div>)}</div></div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>07 / Feedback &amp; Reassessment</h2></div>
+      <div class="project-section__content"><p class="eyebrow">Original project · 2024–2025</p><p class="project-lead">After the first version was designed and coded, focus-group feedback and my own review highlighted four areas for improvement.</p><div class="compact-grid two-columns">{findings.map(([title, copy], index) => <article class="compact-item"><span class="eyebrow">0{index + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><div class="asset-placeholder"><span>Annotated screens placeholder</span><p>One or two original screens with markers linking to the four findings to be added.</p></div></div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>08 / Exploring a New Visual Direction</h2></div>
+      <div class="project-section__content"><p class="eyebrow">2026 Interface Refinement</p><p class="project-lead">I revisited the interface in 2026, using the earlier feedback as a starting point for a broader visual refinement.</p>
+        <div class="subsection"><h3>Lovable Explorations</h3><p>AI-assisted visual exploration</p><div class="compact-grid">{["Concept 01", "Concept 02", "Concept 03"].map(name => <div class="asset-placeholder"><span>Exploration placeholder</span><strong>{name}</strong><p>Selected Lovable concept to be added.</p></div>)}</div></div>
+        <div class="subsection"><h3>What Carried Forward</h3><p class="editorial-placeholder">Confirmed ideas and their connection to the final interface to be added alongside the selected concepts.</p></div>
+        <p class="workflow-note"><strong>AI-assisted workflow:</strong> Lovable was used to explore and compare visual ideas during the refinement. Selected ideas were reviewed, adapted, and implemented within the existing responsive website.</p>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>09 / Final Responsive Experience</h2></div>
+      <div class="project-section__content"><p class="project-lead">The refined experience brings pet discovery, search and filtering, adoption resources, success stories, events, and ways to foster, volunteer, and donate together across devices.</p>
+        <div class="subsection"><h3>Desktop</h3><div class="asset-placeholder final-desktop"><span>Final website placeholder</span><p>Current coded desktop experience to be added.</p></div></div>
+        <div class="compact-grid two-columns"><div class="subsection"><h3>Tablet</h3><div class="asset-placeholder final-device"><span>Final website placeholder</span><p>Current coded tablet experience to be added.</p></div></div><div class="subsection"><h3>Mobile</h3><div class="asset-placeholder final-device"><span>Final website placeholder</span><p>Current coded mobile experience to be added.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>10 / Build &amp; Implementation</h2></div>
+      <div class="project-section__content"><p class="project-lead">I translated the experience into a responsive multi-page website using HTML, CSS, and JavaScript, managing the project with Git and GitHub and deploying it through GitHub Pages.</p><div class="compact-grid two-columns"><div class="compact-item"><h3>Stack</h3><p>HTML · CSS · JavaScript</p></div><div class="compact-item"><h3>Workflow</h3><p>Git · GitHub · GitHub Pages</p></div></div><p>The implementation covered mobile, tablet, and desktop layouts, navigation, search and filter interactions, reusable styling, front-end refinement, and deployment.</p></div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label"><h2>11 / Outcome</h2></div>
+      <div class="project-section__content"><p class="project-lead">Pawsitive Futures resulted in a fully designed and developed responsive website that brings pet discovery, adoption guidance, resources, and community involvement into one experience. Revisiting the interface later also allowed the visual direction to evolve without losing the research-led structure established in the original project.</p>
+        {liveSiteUrl ? <a class="prototype-link" href={liveSiteUrl}>View Live Website ↗</a> : <p class="pending-link">View Live Website <span>Link coming soon</span></p>}
+        <div class="subsection"><h3>Reflection</h3><p>Building the first version showed how responsive behavior, content density, and visual hierarchy can reveal issues that are less obvious in static mockups.</p></div>
+        <ProjectPager currentSlug="pawsitive-futures" />
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .project-section__label h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1; font-weight: 700; letter-spacing: -.05em; }
+  .project-section__content { min-width: 0; }
+  .project-section__content p { color: var(--text-muted); line-height: 1.75; }
+  .project-section__content h3, .project-section__content h4 { font-family: var(--font-body); font-weight: 700; letter-spacing: -.02em; }
+  .project-section__content h3 { margin: 0 0 1rem; font-size: clamp(1.35rem, 2vw, 1.8rem); line-height: 1.2; color: var(--text); }
+  .project-section__content h4 { margin: 0 0 1.5rem; font-size: 1.15rem; line-height: 1.4; }
+  .subsection + .subsection { margin-top: 3rem; }
+  .project-lead + .subsection, .eyebrow + .subsection { margin-top: 2rem; }
+  .compact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+  .two-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .compact-item { padding: 1.5rem; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text); }
+  .compact-item h3 { font-size: 1.25rem; }
+  .compact-item p:last-child { margin-bottom: 0; }
+  .eyebrow, .asset-placeholder > span { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .project-section__content .eyebrow { color: var(--text); }
+  .compact-item > .eyebrow { display: block; margin: 1.5rem 0 .75rem; }
+  .compact-item > .eyebrow:first-child { margin-top: 0; }
+  .asset-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; min-height: 13rem; padding: 2rem; margin: 1.5rem 0; text-align: center; border: 1px dashed var(--text-muted); background: var(--bg-soft); color: var(--text); }
+  .asset-placeholder p { max-width: 36rem; margin: 0; color: var(--text-muted); }
+  .compact-grid > .asset-placeholder { margin: 0; padding: 1.5rem; }
+  .hero-placeholder { min-height: 22rem; margin-top: 2.5rem; }
+  .hero-placeholder strong { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 4rem); }
+  .final-desktop { min-height: 25rem; }
+  .final-device { min-height: 25rem; }
+  .evidence { display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 2rem; padding: 2rem 0; margin: 2rem 0; border-block: 1px solid var(--border); }
+  .evidence p { display: flex; flex-direction: column; gap: .75rem; margin: 0; color: var(--text-muted); }
+  .evidence strong { font-size: 2.25rem; line-height: 1.2; color: var(--text); }
+  .evidence .devices { font-size: clamp(1.15rem, 2vw, 1.75rem); }
+  .pending-link { color: var(--text); font-weight: 600; }
+  .pending-link span { display: block; margin-top: .5rem; color: var(--text-muted); font-size: .85rem; font-weight: 400; }
+  .workflow-note, .editorial-placeholder { border-left: 2px solid var(--text-muted); padding: 1rem 1.5rem; margin-top: 2rem; }
+  @media (max-width: 1000px) { .compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .compact-grid, .two-columns, .evidence { grid-template-columns: 1fr; } .hero-placeholder, .final-desktop, .final-device { min-height: 16rem; } }
+</style>
