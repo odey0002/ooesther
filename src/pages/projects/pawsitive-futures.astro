@@ -9,9 +9,9 @@ const project = getProjectBySlug("pawsitive-futures");
 // Live responsive website.
 const liveSiteUrl = "https://odey0002.github.io/pawsitive-futures/";
 const priorities = [
-  ["Confident pet discovery", "Help adopters find detailed, current information and understand the adoption process."],
-  ["Clear ways to get involved", "Make fostering, volunteering, and support opportunities easy to understand and act on."],
-  ["Trust and community impact", "Use stories, resources, events, and clear support pathways to show the rescue’s impact."],
+  { title: "Easier Pet Discovery", need: "Prospective adopters wanted detailed pet information and an easier way to find animals that matched what they were looking for.", solution: "Added searchable pet listings with Dogs, Cats, and Rabbits filters, result counts, clear feedback states, and structured pet information to make browsing easier." },
+  { title: "Clearer Ways to Get Involved", need: "Volunteers and foster caregivers needed clearer information about available roles, expectations, requirements, and how to take the next step.", solution: "Created a dedicated Get Involved experience that organizes volunteering, fostering, support options, expectations, resources, and interest submission into clearer pathways." },
+  { title: "More Trust & Connection", need: "Participants looked for success stories, community activity, useful resources, and clearer ways to understand and connect with the rescue.", solution: "Used success stories, resources, events and workshops, support options, FAQs, and direct contact pathways to make the rescue feel more informative and connected." },
 ];
 const findings = [
   ["Colour hierarchy", "Sections needed stronger visual distinction."],
@@ -96,13 +96,33 @@ const findings = [
     </section>
 
     <section class="project-section site-shell">
-      <div class="project-section__label"><h2>03 / From Research to Priorities</h2></div>
-      <div class="project-section__content"><div class="compact-grid">{priorities.map(([title, copy]) => <article class="compact-item"><h3>{title}</h3><p>{copy}</p></article>)}</div></div>
+      <div class="project-section__label"><h2>03 / From Needs to Solution</h2></div>
+      <div class="project-section__content">
+        <p class="project-lead">The research translated into three priorities for the experience: make pet discovery easier, make ways to get involved clearer, and give visitors more reasons to trust and engage with the rescue.</p>
+        <div class="paws-decisions">
+          {priorities.map((item, index) => (
+            <article class="paws-decision">
+              <header><span class="paws-decision__number">{String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3></header>
+              <div class="paws-decision__body">
+                <div class="paws-decision__need"><h4>Need</h4><p>{item.need}</p></div>
+                <div class="paws-decision__solution"><h4>Solution</h4><p>{item.solution}</p></div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>04 / Structure</h2></div>
-      <div class="project-section__content"><p class="project-lead">The primary navigation brings together Home, Adopt, Get Involved, Resources, and Contact.</p><PawsitiveImage file="sitemap.jpg" alt="Pawsitive Futures sitemap" /></div>
+      <div class="project-section__content">
+        <div class="subsection">
+          <h3>Information Architecture</h3>
+          <p class="project-lead">The site structure was organized around the main tasks identified in research: finding a pet, getting involved, accessing resources, and contacting the rescue.</p>
+          <div class="paws-sitemap"><PawsitiveImage file="paw-sitemap.png" alt="Pawsitive Futures sitemap: Home leads to Adopt, Get Involved, and Contact. Adopt contains Available Pets, Search and Filters, and Resources with Adoption Guides, Events and Workshops, and FAQs. Get Involved contains Volunteer, Foster, and Donate. Contact contains Contact Form and Contact Info." /></div>
+          <p>Grouping related content under three main pathways helped keep pet discovery, participation, resources, and contact information easier to understand.</p>
+        </div>
+      </div>
     </section>
 
     <section class="project-section site-shell">
@@ -335,4 +355,27 @@ const findings = [
   .pawsitive .project-section__content .brand-competitors .review-label { display: block; margin-bottom: .65rem; color: var(--project-highlight); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 
   .pawsitive .project-section__content .paws-audience-focus p + p { margin-top: 1rem; }
+
+  /* Numbered decision panels: shared title, quiet need, highlighted solution. */
+  .paws-decisions { display: grid; gap: 2rem; margin-top: 2.5rem; }
+  .paws-decision { --decision-line: #7ca8a5; border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; }
+  .paws-decision:nth-child(2) { --decision-line: #e8b923; }
+  .paws-decision:nth-child(3) { --decision-line: #b8a799; }
+  .paws-decision header { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); border-top: 4px solid var(--decision-line); }
+  .paws-decision__number { display: grid; place-items: center; flex: 0 0 2.5rem; height: 2.5rem; border: 1px solid var(--project-highlight); border-radius: 50%; color: var(--project-highlight); font-size: .85rem; font-weight: 700; }
+  .pawsitive .project-section__content .paws-decision h3 { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 700; line-height: 1.3; }
+  .paws-decision__body { display: grid; grid-template-columns: 1fr 1.3fr; }
+  .paws-decision__need, .paws-decision__solution { padding: 1.5rem; }
+  .paws-decision__solution { border-left: 1px solid var(--border); background: rgb(124 168 165 / 12%); }
+  .pawsitive .project-section__content .paws-decision h4 { margin: 0 0 .75rem; font-size: .7rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; color: var(--project-highlight); }
+  .pawsitive .project-section__content .paws-decision p { margin: 0; font-size: .95rem; line-height: 1.7; }
+  .pawsitive .project-section__content .paws-decision__solution p { color: var(--text); }
+  @media (max-width: 700px) {
+    .paws-decision__body { grid-template-columns: 1fr; }
+    .paws-decision__solution { border-left: 0; border-top: 1px solid var(--border); }
+    .paws-decision header, .paws-decision__need, .paws-decision__solution { padding: 1.25rem; }
+  }
+
+  .paws-sitemap { width: 85%; margin-inline: auto; }
+  @media (max-width: 700px) { .paws-sitemap { width: 100%; } }
 </style>
