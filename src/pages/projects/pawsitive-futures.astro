@@ -61,24 +61,24 @@ const findings = [
         </div>
         <div class="subsection competitive-section"><h3>Competitive Review</h3>
           <p>I reviewed three animal rescue websites to understand how they handled pet discovery, community involvement, calls to action, and trust-building content.</p>
-          <div class="compact-grid competitor-review">
+          <div class="compact-grid competitor-review brand-competitors">
             <article>
               <div class="competitor-logo"><img src="/images/projects/pawsitive-futures/ottawa-dog-rescue-logo.png" alt="Ottawa Dog Rescue logo" loading="lazy" decoding="async" /></div>
               <h4>Ottawa Dog Rescue</h4>
-              <p><span class="inline-label">Strength:</span> Clear Donate and Featured Dog CTAs, visible navigation, impact metrics, and featured-animal storytelling made important actions and organizational impact easy to see.</p>
-              <p><span class="inline-label">Opportunity:</span> Pet discovery could be stronger with clearer hierarchy, more detailed search and filtering, adopter testimonials, and additional educational content.</p>
+              <p><span class="review-label">What works</span> Clear Donate and Featured Dog CTAs, visible navigation, impact metrics, and featured-animal storytelling made important actions and organizational impact easy to see.</p>
+              <p><span class="review-label">Gap / opportunity</span> Pet discovery could be stronger with clearer hierarchy, more detailed search and filtering, adopter testimonials, and additional educational content.</p>
             </article>
             <article>
               <div class="competitor-logo"><img src="/images/projects/pawsitive-futures/ohs_logo.png" alt="Ottawa Humane Society logo" loading="lazy" decoding="async" /></div>
               <h4>Ottawa Humane Society</h4>
-              <p><span class="inline-label">Strength:</span> Strong Adopt, Donate, and Get Involved CTAs, community programs, accreditation information, and accessible navigation helped communicate credibility and participation opportunities.</p>
-              <p><span class="inline-label">Opportunity:</span> The large amount of content created an opportunity for simpler navigation and clearer organization, with more adopter testimonials supporting the experience.</p>
+              <p><span class="review-label">What works</span> Strong Adopt, Donate, and Get Involved CTAs, community programs, accreditation information, and accessible navigation helped communicate credibility and participation opportunities.</p>
+              <p><span class="review-label">Gap / opportunity</span> The large amount of content created an opportunity for simpler navigation and clearer organization, with more adopter testimonials supporting the experience.</p>
             </article>
             <article>
               <div class="competitor-logo"><img src="/images/projects/pawsitive-futures/paws-for-cause-logo.png" alt="Paws for Cause logo" loading="lazy" decoding="async" /></div>
               <h4>Paws for Cause</h4>
-              <p><span class="inline-label">Strength:</span> Emotional animal photography, a calm colour palette, simple navigation, and a distinctive Donate CTA created a welcoming and approachable experience.</p>
-              <p><span class="inline-label">Opportunity:</span> Animal profiles needed more detail, while search, volunteer information, testimonials, FAQs, and educational content could make the experience more useful.</p>
+              <p><span class="review-label">What works</span> Emotional animal photography, a calm colour palette, simple navigation, and a distinctive Donate CTA created a welcoming and approachable experience.</p>
+              <p><span class="review-label">Gap / opportunity</span> Animal profiles needed more detail, while search, volunteer information, testimonials, FAQs, and educational content could make the experience more useful.</p>
             </article>
           </div>
           <div class="competitive-takeaway"><h4>Key Takeaway</h4><p>The review reinforced the need to combine emotional storytelling with practical discovery tools, clearer participation pathways, and enough information for users to act with confidence.</p></div>
@@ -326,4 +326,12 @@ const findings = [
     font-size: .9rem;
     line-height: 1.6;
   }
+
+  .pawsitive .project-section__content .brand-competitors { gap: 1.5rem; margin-top: 3rem; }
+  .pawsitive .project-section__content .brand-competitors article { display: grid; grid-template-rows: 6rem auto 1fr 1fr; gap: 1.25rem; padding: 1.5rem; border: 1px solid var(--border); background: linear-gradient(135deg, rgb(124 168 165 / 12%), rgb(184 167 153 / 10%)); }
+  .pawsitive .project-section__content .brand-competitors .competitor-logo { height: 6rem; padding: .5rem; margin: 0; }
+  .pawsitive .project-section__content .brand-competitors h4 { margin: 0; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); font-size: clamp(1.15rem, 1.7vw, 1.45rem); font-weight: 800; line-height: 1.2; letter-spacing: -.03em; }
+  .pawsitive .project-section__content .brand-competitors p { margin: 0; font-size: .9rem; line-height: 1.6; }
+  .pawsitive .project-section__content .brand-competitors .review-label { display: block; margin-bottom: .65rem; color: var(--project-highlight); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+
 </style>

@@ -406,19 +406,19 @@ const hifiSections = [
         </p>
 
         <div class="question-block">
-          <h3>Looking at Existing Products</h3>
+          <h3>Competitive Review</h3>
           <p>Google Home and Samsung SmartThings were reviewed to understand how established products organize devices, routines, alerts, and home controls.</p>
-          <div class="split-copy">
+          <div class="split-copy brand-competitors">
           {competitorAnalysis.map((item) => (
             <article>
-              <img src={item.logo} alt={item.logoAlt} />
+              <div class="competitor-logo"><img src={item.logo} alt={item.logoAlt} /></div>
               <h3>{item.product}</h3>
               <p>
-                <span class="inline-label">Strength:</span>{" "}
+                <span class="review-label">What works</span>{" "}
                 {item.strength}
               </p>
               <p>
-                <span class="inline-label">Opportunity:</span>{" "}
+                <span class="review-label">Gap / opportunity</span>{" "}
                 {item.opportunity}
               </p>
             </article>

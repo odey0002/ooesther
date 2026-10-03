@@ -2283,3 +2283,18 @@ html[data-theme="dark"] .omvia-page { --project-highlight: #c4ceff; }
   font-size: .9rem;
   line-height: 1.6;
 }
+/* Competitive-review cards, using Omvia's brand palette. */
+.omvia-page .omvia-research .brand-competitors { gap: 1.5rem; margin-top: 3rem; }
+.omvia-page .omvia-research .brand-competitors article { display: grid; grid-template-rows: 6rem auto 1fr 1fr; gap: 1.25rem; padding: 1.5rem; border: 1px solid var(--border); background: linear-gradient(135deg, rgb(46 72 200 / 8%), rgb(213 199 247 / 15%)); }
+.omvia-page .omvia-research .brand-competitors .competitor-logo { display: flex; align-items: center; justify-content: center; height: 6rem; padding: .5rem; }
+.omvia-page .omvia-research .brand-competitors .competitor-logo img { width: 8rem; height: 5rem; margin: 0; object-fit: contain; transform: none; }
+.omvia-page .omvia-research .brand-competitors h3 { margin: 0; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); font-size: clamp(1.15rem, 1.7vw, 1.45rem); font-weight: 800; line-height: 1.2; letter-spacing: -.03em; }
+.omvia-page .omvia-research .brand-competitors p { margin: 0; font-size: .9rem; line-height: 1.6; }
+.omvia-page .omvia-research .brand-competitors .review-label { display: block; margin-bottom: .65rem; color: var(--project-highlight); font-family: var(--font-body); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+
+/* Carry the project accent into the results strip and problem numbering. */
+.omvia-page .omvia-test-results h2,
+.omvia-page .omvia-test-results__metrics dd,
+.omvia-page .number-list article > span {
+  color: var(--project-highlight);
+}
