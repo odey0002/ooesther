@@ -117,10 +117,10 @@ const findings = [
       <div class="project-section__label"><h2>04 / Structure</h2></div>
       <div class="project-section__content">
         <div class="subsection">
-          <h3>Information Architecture</h3>
-          <p class="project-lead">The site structure was organized around the main tasks identified in research: finding a pet, getting involved, accessing resources, and contacting the rescue.</p>
+          <h3>Refined Information Architecture</h3>
+          <p class="project-lead">The original sitemap was broader, so the structure was refined around the main user paths and the final coded experience.</p>
           <div class="paws-sitemap"><PawsitiveImage file="paw-sitemap.png" alt="Pawsitive Futures sitemap: Home leads to Adopt, Get Involved, and Contact. Adopt contains Available Pets, Search and Filters, and Resources with Adoption Guides, Events and Workshops, and FAQs. Get Involved contains Volunteer, Foster, and Donate. Contact contains Contact Form and Contact Info." /></div>
-          <p>Grouping related content under three main pathways helped keep pet discovery, participation, resources, and contact information easier to understand.</p>
+          <p>The refined structure keeps pet discovery, participation, resources, and contact information grouped around the main tasks visitors need to complete.</p>
         </div>
       </div>
     </section>
@@ -132,10 +132,10 @@ const findings = [
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>06 / Initial Visual Direction</h2></div>
-      <div class="project-section__content"><p class="eyebrow">Original project · Nov 2024 – Mar 2025</p>
-        <div class="subsection"><h3>Moodboard</h3><p>The original direction was friendly, compassionate, warm, hopeful, and organized.</p><PawsitiveImage file="moodboard.jpg" alt="Original Pawsitive Futures moodboard" /></div>
-        <div class="subsection"><h3>Style Tile</h3><PawsitiveImage file="style-tile.jpg" alt="Original colour palette, typography, buttons, and imagery" /></div>
-        <div class="subsection"><h3>First Implemented Interface</h3><p>Selected screens from the first coded version establish the original visual direction.</p><div class="compact-grid">{["Home", "Adopt", "Contact"].map(name => <PawsitiveImage file={`initial-${name.toLowerCase()}.jpg`} alt={`Original ${name} screen`} />)}</div></div>
+      <div class="project-section__content">
+        <div class="subsection"><h3>Moodboard</h3><p>The original moodboard established a warm, approachable direction that remained the visual foundation of the project through the later refinement.</p><ul class="visual-keywords" aria-label="Visual direction keywords"><li>Friendly</li><li>Compassionate</li><li>Warmth</li><li>Hope</li><li>Organized</li></ul><PawsitiveImage file="moodboard.jpg" alt="Original Pawsitive Futures moodboard" /></div>
+        <div class="subsection"><h3>Style Tile</h3><p>The style tile translated that direction into typography, colour, imagery, and interface treatments that continued to guide the 2026 redesign.</p><PawsitiveImage file="style-tile.jpg" alt="Original colour palette, typography, buttons, and imagery" /></div>
+        <div class="subsection"><h3>Initial UI</h3><p>Selected screens from the first coded version establish the original visual direction.</p><div class="compact-grid">{["Home", "Adopt", "Contact"].map(name => <PawsitiveImage file={`initial-${name.toLowerCase()}.jpg`} alt={`Original ${name} screen`} />)}</div><p>The interface was later refined in 2026, while the original visual direction and core brand language remained consistent.</p></div>
       </div>
     </section>
 
@@ -378,4 +378,5 @@ const findings = [
 
   .paws-sitemap { width: 85%; margin-inline: auto; }
   @media (max-width: 700px) { .paws-sitemap { width: 100%; } }
+  .visual-keywords { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; margin: 1rem 0 1.5rem; padding: 0; list-style: none; color: var(--project-highlight); font-size: .85rem; font-weight: 600; }
 </style>
