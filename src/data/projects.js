@@ -19,7 +19,7 @@ export const projects = [
     title: "Pawsitive Futures",
     year: "2024–2025",
     category: "UX/UI + Front-End",
-    description: "A responsive animal rescue website shaped by user research, designed across mobile, tablet, and desktop, and developed into a working front-end experience.",
+    description: "A responsive animal rescue website shaped by user research, designed to simplify pet discovery, adoption guidance, and community involvement across mobile, tablet, and desktop.",
     tags: ["User Research", "Responsive Web", "UI/UX", "Front-End"],
     image: "/images/projects/preview.jpg",
     link: "/projects/pawsitive-futures",

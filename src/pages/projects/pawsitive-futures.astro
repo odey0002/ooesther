@@ -27,36 +27,71 @@ const findings = [
       <a href="/work" class="project-back-link">← Work</a>
       <div class="project-hero__intro">
         <p class="project-number">{project.number}</p>
-        <div><p class="project-label">{project.category} — {project.year}</p><h1>{project.title}</h1><p class="project-hero__summary">{project.description}</p></div>
+        <div><p class="project-label">{project.category} · {project.year}</p><h1>{project.title}</h1><p class="project-hero__summary">{project.description}</p></div>
       </div>
       <div class="pawsitive-hero-image"><PawsitiveImage file="hero.jpg" alt="Pawsitive Futures responsive website preview" eager /></div>
       <dl class="project-facts">
         <div><dt>Role</dt><dd>UX/UI Designer &amp; Front-End Developer</dd></div>
-        <div><dt>Contribution</dt><dd>Led the project from primary research and information architecture through responsive UX/UI design, front-end development, and later visual refinement.</dd></div>
+        <div><dt>Contribution</dt><dd>Owned the project from primary research and information architecture through responsive UX/UI design, front-end development, and later visual refinement.</dd></div>
         <div><dt>Tools</dt><dd>Figma · FigJam · Lovable · HTML · CSS · JavaScript · Git · GitHub · GitHub Pages</dd></div>
-        <div><dt>Timeframe</dt><dd>Nov 2024 – Mar 2025</dd></div>
+        <div><dt>Timeframe</dt><dd>Nov 2024 – Mar 2025<br />Interface refinement: 2026</dd></div>
       </dl>
-      <p class="project-copy">Interface refinement: 2026</p>
-      <div class="evidence"><p><strong>9</strong>User Interviews</p><p><strong>3</strong>Audience Groups</p><p><strong class="devices">Mobile · Tablet · Desktop</strong>Responsive design &amp; development</p></div>
+      <p class="eyebrow at-a-glance">Research &amp; Scope</p>
+      <div class="evidence"><p><strong>9</strong>User Interviews</p><p><strong>3</strong>Audience Groups</p><p><strong class="devices">Mobile · Tablet · Desktop</strong>Responsive experience</p></div>
       {liveSiteUrl ? <a class="prototype-link" href={liveSiteUrl}>View Live Website ↗</a> : <p class="pending-link">View Live Website <span>Link coming soon</span></p>}
 
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>01 / The Challenge</h2></div>
-      <div class="project-section__content"><p class="project-lead">The experience needed to help people discover pets, understand adoption, and find clear ways to foster, volunteer, donate, or support the rescue community across mobile, tablet, and desktop.</p></div>
+      <div class="project-section__content"><p class="project-lead">The challenge was to create one clear experience for people arriving with very different goals, from finding a pet to fostering, volunteering, donating, or learning more about adoption. The experience also needed to stay easy to navigate across mobile, tablet, and desktop.</p></div>
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>02 / Research</h2></div>
       <div class="project-section__content">
-        <div class="subsection"><h3>Primary Research</h3><p>9 user interviews across 3 audience groups informed the original project.</p>
-          <div class="compact-grid">{["3 prospective adopters", "3 staff & volunteers", "3 supporters"].map(label => <div class="compact-item"><strong>{label}</strong></div>)}</div>
-          <PawsitiveImage file="research-synthesis.jpg" alt="Interview research synthesis" />
+        <div class="subsection"><h3>Interview Synthesis</h3>
+          <p>9 interviews across 3 audience groups revealed common needs around pet information, getting involved, trust, and navigation.</p>
+          <figure class="interview-map"><button type="button" class="paws-board-open" aria-haspopup="dialog" aria-label="Enlarge interview synthesis affinity map"><img src="/images/projects/pawsitive-futures/research-synthesis.png" alt="Interview affinity map synthesizing notes from 3 prospective adopters, 3 staff and volunteers, and 3 supporters" loading="lazy" decoding="async" /></button></figure>
+          <div class="compact-grid synthesis-findings">
+            <article><h4>Clear, current pet information</h4><p>Adopters wanted detailed profiles, behavioural information, care needs, availability, and clearer guidance before making a decision.</p></article>
+            <article><h4>Guided ways to take action</h4><p>Adoption, volunteering, and fostering all needed clearer steps, expectations, and supporting information.</p></article>
+            <article><h4>Trust through transparency</h4><p>Participants looked for reviews, success stories, regular updates, visible community activity, and clearer information about how support makes an impact.</p></article>
+          </div>
         </div>
-        <div class="subsection"><h3>Competitive Review</h3><div class="compact-grid">{["Ottawa Dog Rescue", "Ottawa Humane Society", "Paws for Cause"].map(name => <article class="compact-item"><h4>{name}</h4><p class="eyebrow">What worked</p><p>Research summary to be added.</p><p class="eyebrow">Opportunity</p><p>Research summary to be added.</p></article>)}</div></div>
-        <div class="subsection"><h3>Audience Profiles</h3><div class="compact-grid">{["Prospective Adopter", "Staff / Volunteer", "Supporter"].map(name => <article class="compact-item"><h4>{name}</h4><p>Key needs from the original profile to be added.</p></article>)}</div></div>
-        <div class="subsection"><h3>Journey Map</h3><PawsitiveImage file="journey-map.jpg" alt="Jim’s volunteer journey map" /></div>
+        <div class="subsection competitive-section"><h3>Competitive Review</h3>
+          <p>I reviewed three animal rescue websites to understand how they handled pet discovery, community involvement, calls to action, and trust-building content.</p>
+          <div class="compact-grid competitor-review">
+            <article>
+              <div class="competitor-logo"><img src="/images/projects/pawsitive-futures/ottawa-dog-rescue-logo.png" alt="Ottawa Dog Rescue logo" loading="lazy" decoding="async" /></div>
+              <h4>Ottawa Dog Rescue</h4>
+              <p><span class="inline-label">Strength:</span> Clear Donate and Featured Dog CTAs, visible navigation, impact metrics, and featured-animal storytelling made important actions and organizational impact easy to see.</p>
+              <p><span class="inline-label">Opportunity:</span> Pet discovery could be stronger with clearer hierarchy, more detailed search and filtering, adopter testimonials, and additional educational content.</p>
+            </article>
+            <article>
+              <div class="competitor-logo"><img src="/images/projects/pawsitive-futures/ohs_logo.png" alt="Ottawa Humane Society logo" loading="lazy" decoding="async" /></div>
+              <h4>Ottawa Humane Society</h4>
+              <p><span class="inline-label">Strength:</span> Strong Adopt, Donate, and Get Involved CTAs, community programs, accreditation information, and accessible navigation helped communicate credibility and participation opportunities.</p>
+              <p><span class="inline-label">Opportunity:</span> The large amount of content created an opportunity for simpler navigation and clearer organization, with more adopter testimonials supporting the experience.</p>
+            </article>
+            <article>
+              <div class="competitor-logo"><img src="/images/projects/pawsitive-futures/paws-for-cause-logo.png" alt="Paws for Cause logo" loading="lazy" decoding="async" /></div>
+              <h4>Paws for Cause</h4>
+              <p><span class="inline-label">Strength:</span> Emotional animal photography, a calm colour palette, simple navigation, and a distinctive Donate CTA created a welcoming and approachable experience.</p>
+              <p><span class="inline-label">Opportunity:</span> Animal profiles needed more detail, while search, volunteer information, testimonials, FAQs, and educational content could make the experience more useful.</p>
+            </article>
+          </div>
+          <div class="competitive-takeaway"><h4>Key Takeaway</h4><p>The review reinforced the need to combine emotional storytelling with practical discovery tools, clearer participation pathways, and enough information for users to act with confidence.</p></div>
+        </div>
+        <div class="subsection research-divider"><h3>Audience Focus</h3>
+          <p>The experience needed to support three groups: people considering adoption, staff and volunteers involved in rescue work, and supporters looking to make a difference.</p>
+          <div class="paws-audience-focus">
+            <article><h4>Prospective adopters</h4><p>Need clear, current pet information and guidance to make an informed adoption decision.</p></article>
+            <article><h4>Staff / volunteers</h4><p>Need clear participation steps, expectations, and supporting information for rescue work.</p></article>
+            <article><h4>Supporters</h4><p>Want transparent updates and clear ways to understand how their support makes an impact.</p></article>
+          </div>
+        </div>
+        <div class="subsection research-divider"><h3>Journey Map</h3><PawsitiveImage file="journey-map.jpg" alt="Jim’s volunteer journey map" /></div>
       </div>
     </section>
 
@@ -120,9 +155,91 @@ const findings = [
       </div>
     </section>
   </main>
+  <dialog class="paws-board-dialog" aria-label="Enlarged project image">
+    <form method="dialog" class="paws-board-dialog__toolbar">
+      <button type="button" class="paws-board-dialog__zoom" aria-pressed="false">View actual size</button>
+      <button class="paws-board-dialog__close" autofocus>Close ×</button>
+    </form>
+    <div class="paws-board-dialog__image"></div>
+  </dialog>
+
+  <script>
+    function setupPawsBoards() {
+      const dialog = document.querySelector<HTMLDialogElement>('.paws-board-dialog');
+      const imageContainer = dialog?.querySelector<HTMLDivElement>('.paws-board-dialog__image');
+      if (!dialog || !imageContainer || dialog.dataset.ready) return;
+      dialog.dataset.ready = 'true';
+      const zoom = dialog.querySelector<HTMLButtonElement>('.paws-board-dialog__zoom');
+      function setZoom(actualSize: boolean) {
+        imageContainer!.classList.toggle('is-actual-size', actualSize);
+        if (zoom) {
+          zoom.textContent = actualSize ? 'Fit to window' : 'View actual size';
+          zoom.setAttribute('aria-pressed', String(actualSize));
+        }
+        imageContainer!.scrollTo(0, 0);
+      }
+      zoom?.addEventListener('click', () => {
+        setZoom(!imageContainer.classList.contains('is-actual-size'));
+      });
+      let opener: HTMLButtonElement | null = null;
+      document.querySelectorAll<HTMLButtonElement>('.paws-board-open').forEach((button) => {
+        const thumbnail = button.querySelector('img');
+        if (!thumbnail) return;
+        button.setAttribute('aria-label', `Enlarge: ${thumbnail.alt}`);
+        button.addEventListener('click', () => {
+          const enlarged = new Image();
+          enlarged.src = thumbnail.currentSrc || thumbnail.src;
+          enlarged.alt = thumbnail.alt;
+          imageContainer.replaceChildren(enlarged);
+          setZoom(false);
+          opener = button;
+          dialog.showModal();
+          document.documentElement.classList.add('paws-board-is-open');
+          imageContainer.scrollTo(0, 0);
+        });
+      });
+      dialog.addEventListener('click', (event) => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        document.documentElement.classList.remove('paws-board-is-open');
+        opener?.focus({ preventScroll: true });
+      });
+      document.addEventListener('astro:before-swap', () => {
+        document.documentElement.classList.remove('paws-board-is-open');
+      }, { once: true });
+    }
+    setupPawsBoards();
+    document.addEventListener('astro:page-load', setupPawsBoards);
+  </script>
   <Footer />
 </BaseLayout>
 <style>
+  .competitor-review { margin-top: 2.5rem; gap: 1rem; align-items: stretch; }
+  .competitor-review article { border-top: 1px solid var(--border); padding-top: 1.3rem; }
+  .competitor-logo { display: flex; align-items: center; justify-content: center; height: 5rem; margin-bottom: 1.25rem; padding: .75rem; }
+  .competitor-logo img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
+  :global(html[data-theme="dark"]) .competitor-logo { background: #f7f4ef; }
+  .competitor-review strong { color: var(--text); font-weight: 500; }
+
+  .interview-map { margin: 1.5rem 0 2rem; }
+  .paws-board-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+  .paws-board-open img { display: block; width: 100%; height: auto; }
+  .synthesis-findings article { border-top: 1px solid var(--border); padding-top: 1.5rem; }
+  .synthesis-findings h4 { margin-bottom: .75rem; }
+  :global(html.paws-board-is-open) { overflow: hidden; }
+  .paws-board-dialog { width: 96vw; max-width: 96vw; max-height: 94dvh; margin: auto; padding: 0; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text); }
+  .paws-board-dialog::backdrop { background: rgb(0 0 0 / 75%); }
+  .paws-board-dialog__toolbar { display: flex; justify-content: flex-end; gap: .75rem; margin: 0; padding: .75rem 1rem; }
+  .paws-board-dialog__toolbar button { padding: .5rem .75rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; }
+  .paws-board-open:focus-visible, .paws-board-dialog__toolbar button:focus-visible { outline: 3px solid var(--text); outline-offset: 4px; }
+  .paws-board-dialog__image { max-height: calc(94dvh - 5rem); overflow: auto; }
+  .paws-board-dialog__image :global(img) { display: block; width: auto; max-width: 100%; max-height: calc(94dvh - 6rem); height: auto; object-fit: contain; margin-inline: auto; }
+  .paws-board-dialog__image.is-actual-size :global(img) { max-width: none; max-height: none; }
+
+  .at-a-glance { margin: 2rem 0 0; color: var(--project-highlight); }
   /* Cambridge blue, deepened for small text on the portfolio cream. */
   .pawsitive { --project-highlight: #3f6e6b; }
   :global(html[data-theme="dark"]) .pawsitive { --project-highlight: #7ca8a5; }
@@ -136,15 +253,16 @@ const findings = [
   .project-section__label h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1; font-weight: 700; letter-spacing: -.05em; }
   .project-section__content { min-width: 0; }
   .project-section__content p { color: var(--text-muted); line-height: 1.75; }
-  .project-section__content h3, .project-section__content h4 { font-family: var(--font-body); font-weight: 700; letter-spacing: -.02em; }
-  .project-section__content h3 { margin: 0 0 1rem; font-size: clamp(1.35rem, 2vw, 1.8rem); line-height: 1.2; color: var(--text); }
-  .project-section__content h4 { margin: 0 0 1.5rem; font-size: 1.15rem; line-height: 1.4; }
+  .project-section__content h3, .project-section__content h4 { font-family: var(--font-body); font-weight: 500; letter-spacing: 0; }
+  .project-section__content .subsection > h3 { font-weight: 700; }
+  .project-section__content h3 { margin: 0 0 1rem; font-size: 0.95rem; line-height: 1.5; color: var(--text); }
+  .project-section__content h4 { margin: 0 0 1rem; font-size: 0.95rem; line-height: 1.5; }
   .subsection + .subsection { margin-top: 3rem; }
   .project-lead + .subsection, .eyebrow + .subsection { margin-top: 2rem; }
   .compact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
   .two-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .compact-item { padding: 1.5rem; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text); }
-  .compact-item h3 { font-size: 1.25rem; }
+  .compact-item h3 { font-size: 0.95rem; }
   .compact-item p:last-child { margin-bottom: 0; }
   .eyebrow, .asset-placeholder > span { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
   .project-section__content .eyebrow { color: var(--text); }
@@ -166,4 +284,46 @@ const findings = [
   .workflow-note, .editorial-placeholder { border-left: 2px solid var(--text-muted); padding: 1rem 1.5rem; margin-top: 2rem; }
   @media (max-width: 1000px) { .compact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .compact-grid, .two-columns, .evidence { grid-template-columns: 1fr; } .hero-placeholder, .final-desktop, .final-device { min-height: 16rem; } }
+  .project-section__content .competitive-section { border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2.5rem; }
+  .project-section__content .competitive-section > h3,
+  .project-section__content .competitor-review h4 { font-size: 1rem; font-weight: 600; line-height: 1.45; letter-spacing: 0; margin: 0; }
+  .project-section__content .competitive-section p { font-family: var(--font-body); font-size: .95rem; font-weight: 400; line-height: 1.7; margin-top: .8rem; }
+  .competitive-takeaway { margin-top: 1.5rem; }
+  .project-section__content .competitive-takeaway h4 { margin: 0; font-size: .95rem; font-weight: 500; line-height: 1.5; }
+  .project-section__content .research-divider { margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+  .paws-audience-focus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+  .paws-audience-focus article { padding: 1rem; border-top: 3px solid #7ca8a5; background: #f7f4ef; color: #262322; }
+  .paws-audience-focus article:nth-child(2) { border-color: #e8b923; }
+  .paws-audience-focus article:nth-child(3) { border-color: #b8a799; }
+  .project-section__content .paws-audience-focus h4 { margin: 0; color: #262322; font-size: 1rem; font-weight: 600; line-height: 1.4; }
+  .project-section__content .paws-audience-focus p { margin: .6rem 0 0; color: #262322; font-size: .9rem; line-height: 1.6; }
+  @media (max-width: 700px) { .paws-audience-focus { grid-template-columns: 1fr; } }
+  /* Shared case-study hierarchy: section > subsection > card > body. */
+  .pawsitive .project-section__content .subsection > h3 {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-body);
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.04em;
+  }
+  .pawsitive .project-section__content .compact-item h3,
+  .pawsitive .project-section__content .compact-item h4,
+  .pawsitive .project-section__content .synthesis-findings h4,
+  .pawsitive .project-section__content .competitor-review h4,
+  .pawsitive .project-section__content .paws-audience-focus h4,
+  .pawsitive .project-section__content .competitive-takeaway h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0;
+    margin-bottom: .5rem;
+  }
+  .pawsitive .project-section__content .compact-item p,
+  .pawsitive .project-section__content .synthesis-findings p,
+  .pawsitive .project-section__content .paws-audience-focus p {
+    margin-top: .5rem;
+    font-size: .9rem;
+    line-height: 1.6;
+  }
 </style>
