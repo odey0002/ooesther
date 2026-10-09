@@ -9,9 +9,21 @@ const project = getProjectBySlug("pawsitive-futures");
 // Live responsive website.
 const liveSiteUrl = "https://odey0002.github.io/pawsitive-futures/";
 const priorities = [
-  { title: "Easier Pet Discovery", need: "Prospective adopters wanted detailed pet information and an easier way to find animals that matched what they were looking for.", solution: "Added searchable pet listings with Dogs, Cats, and Rabbits filters, result counts, clear feedback states, and structured pet information to make browsing easier." },
-  { title: "Clearer Ways to Get Involved", need: "Volunteers and foster caregivers needed clearer information about available roles, expectations, requirements, and how to take the next step.", solution: "Created a dedicated Get Involved experience that organizes volunteering, fostering, support options, expectations, resources, and interest submission into clearer pathways." },
-  { title: "More Trust & Connection", need: "Participants looked for success stories, community activity, useful resources, and clearer ways to understand and connect with the rescue.", solution: "Used success stories, resources, events and workshops, support options, FAQs, and direct contact pathways to make the rescue feel more informative and connected." },
+  {
+    "title": "Easier Pet Discovery",
+    "need": "Prospective adopters wanted an easier way to find pets and enough information to know if a pet might suit their home.",
+    "solution": "Added search and Dogs, Cats, and Rabbits filters, result counts, feedback states, and detailed pet profiles with breed, size, personality, energy level, compatibility, care needs, health, and ideal home information."
+  },
+  {
+    "title": "Clearer Ways to Get Involved",
+    "need": "Volunteers and foster caregivers needed clearer information about roles, expectations, requirements, training, and how to take the next step.",
+    "solution": "Created a dedicated Get Involved experience with volunteer role details, time commitments, training information, a clear four-step process, foster and donation paths, and a Volunteer with us action linked to the interest form."
+  },
+  {
+    "title": "More Trust & Connection",
+    "need": "Participants looked for success stories, community activity, useful resources, and clearer ways to understand and connect with the rescue.",
+    "solution": "Added success stories, downloadable guides, events and workshops, FAQs, support options, and direct contact pathways."
+  }
 ];
 const findings = [
   ["Colour hierarchy", "Sections needed stronger visual distinction."],
@@ -85,20 +97,28 @@ const findings = [
         </div>
         <div class="subsection research-divider"><h3>Audience Groups</h3>
           <p>The interviews highlighted three audience groups, each with different goals and information needs.</p>
+          <p>I created three personas from the interview patterns to represent the main audience groups and keep their goals and needs visible throughout the design process.</p>
           <div class="paws-audience-focus">
             <article><h4>01 — Prospective Adopter</h4><p><strong>Bola Adedapo</strong></p><p>Wants to find a suitable pet and feel confident about the adoption process.</p><p><strong>Needs</strong><br />Detailed pet profiles, behaviour and care information, clear adoption guidance, and trustworthy shelter information.</p></article>
             <article><h4>02 — Prospective Volunteer</h4><p><strong>Jim James</strong></p><p>Wants to understand where help is needed and how to get involved.</p><p><strong>Needs</strong><br />Clear volunteer roles, expectations, application steps, training resources, and up-to-date opportunities.</p></article>
             <article><h4>03 — Supporter</h4><p><strong>Keisha Jing</strong></p><p>Wants to support animal welfare and understand how their contribution makes an impact.</p><p><strong>Needs</strong><br />Clear donation and sponsorship options, community opportunities, regular updates, success stories, and transparency around impact.</p></article>
           </div>
         </div>
-        <div class="subsection research-divider"><h3>Journey Map</h3><figure class="interview-map"><button type="button" class="paws-board-open" aria-haspopup="dialog" aria-label="Enlarge volunteer journey map"><img src="/images/projects/pawsitive-futures/journey-map.jpg" alt="Volunteer journey map" loading="lazy" decoding="async" /></button></figure></div>
+        <div class="subsection research-divider">
+          <h3>Journey Map</h3>
+          <p>To look more closely at the volunteer experience, I mapped Jim’s journey from exploring animal shelter websites to applying for a volunteer role.</p>
+          <figure class="interview-map"><button type="button" class="paws-board-open" aria-haspopup="dialog" aria-label="Enlarge volunteer journey map"><img src="/images/projects/pawsitive-futures/journey-map.jpg" alt="Volunteer journey map" loading="lazy" decoding="async" /></button></figure>
+          <h4>What the journey revealed</h4>
+          <p>The Pain Points row showed where Jim faced friction at each stage. During Explore, some websites did not have a clear section for volunteer opportunities. During Research, role details and application instructions were limited. During Apply, unclear application processes and limited volunteer experiences made it harder to move forward with confidence.</p>
+          <p>These findings helped shape the design priorities explored in the next section.</p>
+        </div>
       </div>
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>03 / From Needs to Solution</h2></div>
       <div class="project-section__content">
-        <p class="project-lead">The research translated into three priorities for the experience: make pet discovery easier, make ways to get involved clearer, and give visitors more reasons to trust and engage with the rescue.</p>
+        <p class="project-lead">Research findings were grouped into three priorities that shaped the refined experience.</p>
         <div class="paws-decisions">
           {priorities.map((item, index) => (
             <article class="paws-decision">
@@ -118,24 +138,50 @@ const findings = [
       <div class="project-section__content">
         <div class="subsection">
           <h3>Refined Information Architecture</h3>
-          <p class="project-lead">The original sitemap was broader, so the structure was refined around the main user paths and the final coded experience.</p>
+          <p class="project-lead">The original sitemap had several separate top-level sections, so I simplified the structure around the three audience groups identified in the research. Adopt supports prospective adopters, Get Involved brings volunteer, foster, and donation paths together for volunteers and supporters, and Contact gives all users a direct way to reach the rescue.</p>
+          <p>Resources sit within Adopt because the guides, workshops, and FAQs mainly support people learning about adoption. A Resources link also remains in the main navigation so users can access that content directly.</p>
           <div class="paws-sitemap"><PawsitiveImage file="paw-sitemap.png" alt="Pawsitive Futures sitemap: Home leads to Adopt, Get Involved, and Contact. Adopt contains Available Pets, Search and Filters, and Resources with Adoption Guides, Events and Workshops, and FAQs. Get Involved contains Volunteer, Foster, and Donate. Contact contains Contact Form and Contact Info." /></div>
-          <p>The refined structure keeps pet discovery, participation, resources, and contact information grouped around the main tasks visitors need to complete.</p>
+          <p>The final structure keeps the main paths clear while still supporting the different goals identified in the research.</p>
         </div>
       </div>
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>05 / Early Design</h2></div>
-      <div class="project-section__content"><p class="project-lead">Low-fidelity wireframes established the page hierarchy, responsive structure, and key paths to adoption and community involvement before visual styling was applied.</p><div class="subsection"><h3>Low-Fidelity Wireframes</h3><PawsitiveImage file="low-fi.jpg" alt="Low-fidelity mobile, tablet, and desktop wireframes" /></div></div>
+      <div class="project-section__content"><p class="project-lead">Low-fidelity wireframes helped establish page hierarchy, content placement, and responsive layouts before moving into visual design.</p>
+        <div class="subsection lofi-device"><h3>Desktop</h3><div class="lofi-row lofi-row--desktop">
+        <figure><figcaption>Home</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Home desktop wireframe"><img src="/images/projects/pawsitive-futures/lofi-home-desktop.jpg" alt="Original Home low-fidelity wireframe at desktop width" loading="lazy" decoding="async" /></button></figure>
+        <figure><figcaption>Adopt</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Adopt desktop wireframe"><img src="/images/projects/pawsitive-futures/lofi-adopt-desktop.jpg" alt="Original Adopt low-fidelity wireframe at desktop width" loading="lazy" decoding="async" /></button></figure>
+        <figure><figcaption>Contact</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Contact desktop wireframe"><img src="/images/projects/pawsitive-futures/lofi-contact-desktop.jpg" alt="Original Contact low-fidelity wireframe at desktop width" loading="lazy" decoding="async" /></button></figure>
+        </div></div>
+        <div class="subsection lofi-device"><h3>Tablet</h3><div class="lofi-row lofi-row--tablet">
+        <figure><figcaption>Home</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Home tablet wireframe"><img src="/images/projects/pawsitive-futures/lofi-home-tablet.jpg" alt="Original Home low-fidelity wireframe at tablet width" loading="lazy" decoding="async" /></button></figure>
+        <figure><figcaption>Adopt</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Adopt tablet wireframe"><img src="/images/projects/pawsitive-futures/lofi-adopt-tablet.jpg" alt="Original Adopt low-fidelity wireframe at tablet width" loading="lazy" decoding="async" /></button></figure>
+        <figure><figcaption>Contact</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Contact tablet wireframe"><img src="/images/projects/pawsitive-futures/lofi-contact-tablet.jpg" alt="Original Contact low-fidelity wireframe at tablet width" loading="lazy" decoding="async" /></button></figure>
+        </div></div>
+        <div class="subsection lofi-device"><h3>Mobile</h3><div class="lofi-row lofi-row--mobile">
+        <figure><figcaption>Home</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Home mobile wireframe"><img src="/images/projects/pawsitive-futures/lofi-home-mobile.jpg" alt="Original Home low-fidelity wireframe at mobile width" loading="lazy" decoding="async" /></button></figure>
+        <figure><figcaption>Adopt</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Adopt mobile wireframe"><img src="/images/projects/pawsitive-futures/lofi-adopt-mobile.jpg" alt="Original Adopt low-fidelity wireframe at mobile width" loading="lazy" decoding="async" /></button></figure>
+        <figure><figcaption>Contact</figcaption><button type="button" class="paws-board-open" aria-label="Enlarge original Contact mobile wireframe"><img src="/images/projects/pawsitive-futures/lofi-contact-mobile.jpg" alt="Original Contact low-fidelity wireframe at mobile width" loading="lazy" decoding="async" /></button></figure>
+        </div></div>
+        <p>The early layouts focused on making pet discovery, adoption information, and ways to get involved easy to find across screen sizes.</p></div>
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>06 / Initial Visual Direction</h2></div>
       <div class="project-section__content">
-        <div class="subsection"><h3>Moodboard</h3><p>The original moodboard established a warm, approachable direction that remained the visual foundation of the project through the later refinement.</p><ul class="visual-keywords" aria-label="Visual direction keywords"><li>Friendly</li><li>Compassionate</li><li>Warmth</li><li>Hope</li><li>Organized</li></ul><PawsitiveImage file="moodboard.jpg" alt="Original Pawsitive Futures moodboard" /></div>
-        <div class="subsection"><h3>Style Tile</h3><p>The style tile translated that direction into typography, colour, imagery, and interface treatments that continued to guide the 2026 redesign.</p><PawsitiveImage file="style-tile.jpg" alt="Original colour palette, typography, buttons, and imagery" /></div>
-        <div class="subsection"><h3>Initial UI</h3><p>The first coded version established the visual foundation across Home, Adopt, and Contact.</p><div class="compact-grid">{["Home", "Adopt", "Contact"].map(name => <PawsitiveImage file={`initial-${name.toLowerCase()}.jpg`} alt={`Original desktop high-fidelity ${name} screen`} />)}</div><p>The interface was later refined and expanded in 2026, while the original visual direction and core brand language remained consistent.</p></div>
+        <div class="subsection"><h3>Moodboard</h3><p>The original moodboard established a warm, approachable direction that remained the visual foundation of the project through the later refinement.</p><ul class="visual-keywords" aria-label="Visual direction keywords"><li>Friendly</li><li>Compassionate</li><li>Warmth</li><li>Hope</li><li>Organized</li></ul><button type="button" class="paws-board-open" aria-haspopup="dialog" aria-label="Enlarge Original Pawsitive Futures moodboard"><img src="/images/projects/pawsitive-futures/moodboard.jpg" alt="Original Pawsitive Futures moodboard" loading="lazy" decoding="async" /></button></div>
+        <div class="subsection"><h3>Style Tile</h3><p>The style tile translated that direction into typography, colour, imagery, and interface treatments that continued to guide the 2026 redesign.</p><button type="button" class="paws-board-open" aria-haspopup="dialog" aria-label="Enlarge Original colour palette, typography, buttons, and imagery"><img src="/images/projects/pawsitive-futures/style-tile.jpg" alt="Original colour palette, typography, buttons, and imagery" loading="lazy" decoding="async" /></button></div>
+        <div class="subsection logo-variations">
+          <h3>Logo &amp; Brand Mark</h3>
+          <p>The moodboard helped spark the idea for the logo. I kept coming back to the feeling of “finding a home,” so I combined a paw with a location pin in Adobe Illustrator. I paired it with Inter to keep the name clear, friendly, and easy to recognize.</p>
+          <div class="logo-variations__grid">
+            <figure><div class="logo-swatch"><img src="/images/projects/pawsitive-futures/logo-primary.svg" alt="Primary Pawsitive Futures logo on ivory" loading="lazy" /></div><figcaption>Primary</figcaption></figure>
+            <figure><div class="logo-swatch logo-swatch--dark"><img src="/images/projects/pawsitive-futures/logo-dark.svg" alt="Pawsitive Futures logo with ivory paw and wordmark on charcoal" loading="lazy" /></div><figcaption>Dark Background</figcaption></figure>
+            <figure><div class="logo-icons"><div class="logo-swatch"><img src="/images/projects/pawsitive-futures/logo-icon-light.svg" alt="Teal pin with charcoal paw" loading="lazy" /></div><div class="logo-swatch logo-swatch--dark"><img src="/images/projects/pawsitive-futures/logo-icon-dark.svg" alt="Teal pin with ivory paw" loading="lazy" /></div></div><figcaption>Icon Only</figcaption></figure>
+          </div>
+        </div>
+        <div class="subsection"><h3>Initial UI</h3><p>The first coded version established the visual foundation across Home, Adopt, and Contact.</p><div class="compact-grid">{["Home", "Adopt", "Contact"].map(name => <button type="button" class="paws-board-open" aria-haspopup="dialog" aria-label={`Enlarge original ${name} desktop screen`}><img src={`/images/projects/pawsitive-futures/initial-${name.toLowerCase()}.jpg`} alt={`Original desktop high-fidelity ${name} screen`} loading="lazy" decoding="async" /></button>)}</div><p>The interface was later refined and expanded in 2026, while the original visual direction and core brand language remained consistent.</p></div>
       </div>
     </section>
 
@@ -168,7 +214,7 @@ const findings = [
         {[
           { title: "Colour hierarchy", response: "Introduced clearer background changes, spacing, dividers, and content groupings to give sections stronger visual distinction.", file: "refinement-home", beforeRatio: 3456 / 5582, afterRatio: 2522 / 3276, before: "Original Home section hierarchy", after: "Refined Home section hierarchy" },
           { title: "CTA visibility", response: "Standardized primary and secondary action treatments to create a clearer and more consistent hierarchy across the experience.", file: "refinement-cta", beforeRatio: 3456 / 2823, afterRatio: 2522 / 1736, before: "Original How You Can Help actions", after: "Refined primary and secondary actions" },
-          { title: "Visual engagement", response: "Expanded photography, editorial image treatments, success stories, and supporting visual elements to reduce text-heavy sections.", file: "visual-storytelling", beforeRatio: 3456 / 2051, afterRatio: 2522 / 1443, before: "Original text-heavy Why We Care section", after: "Refined Luna success story with photography and story content" },
+          { title: "Visual engagement", response: "Expanded photography, editorial pet crops, success stories, and supporting visual elements to reduce text-heavy sections.", file: "visual-storytelling", beforeRatio: 3456 / 2051, afterRatio: 2522 / 1443, before: "Original text-heavy Why We Care section", after: "Refined Luna success story with photography and story content" },
           { title: "Contact hierarchy", response: "Separated contact information from the enquiry form and gave the form clearer definition as the page’s primary action.", file: "refinement-contact", beforeRatio: 3456 / 3762, afterRatio: 2064 / 1622, before: "Original Contact form hierarchy", after: "Refined enquiry form with a distinct heading and primary action" },
         ].map((comparison, index) => (
           <div class="subsection research-divider">
@@ -185,7 +231,7 @@ const findings = [
 
     <section class="project-section site-shell">
       <div class="project-section__label"><h2>09 / Final Responsive Experience</h2></div>
-      <div class="project-section__content"><p class="project-lead">The refined experience brings pet discovery, search and filtering, adoption resources, success stories, events, and ways to foster, volunteer, and donate together across desktop, tablet, and mobile.</p>
+      <div class="project-section__content"><p class="project-lead">The final experience brings pet discovery, adoption guidance, resources, and ways to get involved together across desktop, tablet, and mobile.</p>
           <div class="subsection final-showcase"><h3>Desktop</h3>
           <div class="final-showcase__grid final-showcase__grid--desktop">
           <div class="final-showcase__page final-showcase__page--featured"><h4><span>01</span> Home</h4>
@@ -222,13 +268,13 @@ const findings = [
           
           <div class="subsection responsive-notes">
             <h3>Responsive behaviour</h3>
-            <p>The layout was adjusted for desktop, tablet, and mobile. Columns reduce as the screen gets smaller. Content stacks on mobile. Spacing and text sizes were adjusted for readability. Buttons and controls were kept easy to use on smaller screens.</p>
+            <p>The layout was adjusted for desktop, tablet, and mobile. Columns reduce as the screen gets smaller, content stacks where needed, and controls remain easy to use on smaller screens.</p>
             <p>The desktop navigation changes to a compact menu on smaller screens to reduce crowding.</p>
             <div class="responsive-notes__grid">
-              <div><h4>Home</h4><p>The two-column hero stacks on smaller screens. Statistics and event content simplify as the screen narrows. The success story also stacks on mobile.</p></div>
-              <div><h4>Adopt</h4><p>Pet cards move from three columns on desktop to two on tablet and one on mobile. Filters wrap on tablet and become horizontally scrollable on mobile.</p></div>
-              <div><h4>Get Involved</h4><p>The hero changes from two columns to one. Volunteer, Foster, Donate, and form content stack as the screen gets smaller.</p></div>
-              <div><h4>Contact</h4><p>Contact information and the form sit side by side on desktop, then stack on tablet and mobile.</p></div>
+              <div><h4>Home</h4><p>The hero and content sections stack on smaller screens, while selected editorial pet crops remain as part of the visual identity.</p></div>
+              <div><h4>Adopt</h4><p>Pet cards move from three columns to two and then one. Filters adapt to smaller screens, while detailed pet profiles remain easy to scan on mobile.</p></div>
+              <div><h4>Get Involved</h4><p>Volunteer roles and participation content stack on smaller screens. The four-step volunteer journey also uses a longer mobile path so all four stages remain connected.</p></div>
+              <div><h4>Contact</h4><p>Contact information and the enquiry form sit side by side on desktop and stack on smaller screens.</p></div>
             </div>
           </div>
 </div>
@@ -258,6 +304,12 @@ const findings = [
             </figure>
           ))}
           <p class="pet-search-caption">JavaScript handles pet search, category filters, result counts, and feedback when no matches are found.</p>
+        </div>
+        <div class="subsection pet-profile-demo">
+          <h3>Pet Profiles &amp; Enquiry</h3>
+          <button type="button" class="paws-board-open" aria-haspopup="dialog" aria-label="Enlarge detailed pet profile screenshot"><img src="/images/projects/pawsitive-futures/build-pet-profile-modal.jpg" alt="Desktop pet profile modal with detailed pet information and adoption enquiry action" loading="lazy" decoding="async" /></button>
+          <p>Selecting a pet opens a detailed profile with breed, size, personality, energy level, compatibility, care needs, health, ideal home, and adoption status.</p>
+          <p>The “I’m interested in…” button takes the selected pet into the adoption enquiry form.</p>
         </div>
         <aside class="implementation-note"><p>This is a front-end implementation. The forms show confirmation messages, but they are not connected to a backend. Pet information is also stored directly in the site rather than in a live database or CMS.</p></aside>
       </div>
@@ -515,7 +567,7 @@ const findings = [
   .final-showcase { border-top: 1px solid var(--border); padding-top: 2rem; }
   .final-showcase__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1.5rem; align-items: start; }
   .final-showcase__page { min-width: 0; }
-  .final-showcase__page--featured { grid-column: 1 / -1; }
+  .final-showcase__page--featured { grid-column: auto; }
   .pawsitive .final-showcase__page h4 { margin: 0 0 1rem; font-size: 1rem; font-weight: 600; line-height: 1.4; }
   .final-showcase__page h4 span { color: var(--project-highlight); margin-right: .5rem; }
   .final-showcase__page .paws-board-open { display: block; width: 100%; margin: 0; }
@@ -546,4 +598,39 @@ const findings = [
 
   .pawsitive .project-section__content .outcome-reflection { margin-top: 2.5rem; }
   .pawsitive .project-section__content .outcome-reflection p + p { margin-top: 1.25rem; }
+
+  .lofi-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+  .lofi-row--tablet { max-width: 90%; margin-inline: auto; }
+  .lofi-row--mobile { max-width: 70%; margin-inline: auto; gap: 2rem; }
+  .lofi-row figure { min-width: 0; margin: 0; }
+  .lofi-row figcaption { margin-bottom: .75rem; font-size: .9rem; font-weight: 600; }
+  .lofi-row .paws-board-open { display: block; width: 100%; margin: 0; }
+  .lofi-row img { display: block; width: 100%; height: auto; }
+  @media (max-width: 640px) {
+    .lofi-row--tablet, .lofi-row--mobile { max-width: 100%; }
+    .lofi-row { gap: .75rem; }
+  }
+
+  /* Compact previews retain the full images; the dialog provides detail. */
+  .lofi-row { max-width: 75%; margin-inline: auto; }
+  .lofi-row--tablet { max-width: 65%; }
+  .lofi-row--mobile { max-width: 50%; }
+  .final-showcase__grid { max-width: 75%; margin-inline: auto; }
+  .final-showcase__grid--mobile { max-width: 85%; }
+  .pet-profile-demo { border-top: 1px solid var(--border); padding-top: 2rem; }
+  .pet-profile-demo .paws-board-open { display: block; width: 85%; margin: 1.5rem auto; }
+  .pet-profile-demo img { display: block; width: 100%; height: auto; }
+  @media (max-width: 640px) {
+    .lofi-row, .final-showcase__grid, .pet-profile-demo .paws-board-open { max-width: 100%; width: 100%; }
+  }
+
+  .logo-variations__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .logo-variations__grid figure { margin: 0; min-width: 0; }
+  .logo-swatch { height: 9rem; padding: 1.25rem; display: flex; align-items: center; justify-content: center; background: #f7f4ef; border: 1px solid var(--border); }
+  .logo-swatch--dark { background: #262322; }
+  .logo-swatch img { width: 100%; max-height: 5rem; object-fit: contain; }
+  .logo-icons { display: grid; grid-template-columns: 1fr 1fr; }
+  .logo-icons .logo-swatch { padding: 1rem; }
+  .logo-variations__grid figcaption { margin-top: .75rem; font-size: .85rem; font-weight: 600; }
+  @media (max-width: 640px) { .logo-variations__grid { grid-template-columns: 1fr; } }
 </style>
