@@ -7,7 +7,7 @@ export const projects = [
     category: "Product Design",
     description:
       "A smart-home app bringing routines, devices, safety, and caregiving into one calm, clear experience.",
-    tags: ["Mobile App", "Systems Design", "IoT", "UI/UX", "Product Design"],
+    tags: ["Mobile App", "Smart Home", "UI/UX", "Product Design", "Design System"],
     image: "/images/projects/omvia.png",
     link: "/projects/omvia",
     featured: true,
