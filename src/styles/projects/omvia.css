@@ -408,9 +408,13 @@
 }
 
 .screen-flow--two .screen-flow__item--1 img {
-  aspect-ratio: auto;
+  width: auto;
+  max-width: 100%;
   height: auto;
-  max-height: clamp(30rem, 36vw, 28rem);
+  max-height: 30rem;
+  aspect-ratio: auto;
+  border: 0;
+  background: transparent;
 }
 
 .screen-flow--two .screen-flow__item--2 img {
