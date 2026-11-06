@@ -408,7 +408,8 @@
 }
 
 .screen-flow--two .screen-flow__item--1 img {
-  aspect-ratio: 380 / 860;
+  aspect-ratio: auto;
+  height: auto;
   max-height: clamp(30rem, 36vw, 28rem);
 }
 
@@ -2298,3 +2299,5 @@ html[data-theme="dark"] .omvia-page { --project-highlight: #c4ceff; }
 .omvia-page .number-list article > span {
   color: var(--project-highlight);
 }
+.omvia-image-trigger { cursor: zoom-in; }
+.omvia-image-trigger:focus-visible { outline: 2px solid var(--project-highlight); outline-offset: 3px; }
