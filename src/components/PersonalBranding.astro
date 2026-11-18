@@ -1,0 +1,40 @@
+---
+const concepts = [
+  {title:"Blue & Teal Identity", moodboard:"Moodboard 2-01.png", size:5417, designs:[
+    {file:"business card 2-01.png", title:"Blue personal identity with logo, name and colour palette", width:4375},
+    {file:"business card 2-02.png", title:"Navy presentation — Crafting Thoughtful Experiences", width:4350}
+  ]},
+  {title:"Neutral & Minimal Identity", moodboard:"business-card-moodboard-1.png", size:1500, designs:[
+    {file:"Business card-02-01.png", title:"Grey-blue logo and business card design", width:4375},
+    {file:"Business card-02-02.png", title:"Beige contact card", width:4350}
+  ]}
+];
+---
+<section class="personal-branding" id="personal-branding" aria-labelledby="personal-branding-title">
+  <h2 id="personal-branding-title">Personal Branding &amp; Visual Identity</h2>
+  <div class="branding-concepts">
+    {concepts.map(concept => <section class="branding-concept" aria-label={concept.title}>
+      <h3>{concept.title}</h3>
+      <h4>Visual Exploration / Moodboard</h4>
+      <button class="artwork-open branding-moodboard" aria-label={`Enlarge ${concept.title} moodboard`}><img src={`/images/other-works/${concept.moodboard}`} alt={`${concept.title} moodboard`} width={concept.size} height={concept.size} loading="lazy" /></button>
+      <h4>Brand Identity Applications</h4>
+      <div class="branding-applications">
+        {concept.designs.map(design => <button class="artwork-open" aria-label={`Enlarge ${design.title}`}><img src={`/images/other-works/${design.file}`} alt={design.title} width={design.width} height="2500" loading="lazy" /></button>)}
+      </div>
+    </section>)}
+  </div>
+</section>
+<style>
+.personal-branding { display:grid; grid-template-columns:minmax(0,.7fr) minmax(0,1.8fr); gap:clamp(1.5rem,3vw,3rem); align-items:center; padding-block:clamp(2rem,4vw,3rem); border-top:1px solid var(--border); scroll-margin-top:7rem; }
+h2 { font-family:var(--font-display); font-size:clamp(2rem,3vw,3rem); line-height:1.05; margin:0 0 2rem; }
+.branding-concepts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1rem,2vw,1.5rem); min-width:0; }
+.branding-concept { min-width:0; width:100%; max-width:26rem; justify-self:center; }
+h3 { font-family:var(--font-display); font-size:clamp(1.3rem,2vw,1.7rem); margin:0 0 1rem; }
+h4 { font:inherit; color:var(--text-muted); font-size:.85rem; font-weight:600; margin:1rem 0 .75rem; }
+.artwork-open { display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; }
+img { display:block; width:100%; height:auto; }
+.branding-moodboard { width:min(50%,11rem); margin-inline:auto; }
+.branding-applications { display:grid; gap:.75rem; }
+@media(max-width:760px) { .personal-branding { grid-template-columns:1fr; gap:2rem; } }
+@media(max-width:600px) { .branding-concepts { grid-template-columns:1fr; gap:2.5rem; } }
+</style>

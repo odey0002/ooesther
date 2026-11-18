@@ -1,0 +1,196 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ArtworkLightbox from "../components/ArtworkLightbox.astro";
+import ConciergeGallery from "../components/ConciergeGallery.astro";
+import TsmartGallery from "../components/TsmartGallery.astro";
+import PersonalBranding from "../components/PersonalBranding.astro";
+import ProjectPager from "../components/ProjectPager.astro";
+import { otherWorks } from "../data/otherWorks.js";
+const descriptions = {
+  "rabbit-carrot-trap": "A series of playful illustrations featuring a rabbit and a carrot trap. The artwork uses bright colours, expressive characters, and simple environments to tell a visual story.",
+  "top-universe": "A series of promotional graphics for Top Universe's UI/UX design programme, combining bold typography, vibrant colours, and geometric elements.",
+  "tsmart-fashion": "A collection of editorial layouts, promotional campaigns, and social media graphics created for TSMART Fashion and its associated brands, TSMART Fashion Academy and MyWarehouse.ng. The work covers fashion storytelling, educational promotions, and business marketing across different visual styles.",
+  "legal-x-campaign": "A collection of social media designs promoting Legal X services to clients and merchants. The campaign combines bold colours, 3D illustrations, and consistent branding to communicate across different audiences.",
+  "carson-furniture": "An editorial design exploring contemporary furniture through clean layouts, bold typography, and a fresh green, white, and charcoal palette. The design balances product photography with clear, structured information.",
+  "midnight-masterpiece": "A cinematic poster combining fantasy imagery, dramatic lighting, and photo manipulation to create a mysterious atmosphere. Glowing typography, rich colours, and layered visuals bring the composition together.",
+  "chocolate-launch": "A collection of food and beverage advertisements featuring bold typography, vibrant colours, and creative product compositions. Each design brings together product imagery and promotional messaging to capture attention.",
+  "mystery-fountain": "A collection of digital illustrations exploring visual storytelling, playful concepts, and creative compositions through colour, imagery, and typography.",
+  "berry-pizza": "A playful advertising concept pairing pizza with oversized strawberries. Bright colour and bold promotional typography make the unexpected combination the focus."
+};
+const details = {
+  "midnight-masterpiece": [
+    { file: "midnight-gallery-title", alt: "Glowing Midnight Masterpiece typography", width: 2500, height: 2500 },
+    { file: "midnight-gallery-castle", alt: "Castle architecture and cinematic lighting", width: 1500, height: 1500 },
+    { file: "midnight-gallery-wolves", alt: "Wolves and atmospheric foreground details", width: 1250, height: 1250 },
+    { file: "midnight-gallery-moon", alt: "Moon and flying silhouette", width: 1150, height: 1150 },
+    { file: "midnight-gallery-magic", alt: "Character and glowing green magic", width: 1300, height: 1300 },
+    { file: "midnight-gallery-tagline", alt: "Poster tagline and rocky landscape", width: 1650, height: 1650 }
+  ]
+};
+const legalCampaign = [
+  { file: "legalXINI CLIENT.jpg", title: "Ini Client — layered app screens" },
+  { file: "legalXTOYO MERCHANT.jpg", title: "Toyo Merchant — work-from-home illustration" },
+  { file: "legalXFRANCIS4 CLIENT.jpg", title: "Francis 4 Client — red-carpet composition" },
+  { file: "legalXMRAGBA2 CLIENT.jpg", title: "Mragba 2 Client — artist illustration" },
+  { file: "legalXFRANCIS3 CLIENT.jpg", title: "Francis 3 Client" },
+  { file: "legalXINI3 CLIENT.jpg", title: "Ini 3 Client — From Your Couch" },
+  { file: "legalXTOYO3 MERCHANT.jpg", title: "Toyo 3 Merchant" }
+];
+const illustrations = [
+  { file: "fox.jpg", title: "Firefox vs. Fox" },
+  { file: "kites2.jpg", title: "Did You Know? Flying Kites" },
+  { file: "MARCH.jpg", title: "Welcome to March" },
+  { file: "finish-the-story.jpg", title: "Finish the Story" }
+];
+const order = ["carson-furniture", "midnight-masterpiece", "chocolate-launch", "mystery-fountain", "top-universe", "legal-x-campaign", "tsmart-fashion", "the-legal-concierge", "rabbit-carrot-trap"];
+const projects = order.map(slug => otherWorks.find(work => work.slug === slug)!);
+---
+<BaseLayout title="Other Works — Esther Odeyemi" description="Graphic design, visual storytelling, and creative projects by Esther Odeyemi.">
+  <Header />
+  <main class="site-shell section graphic-collection">
+    <header class="collection-heading">
+      <a href="/#other-works" class="project-back-link">← Home</a>
+      <p class="project-label">Graphic Design / Visual Storytelling</p>
+      <h1>Other Works</h1>
+      <p class="project-hero__summary">An exploration of graphic design, visual storytelling, and creative projects beyond digital products.</p>
+    </header>
+    {projects.map(project => (<>
+      {project.slug === "rabbit-carrot-trap" && <PersonalBranding />}
+      <section class="graphic-project" id={project.slug} aria-labelledby={`${project.slug}-title`}>
+        <div class="graphic-copy">
+          <h2 id={`${project.slug}-title`}>{project.title}</h2>
+          <p class="graphic-meta">{project.category}{project.slug === "carson-furniture" ? " | 2024" : ""}</p>
+          {project.subtitle && <p class="graphic-meta">{project.subtitle}</p>}
+          {descriptions[project.slug] && <p>{descriptions[project.slug]}</p>}
+        </div>
+        <div class:list={["graphic-artworks", {"graphic-artworks--portrait": project.height > project.width && !details[project.slug] && project.slug !== "chocolate-launch" && project.slug !== "the-legal-concierge", "graphic-artworks--details": !!details[project.slug], "graphic-artworks--pair": ["carson-furniture", "top-universe"].includes(project.slug), "graphic-artworks--rabbit": project.slug === "rabbit-carrot-trap", "graphic-artworks--campaign": project.slug === "legal-x-campaign", "graphic-artworks--food": project.slug === "chocolate-launch", "graphic-artworks--illustrations": project.slug === "mystery-fountain"}]}>
+          {project.slug === "tsmart-fashion" ? <TsmartGallery /> : project.slug === "the-legal-concierge" ? <ConciergeGallery /> : <button class="artwork-open" aria-label={`Enlarge ${project.title} artwork`}><img src={project.image} alt={project.alt || project.title} width={project.width} height={project.height} loading="lazy" /></button>}
+          {project.slug === "legal-x-campaign" && <>
+            <div class="campaign-support">{legalCampaign.slice(0,4).map(artwork => <button class="artwork-open" aria-label={`Enlarge ${artwork.title}`}><img src={`/images/other-works/${artwork.file}`} alt={artwork.title} width="2000" height="2000" loading="lazy" /></button>)}</div>
+            <div class="campaign-footer">{legalCampaign.slice(4).map(artwork => <button class="artwork-open" aria-label={`Enlarge ${artwork.title}`}><img src={`/images/other-works/${artwork.file}`} alt={artwork.title} width="2000" height="2000" loading="lazy" /></button>)}</div>
+          </>}
+          {project.slug === "chocolate-launch" && <>
+            <button class="artwork-open" aria-label="Enlarge North Fork Burger"><img src="/images/other-works/burger flyer.jpg" alt="North Fork Burger advertisement with a burger and a twenty percent discount offer" width="2000" height="2000" loading="lazy" /></button>
+            <div class="food-support">
+              <button class="artwork-open" aria-label="Enlarge Berry Pizza and Quench Juice"><img src="/images/other-works/pzza quench.png" alt="Berry Pizza and Quench Juice promotional offer" width="2000" height="2000" loading="lazy" /></button>
+              <button class="artwork-open" aria-label="Enlarge Berry Pizza Special"><img src="/images/other-works/berry-pizza-advertising.jpg" alt="Berry Pizza Special advertisement with strawberries and pizza" width="2480" height="3508" loading="lazy" /></button>
+            </div>
+          </>}
+          {project.slug === "mystery-fountain" && <div class="illustration-support">{illustrations.map(artwork => <button class="artwork-open" aria-label={`Enlarge ${artwork.title}`}><img src={`/images/other-works/${artwork.file}`} alt={artwork.title} width="2000" height="2000" loading="lazy" /></button>)}</div>}
+          {details[project.slug] && <div class="artwork-details">{details[project.slug].map(detail => <button class="artwork-open" aria-label={`Enlarge ${detail.alt}`}><img src={`/images/other-works/details/${detail.file}.jpg`} alt={detail.alt} width={detail.width} height={detail.height} loading="lazy" /></button>)}</div>}
+          {project.slug === "rabbit-carrot-trap" && <div class="rabbit-crops">
+            <button class="artwork-open" aria-label="Enlarge rabbit character detail"><img src="/images/other-works/details/rabbit-character.png" alt="Detail of the rabbit character and carrots" width="1000" height="1000" loading="lazy" /></button>
+            <button class="artwork-open" aria-label="Enlarge suspended trap detail"><img src="/images/other-works/details/rabbit-trap.png" alt="Detail of the suspended woodland trap" width="900" height="900" loading="lazy" /></button>
+            <button class="artwork-open" aria-label="Enlarge sky and birds detail"><img src="/images/other-works/details/rabbit-sky.png" alt="Blue sky, clouds and birds detail" width="760" height="760" loading="lazy" /></button>
+          </div>}
+          {project.slug === "rabbit-carrot-trap" && <div class="rabbit-support">
+            <button class="artwork-open" aria-label="Enlarge rabbit approaching the carrot trap"><img src="/images/other-works/Odeyemi Esther Avatar Icon1-03-03-02.png" alt="Rabbit approaching carrots on a woodland trap" width="1871" height="1870" loading="lazy" /></button>
+            <button class="artwork-open" aria-label="Enlarge hand holding carrots illustration"><img src="/images/other-works/Odeyemi Esther Avatar Icon1-03-03-03.png" alt="Black and white illustration of a hand holding carrots" width="1471" height="1485" loading="lazy" /></button>
+            <button class="artwork-open" aria-label="Enlarge bush and flowers detail"><img src="/images/other-works/details/rabbit-flowers.png" alt="Woodland bush, colourful flowers and rocks detail" width="600" height="600" loading="lazy" /></button>
+          </div>}
+          {project.slug === "top-universe" && <button class="artwork-open" aria-label="Enlarge Top Universe Cohort 3.0"><img src="/images/other-works/the-legal-concierge.JPG" alt="Top Universe Cohort 3.0 promotional graphic with a 3D die and registration information" width="3000" height="3000" loading="lazy" /></button>}
+          {project.slug === "carson-furniture" && <button class="artwork-open" aria-label="Enlarge Carson Furniture second spread"><img src="/images/other-works/carson-furniture-editorial2.jpg" alt="Carson Furniture second spread with furniture specifications, editorial text, and product photography" width="3542" height="2737" loading="lazy" /></button>}
+        </div>
+      </section>
+    </>))}
+    <ProjectPager currentSlug="other-works" previousProject={{ title: "Quench", link: "/projects/quench/" }} nextProject={{ title: "Omvia", link: "/projects/omvia/" }} />
+  </main>
+  <Footer />
+  <ArtworkLightbox />
+</BaseLayout>
+<style>
+.collection-heading h1 { max-width:980px; margin-top:.6rem; font-size:clamp(2.75rem,5vw,4.5rem); font-weight:400; }
+.collection-heading { padding-bottom:clamp(3rem,6vw,5rem); }
+.collection-heading .project-label { margin-top:2rem; }
+.graphic-project { display:grid; grid-template-columns:minmax(0, .7fr) minmax(0, 1.8fr); gap:clamp(1.5rem,3vw,3rem); align-items:center; padding-block:clamp(2rem,4vw,3rem); border-top:1px solid var(--border); scroll-margin-top:7rem; }
+#tsmart-fashion, #the-legal-concierge { align-items:start; }
+#tsmart-fashion > .graphic-copy, #the-legal-concierge > .graphic-copy { position:sticky; top:7rem; }
+@media(max-width:760px) { #tsmart-fashion > .graphic-copy, #the-legal-concierge > .graphic-copy { position:static; } }
+.graphic-copy h2 { font-family:var(--font-display); font-size:clamp(2rem,3vw,3rem); line-height:1.05; margin:0 0 1.25rem; }
+.graphic-copy p { color:var(--text-muted); line-height:1.75; }
+.graphic-meta { margin-bottom:1.5rem; }
+.graphic-artworks { display:grid; gap:1.5rem; min-width:0; }
+.artwork-open { display:block; padding:0; border:0; background:none; cursor:zoom-in; width:100%; }
+.artwork-open img { display:block; width:100%; height:auto; }
+.graphic-artworks--rabbit { grid-template-columns:minmax(0,1fr) minmax(0,3fr) minmax(0,1fr); gap:.75rem; align-items:center; }
+.graphic-artworks--rabbit > .artwork-open { grid-column:2; grid-row:1; }
+.rabbit-crops { grid-column:1; grid-row:1; display:grid; gap:.75rem; }
+.rabbit-support { grid-column:3; grid-row:1; display:grid; gap:.75rem; }
+.rabbit-support img[src*="Icon1-03-03-03.png"] { background:white; }
+@media(max-width:600px) {
+ .graphic-artworks--rabbit { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .graphic-artworks--rabbit > .artwork-open { grid-column:1 / -1; }
+ .rabbit-crops { grid-column:1; grid-row:2; }
+ .rabbit-support { grid-column:2; grid-row:2; }
+}
+.graphic-artworks--pair { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; gap:1rem; }
+@media(max-width:480px) { .graphic-artworks--pair { grid-template-columns:1fr; } }
+ .graphic-artworks--illustrations { grid-template-columns:minmax(0,1fr) minmax(0,1.65fr) minmax(0,1fr); align-items:center; gap:.75rem; }
+.graphic-artworks--illustrations > .artwork-open { grid-column:2; grid-row:1 / 3; }
+.illustration-support { display:contents; }
+.illustration-support .artwork-open:nth-child(1) { grid-column:1; grid-row:1; }
+.illustration-support .artwork-open:nth-child(2) { grid-column:3; grid-row:2; }
+.illustration-support .artwork-open:nth-child(3) { grid-column:3; grid-row:1; }
+.illustration-support .artwork-open:nth-child(4) { grid-column:1; grid-row:2; }
+@media(max-width:480px) {
+  .graphic-artworks--illustrations { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .graphic-artworks--illustrations > .artwork-open { grid-column:1 / -1; grid-row:auto; }
+  .illustration-support .artwork-open:nth-child(n) { grid-column:auto; grid-row:auto; }
+}
+.graphic-artworks--portrait { width:min(100%,26rem); justify-self:center; }
+/* Keep each poster and its supporting details within one compact visual block. */
+.graphic-artworks--details {
+  grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr);
+  gap:.75rem;
+  align-items:center;
+  width:min(100%,calc(124svh - 14rem));
+  justify-self:center;
+}
+.graphic-artworks--details > .artwork-open { grid-column:2; grid-row:1 / 4; }
+.artwork-details { display:contents; }
+.artwork-details .artwork-open:nth-child(1) { grid-column:1; grid-row:1; }
+.artwork-details .artwork-open:nth-child(2) { grid-column:1; grid-row:2; }
+.artwork-details .artwork-open:nth-child(3) { grid-column:1; grid-row:3; }
+.artwork-details .artwork-open:nth-child(4) { grid-column:3; grid-row:1; }
+.artwork-details .artwork-open:nth-child(5) { grid-column:3; grid-row:2; }
+.artwork-details .artwork-open:nth-child(6) { grid-column:3; grid-row:3; }
+.graphic-artworks--campaign {
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:.75rem;
+  align-items:start;
+}
+.graphic-artworks--campaign > .artwork-open { grid-column:1 / 3; grid-row:1 / 3; }
+.campaign-support { display:contents; }
+.campaign-footer { grid-column:1 / -1; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; }
+.campaign-support .artwork-open:nth-child(1) { grid-column:3; grid-row:1; }
+.campaign-support .artwork-open:nth-child(2) { grid-column:4; grid-row:1; }
+.campaign-support .artwork-open:nth-child(3) { grid-column:3; grid-row:2; }
+.campaign-support .artwork-open:nth-child(4) { grid-column:4; grid-row:2; }
+@media(max-width:480px) {
+  .graphic-artworks--campaign { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .graphic-artworks--campaign > .artwork-open { grid-column:1 / -1; grid-row:auto; }
+  .campaign-support .artwork-open:nth-child(n), .campaign-footer .artwork-open:nth-child(n) { grid-column:auto; grid-row:auto; }
+}
+.graphic-artworks--food {
+  --food-gap:.75rem;
+  --poster-ratio:1.414516129;
+  --food-main-width:calc((100% - 2 * var(--food-gap) + var(--food-gap) / (1 + var(--poster-ratio))) / (2.1 + var(--poster-ratio) / (1 + var(--poster-ratio))));
+  grid-template-columns:minmax(0,var(--food-main-width)) minmax(0,calc(var(--food-main-width) * 1.1)) minmax(0,1fr);
+  gap:var(--food-gap);
+  align-items:center;
+}
+.food-support { display:grid; gap:.75rem; min-width:0; }
+@media(max-width:600px) {
+  .graphic-artworks--food { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .food-support { grid-column:1 / -1; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; }
+}
+
+@media(max-width:480px) {
+  .graphic-artworks--details { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .graphic-artworks--details > .artwork-open { grid-column:1 / -1; grid-row:auto; }
+  .artwork-details .artwork-open:nth-child(n) { grid-column:auto; grid-row:auto; }
+}
+@media(max-width:760px) { .graphic-project { grid-template-columns:1fr; gap:2rem; } .graphic-artworks { width:100%; } }
+</style>

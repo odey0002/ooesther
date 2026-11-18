@@ -2,7 +2,8 @@
 import { getProjectNavigation } from "../data/projects.js";
 
 const { currentSlug } = Astro.props;
-const { previousProject, nextProject } = getProjectNavigation(currentSlug);
+const defaults = getProjectNavigation(currentSlug);
+const { previousProject = defaults.previousProject, nextProject = defaults.nextProject, allWorkLink = "/#work" } = Astro.props;
 ---
 
 <nav class="project-pager" aria-label="Project navigation">
@@ -13,7 +14,7 @@ const { previousProject, nextProject } = getProjectNavigation(currentSlug);
     </a>
   )}
 
-  <a href="/#work" class="project-pager__center">
+  <a href={allWorkLink} class="project-pager__center">
     All Work
   </a>
 

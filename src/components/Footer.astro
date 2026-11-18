@@ -1,6 +1,9 @@
+---
+const { contactLabel = "(C) Get in Touch" } = Astro.props;
+---
 <footer class="footer section-dark" id="contact">
   <div class="site-shell">
-    <p class="section-kicker">(C) Get in Touch</p>
+    <p class="section-kicker">{contactLabel}</p>
 
     <h2>
       Let's build something{" "}<em>tangible.</em>
