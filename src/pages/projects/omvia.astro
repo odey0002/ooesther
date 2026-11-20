@@ -255,11 +255,11 @@ const hifiSections = [
       <a href="/#work" class="project-back-link">← Work</a>
 
       <div class="project-hero__intro">
-        <p class="project-number">{project.number}</p>
+        <p class="project-number">{project?.number}</p>
 
         <div>
-          <p class="project-label">{project.category} - 2025–2026</p>
-          <h1>{project.title}</h1>
+          <p class="project-label">{project?.category} - 2025–2026</p>
+          <h1>{project?.title}</h1>
 
           <p class="project-hero__summary">
             Omvia brings smart-home routines, devices, safety, and caregiving into one calm, clear interface, making everyday home management easier without jumping between multiple apps.
@@ -1085,7 +1085,7 @@ const hifiSections = [
           trigger.setAttribute('aria-haspopup', 'dialog');
           trigger.classList.add('omvia-image-trigger');
           trigger.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
+            if (event instanceof KeyboardEvent && (event.key === 'Enter' || event.key === ' ')) {
               event.preventDefault();
               trigger.click();
             }
