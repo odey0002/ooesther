@@ -82,6 +82,41 @@
   line-height: 1.7;
 }
 
+.auren-early__explorations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.2rem;
+  align-items: start;
+}
+
+.auren-early__exploration figure,
+.auren-early__exploration > * {
+  background: transparent;
+  padding: 0;             
+  border: none;            
+}
+
+.auren-UI__designs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.auren-UI__design img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.auren-UI__design figure,
+.auren-UI__design > * {
+  background: transparent;
+  padding: 0;             
+  border: none;            
+}
+
+
 /* =========================
    RESPONSIVE
 ========================= */

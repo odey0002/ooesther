@@ -45,10 +45,10 @@ export const projects = [
     number: "05",
     title: "Auren",
     year: "2026",
-    category: "UX Research + Motion Design",
+    category: "UI Design + Motion Design",
     description:
-      "A noise-cancelling app concept designed to support focus, calm, and deep work through sound control and intentional interface design.",
-    tags: ["iOS Experience", "Motion Design", "UX Research", "UI/UX"],
+      "An adaptive audio app concept designed to help users manage their listening environment through personalized sound modes, intuitive controls, and thoughtful interface design.",
+    tags: ["UI Design", "Motion Graphics", "Storyboarding", "Video Production"],
     image: "/images/projects/auren.png",
     link: "/projects/auren",
     featured: false,

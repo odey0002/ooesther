@@ -23,7 +23,7 @@ const project = getProjectBySlug("auren");
         <p class="project-number">{project?.number ?? "03"}</p>
 
         <div>
-          <p class="project-label">UX Research / iOS Experience</p>
+          <p class="project-label">UI Design / Motion Graphics</p>
           <h1>Auren</h1>
 
           <p class="project-hero__summary">
@@ -34,7 +34,7 @@ const project = getProjectBySlug("auren");
       </div>
 
       <figure class="project-hero__image auren-hero-image">
-        <span class="auren-progress-badge">In Progress</span>
+        <span class="auren-progress-badge">Case Study in Progress</span>
 
         <img
           src="/images/projects/auren/preview.jpg"
@@ -45,54 +45,48 @@ const project = getProjectBySlug("auren");
       <dl class="project-facts">
         <div>
           <dt>Status</dt>
-          <dd>In Progress</dd>
+          <dd>Case Study in Progress</dd>
         </div>
 
         <div>
           <dt>Role</dt>
-          <dd>UX Research, UI Design, Sound Experience</dd>
+          <dd>UI Design, Motion Graphics, Video Production</dd>
         </div>
 
         <div>
           <dt>Tools</dt>
-          <dd>Figma, Prototyping, Visual Design</dd>
+          <dd>Figma, After Effects, Premiere Pro</dd>
         </div>
 
         <div>
           <dt>Year</dt>
-          <dd>{project?.year ?? "2024"}</dd>
+          <dd>{project?.year ?? "2025"}</dd>
         </div>
       </dl>
     </section>
 
     <section class="project-section site-shell">
       <div class="project-section__label">
-        <p>Preview</p>
+        <p>01 / Project Overview</p>
       </div>
 
       <div class="project-section__content">
         <p class="project-lead">
-          Auren explores how interface design, sound modes, and calm visual
-          systems can help users manage noise and move into more intentional
-          states of focus.
+          Auren is an adaptive audio concept that combines a personal listening device with a companion mobile app. It explores how people can manage surrounding noise and create more comfortable listening environments for different activities.
         </p>
 
         <div class="detail-grid">
           <article class="detail-card">
-            <h3>Product idea</h3>
+            <h3>The Product</h3>
             <p>
-              The app gives users a personal sound zone where they can scan
-              their environment, reduce distractions, and choose listening modes
-              based on how they want to focus or feel.
+              The companion app allows users to explore listening modes, monitor surrounding sound levels, and adjust their listening experience.
             </p>
           </article>
 
           <article class="detail-card">
-            <h3>Visual direction</h3>
+            <h3>My Contribution</h3>
             <p>
-              The interface uses a calm dark UI, soft green sound cues, simple
-              controls, and mode-based navigation to make the experience feel
-              focused and quiet.
+              As part of a collaborative team project, I designed high-fidelity mobile interfaces and reusable Figma components. I also contributed to motion graphics, storyboarding, filming, and video editing.
             </p>
           </article>
         </div>
@@ -101,33 +95,90 @@ const project = getProjectBySlug("auren");
 
     <section class="project-section site-shell">
       <div class="project-section__label">
-        <p>Coming Soon</p>
+        <p>02 / The Problem & Concept</p>
+      </div>
+
+      <div class="project-section__content">
+        {/*<p class="project-lead">
+          The full case study is currently being shaped. Once complete, this
+          page will include the problem, research insights, user flow, sound-mode
+          logic, interaction decisions, visual direction, and final app screens.
+        </p>*/}
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>The Problem</h3>
+            <p>
+              Everyday environments can be noisy and distracting, making it difficult to focus, relax, or enjoy personal listening time. Different situations also require different levels of awareness and sound control.
+            </p>
+          </article>
+
+          <article class="detail-card">
+            <h3>The Concept</h3>
+            <p>
+              Auren explores a more adaptable listening experience through a personal audio device and companion mobile app.
+
+              The concept introduces four listening modes: Silence, Focus, Adaptive, and Conversation. These give users different ways to manage surrounding sound based on their environment and activity.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>03 / Early Exploration</p>
       </div>
 
       <div class="project-section__content">
         <p class="project-lead">
-          The full case study is currently being shaped. Once complete, this
-          page will include the problem, research insights, user flow, sound-mode
-          logic, interaction decisions, visual direction, and final app screens.
+          Initial sketches explored different layouts for Auren's Home screen, listening modes, and Settings.
+
+          These sketches helped shape the interface structure before moving into high-fidelity designs in Figma.
         </p>
-
-        <div class="detail-grid">
-          <article class="detail-card">
-            <h3>What I’m refining</h3>
-            <p>
-              I’m currently refining the product story, the sound-control logic,
-              and how the interface communicates different listening states.
-            </p>
-          </article>
-
-          <article class="detail-card">
-            <h3>What to expect</h3>
-            <p>
-              The final case study will show the thinking behind the experience,
-              not just the finished screens.
-            </p>
-          </article>
+        <div class="auren-early__explorations">
+            <figure class="auren-early__exploration">
+              <button type="button" class="omvia-board-open" aria-haspopup="dialog" aria-label="Enlarge exploration image"><img src="/images/projects/auren/early-home.png" alt="Auren early exploration wireframe sketches for home screen" loading="lazy" /></button>
+              <figcaption>Home Screen</figcaption>
+            </figure>
+            <figure class="auren-early__exploration">
+              <button type="button" class="auren-board-open" aria-haspopup="dialog" aria-label="Enlarge exploration image"><img src="/images/projects/auren/early-modes.png" alt="Auren early exploration wireframe sketches for listening modes screen" loading="lazy" /></button>
+              <figcaption>Listening Modes</figcaption>
+            </figure>
+            <figure class="auren-early__exploration">
+              <button type="button" class="auren-board-open" aria-haspopup="dialog" aria-label="Enlarge exploration image"><img src="/images/projects/auren/early-settings.png" alt="Auren early exploration wireframe sketches for settings screen" loading="lazy" /></button>
+              <figcaption>Settings</figcaption>
+            </figure>
         </div>
+      </div>
+    </section>
+
+    <section class="project-section site-shell">
+      <div class="project-section__label">
+        <p>04 / UI Design</p>
+      </div>
+
+      <div class="project-section__content">
+        <p class="project-lead">
+          I designed Auren's high-fidelity mobile screens in Figma, focusing on clear navigation, simple controls, and a consistent visual experience.
+
+          Reusable components helped maintain consistency across the interface.
+        </p>
+        <div class="auren-UI__designs">
+            <figure class="auren-UI__design">
+              <button type="button" class="auren-board-open" aria-haspopup="dialog" aria-label="Enlarge exploration image"><img src="/images/projects/auren/Home-Hi-fi.jpg" alt="Auren high fidelity home screen" loading="lazy" /></button>
+              <figcaption>Home Hifi Screen</figcaption>
+            </figure>
+            <figure class="auren-UI__design">
+              <button type="button" class="auren-board-open" aria-haspopup="dialog" aria-label="Enlarge exploration image"><img src="/images/projects/auren/Modes-Hi-fi.png" alt="Auren high fidelity modes screen" loading="lazy" /></button>
+              <figcaption>Modes Hifi Screen</figcaption>
+            </figure>
+            <figure class="auren-UI__design">
+              <button type="button" class="auren-board-open" aria-haspopup="dialog" aria-label="Enlarge exploration image"><img src="/images/projects/auren/Settings-Hi-fi.jpg" alt="Auren high fidelity settings screen" loading="lazy" /></button>
+              <figcaption>Settings Hifi Screen</figcaption>
+            </figure>
+          </div>
 
         <ProjectPager currentSlug="auren" />
       </div>
